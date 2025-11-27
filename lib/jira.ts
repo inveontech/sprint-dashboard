@@ -63,10 +63,6 @@ export class JiraClient {
   }
 
   constructor() {
-    // Allow running in a mock mode when env JIRA_MOCK=true so the app can be tested
-    // without real Jira credentials.
-    this.mock = process.env.JIRA_MOCK === 'true';
-
     this.config = {
       host: process.env.JIRA_HOST || '',
       email: process.env.JIRA_EMAIL || '',
@@ -78,17 +74,24 @@ export class JiraClient {
       taskOwnerField: process.env.JIRA_TASK_OWNER_FIELD || 'customfield_10656',
     };
 
+    // Auto-detect mock mode: explicit JIRA_MOCK=true OR missing required credentials
+    const missingCredentials = !this.config.host || !this.config.email || !this.config.apiToken;
+    this.mock = process.env.JIRA_MOCK === 'true' || missingCredentials;
+
     if (this.mock) {
       // Skip real client initialization in mock mode
       // Create a lightweight, empty placeholder to avoid runtime errors where used.
       // @ts-ignore
       this.client = {};
+      
+      if (missingCredentials && process.env.JIRA_MOCK !== 'true') {
+        console.warn(
+          '⚠️  Jira credentials not configured - running in mock mode.\n' +
+          '   To connect to Jira, set these environment variables in your .env file:\n' +
+          '   - JIRA_HOST, JIRA_EMAIL, JIRA_API_TOKEN, JIRA_BOARD_ID, JIRA_PROJECT_KEY'
+        );
+      }
       return;
-    }
-
-    // In real mode, require credentials
-    if (!this.config.host || !this.config.email || !this.config.apiToken) {
-      throw new Error('Missing JIRA configuration. Set JIRA_HOST, JIRA_EMAIL and JIRA_API_TOKEN.');
     }
 
     this.client = new Version3Client({
@@ -103,6 +106,11 @@ export class JiraClient {
   }
 
   async getClosedSprints(count: number = 50): Promise<Sprint[]> {
+    // In mock mode, return data from sprint snapshots
+    if (this.mock) {
+      return this.getMockSprints(count);
+    }
+    
     // Check cache first
     if (this.sprintCache && (Date.now() - this.sprintCache.timestamp) < this.CACHE_DURATION) {
       console.log(`Using cached sprints (${this.sprintCache.data.length} sprints)`);
@@ -291,6 +299,26 @@ export class JiraClient {
         }
         
         return snapshotData;
+      }
+      
+      // In mock mode, if no snapshot exists, return empty data
+      if (this.mock) {
+        console.warn(`📦 Mock mode: No snapshot found for sprint ${sprintId}`);
+        return {
+          sprint: { id: sprintId, name: `Sprint ${sprintId}`, state: 'closed' },
+          issues: [],
+          metrics: {
+            totalPoints: 0,
+            completedPoints: 0,
+            completionRate: 0,
+            velocity: 0,
+            bugCount: 0,
+            customers: [],
+            targetPoints: 0,
+            targetAchievement: 0,
+          },
+          issueTypes: [],
+        };
       }
       
       const sprintUrl = `https://${this.config.host}/rest/agile/1.0/sprint/${sprintId}`;
@@ -939,6 +967,51 @@ export class JiraClient {
     } catch (error) {
       console.error(`Failed to get status for ${issueKey} at date:`, error);
       return null;
+    }
+  }
+
+  // Mock mode helpers
+  private getMockSprints(count: number): Sprint[] {
+    try {
+      const snapshotDir = path.join(process.cwd(), 'data', 'sprint-snapshots');
+      if (!fs.existsSync(snapshotDir)) {
+        console.log('No sprint snapshots found, returning empty array');
+        return [];
+      }
+
+      const files = fs.readdirSync(snapshotDir)
+        .filter(f => f.endsWith('.json'))
+        .sort((a, b) => {
+          const idA = parseInt(a.replace('.json', ''));
+          const idB = parseInt(b.replace('.json', ''));
+          return idB - idA; // Sort by ID descending (newest first)
+        });
+
+      const sprints: Sprint[] = [];
+      for (const file of files.slice(0, count)) {
+        try {
+          const filePath = path.join(snapshotDir, file);
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+          if (data.sprint) {
+            sprints.push({
+              id: data.sprint.id,
+              name: data.sprint.name,
+              state: data.sprint.state || 'closed',
+              startDate: data.sprint.startDate,
+              endDate: data.sprint.endDate,
+              completeDate: data.sprint.completeDate,
+            });
+          }
+        } catch (e) {
+          console.warn(`Failed to parse sprint snapshot ${file}:`, e);
+        }
+      }
+
+      console.log(`📦 Mock mode: Loaded ${sprints.length} sprints from snapshots`);
+      return sprints;
+    } catch (error) {
+      console.error('Failed to load mock sprints:', error);
+      return [];
     }
   }
 }

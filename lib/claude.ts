@@ -6,7 +6,11 @@ export class ClaudeClient {
   constructor() {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      throw new Error('OPENAI_API_KEY environment variable gerekli');
+      throw new Error(
+        'OPENAI_API_KEY environment variable is required for AI analysis.\n' +
+        'Please add OPENAI_API_KEY to your .env file.\n' +
+        'Get your API key from: https://platform.openai.com/api-keys'
+      );
     }
 
     this.client = new OpenAI({

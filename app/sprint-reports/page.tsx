@@ -16,6 +16,7 @@ import CustomerIssueTypeCharts from '@/components/charts/CustomerIssueTypeCharts
 import SuccessTrendChart from '@/components/charts/SuccessTrendChart';
 import WaitingIssuesCharts from '@/components/charts/WaitingIssuesCharts';
 import SprintComparisonCards from '@/components/dashboard/SprintComparisonCards';
+import { EnvWarningBanner } from '@/components/dashboard/EnvWarningBanner';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
@@ -58,6 +59,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedSprintId, setSelectedSprintId] = useState<string>(''); // Selected sprint ID
+  const [envStatus, setEnvStatus] = useState<any>(null); // Environment status
   const allCustomersRef = useRef<string[]>([]);
 
   // Reset customer filter on page mount
@@ -76,6 +78,12 @@ export default function DashboardPage() {
         if (allSprints.length === 0) {
           const allSprintsResponse = await fetch('/api/jira/sprints?sprints=6');
           const allSprintsData = await allSprintsResponse.json();
+          
+          // Store env status for UI warnings
+          if (allSprintsData.envStatus) {
+            setEnvStatus(allSprintsData.envStatus);
+          }
+          
           if (allSprintsData.sprints && allSprintsData.sprints.length > 0) {
             setAllSprints(allSprintsData.sprints);
             // Set default selection to latest sprint if not selected yet
@@ -202,6 +210,11 @@ export default function DashboardPage() {
         </div>
       </header>
 
+      {/* Environment Warnings */}
+      <div className="max-w-7xl mx-auto px-4 pt-4">
+        <EnvWarningBanner envStatus={envStatus} />
+      </div>
+
       {/* Loading State */}
       {loading && (
         <div className="max-w-7xl mx-auto px-4 py-8">
@@ -247,7 +260,7 @@ export default function DashboardPage() {
               {/* Current Sprint Overview */}
               <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">Son Sprint Detayları{selectedCustomer ? ` - ${selectedCustomer}` : ''}</h2>
-                <SprintComparisonCards sprints={sprints} selectedCustomer={selectedCustomer} />
+                <SprintComparisonCards sprints={sprints} selectedCustomer={selectedCustomer ?? undefined} />
               </div>
 
               {/* Waiting Issues Charts - PM Approval and WFS - Only show when no customer filter */}

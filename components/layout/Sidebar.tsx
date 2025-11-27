@@ -2,9 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, AlertCircle, Users, XCircle, Settings, Sparkles, TrendingUp, UserCheck } from 'lucide-react';
+import { BarChart3, AlertCircle, Users, XCircle, Settings, Sparkles, TrendingUp, UserCheck, Home } from 'lucide-react';
 
 const menuItems = [
+  {
+    title: 'Ana Sayfa',
+    href: '/',
+    icon: Home,
+  },
   {
     title: 'Sprint Raporu',
     href: '/sprint-reports',

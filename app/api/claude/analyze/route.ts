@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          error: 'OPENAI_API_KEY environment variable is not configured.',
+          error: 'OPENAI_API_KEY is not configured. Please add OPENAI_API_KEY to your .env file. Get your API key from: https://platform.openai.com/api-keys',
         },
         { status: 500 }
       );

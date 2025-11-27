@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { JiraClient } from '@/lib/jira';
+import { getEnvStatus } from '@/lib/env-status';
 
 export async function GET(request: Request) {
   try {
@@ -16,6 +17,8 @@ export async function GET(request: Request) {
     }
 
     const jira = new JiraClient();
+    const envStatus = getEnvStatus();
+    
     let sprintDetailsList;
 
     // Get sprints - fetch more than needed if customer filter is active
@@ -76,6 +79,7 @@ export async function GET(request: Request) {
       success: true,
       sprints,
       customers: allCustomers,
+      envStatus, // Include environment status for UI warnings
     });
   } catch (error: any) {
     console.error('Jira API Error:', error);
