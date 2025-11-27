@@ -1,0 +1,5396 @@
+{
+  "sprint": {
+    "id": 3086,
+    "self": "https://inveon.atlassian.net/rest/agile/1.0/sprint/3086",
+    "state": "closed",
+    "name": "2025.10.20 | Sprint 39",
+    "startDate": "2025-10-20T06:17:21.000Z",
+    "endDate": "2025-10-31T15:30:00.000Z",
+    "completeDate": "2025-11-02T21:13:33.362Z",
+    "createdDate": "2025-10-17T12:33:25.880Z",
+    "originBoardId": 284,
+    "goal": ""
+  },
+  "issues": [
+    {
+      "key": "INC-76989",
+      "summary": "Badge değişikliklerinin ön yüze yansıması hk.",
+      "status": "Waiting PM",
+      "storyPoints": 1,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2024-07-02T14:43:53.571+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-11-10T14:50:23.364+0300"
+    },
+    {
+      "key": "INC-80057",
+      "summary": "Ayakkabı Dünyası | Başarısız Siparişlerde Hata Mesajı Gösterimi | BE",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2024-12-30T11:13:32.568+0300",
+      "dueDate": "2025-05-21",
+      "resolutionDate": "2025-10-20T10:11:21.249+0300"
+    },
+    {
+      "key": "INC-80448",
+      "summary": "INVEON | Admin Panel - Mongo çoklu sorgu",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-01-22T16:54:35.350+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-31T09:17:14.618+0300"
+    },
+    {
+      "key": "LTBL-78",
+      "summary": "FED I E-Posta Doğrulamasının Yapılması ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-02-06T17:26:42.080+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T08:28:54.402+0300"
+    },
+    {
+      "key": "LTBL-84",
+      "summary": "FED I Gmail ile Giriş",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-02-06T17:39:50.724+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T08:28:28.216+0300"
+    },
+    {
+      "key": "LTBL-200",
+      "summary": "XML Yönetimi I Multilculture Desteklemesi",
+      "status": "PR Requested",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-02-07T12:58:12.335+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-06T08:53:14.303+0300"
+    },
+    {
+      "key": "LTBL-218",
+      "summary": "WEB - SEO",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-02-07T17:59:40.048+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-14T17:09:08.792+0300"
+    },
+    {
+      "key": "INC-81061",
+      "summary": "Notification Model Düzenleme",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-02-25T14:27:08.485+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-28T09:32:18.693+0300"
+    },
+    {
+      "key": "INC-81783",
+      "summary": "export-order-event_error oluşması incelemesi ",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Task"
+      },
+      "created": "2025-04-07T15:38:00.049+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-81819",
+      "summary": "Columbia- Stoğu biten ürünlerin sepetten otomatik çıkması | BE",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-04-08T18:48:28.426+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": "2025-10-24T15:41:11.218+0300"
+    },
+    {
+      "key": "INC-81877",
+      "summary": "Columbia | Segment , Kişi bazlı Wording Kurguları Oluşturulması FE",
+      "status": "Waiting PM",
+      "storyPoints": 5,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-04-11T14:20:43.546+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": null
+    },
+    {
+      "key": "LTBL-286",
+      "summary": "FED - Yurtiçi IP ile Üyelik Sonrası Yurtdışı IP ile Login",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-04-22T14:40:47.886+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-14T17:09:18.055+0300"
+    },
+    {
+      "key": "LTBL-287",
+      "summary": "FED - Yurtdışı IP ile Üyelik Sonrasında Yurtiçi IP ile Login",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-04-22T14:42:46.662+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-14T17:09:24.215+0300"
+    },
+    {
+      "key": "INC-82110",
+      "summary": "Ürün Detayda Videoların İstenilen Sıraya Konulabilmesi ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-04-24T23:45:56.598+0300",
+      "dueDate": "2025-06-26",
+      "resolutionDate": "2025-10-27T16:14:16.431+0300"
+    },
+    {
+      "key": "INC-82410",
+      "summary": "Page Builder - Multilanguage & Currency Code Düzenlemeleri & req head Language-Culture",
+      "status": "In Progress",
+      "storyPoints": 0,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Hilal Özer - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-05-15T10:07:22.494+0300",
+      "dueDate": "2025-06-11",
+      "resolutionDate": null
+    },
+    {
+      "key": "LTBL-299",
+      "summary": "Müşteri Bilgileri Güncelleme Yurtiçi & Yurtdışı senaryosu",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Hilal Özer - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-16T16:58:46.712+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-18",
+      "summary": "SD | Meta server-to-server integration",
+      "status": "PM Approval",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-21T15:01:55.885+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-20",
+      "summary": "SD | Ometria Analytics",
+      "status": "PM Approval",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-21T15:11:55.822+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-33",
+      "summary": "SD | FED - Ürün datası",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-22T22:59:44.075+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:24:01.031+0300"
+    },
+    {
+      "key": "SDL-35",
+      "summary": "SD | Bundle Product TRS Entegrasyonu",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Eftal Kerem Dursunlar - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-23T12:06:32.848+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:25:21.525+0300"
+    },
+    {
+      "key": "SDL-36",
+      "summary": "SD | Bundle Product TRS Entegrasyonu - FED",
+      "status": "Done",
+      "storyPoints": 10,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-23T12:09:58.116+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:24:43.680+0300"
+    },
+    {
+      "key": "INC-82519",
+      "summary": "Hotiç | Search, Tüm Renk Seçeneklerinin Gösterimi",
+      "status": "To Do",
+      "storyPoints": 5,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-05-23T17:45:38.465+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-82591",
+      "summary": "Tüm mikroservislerdeki setting değişikliklerinin deploy gerektirmeden siteye otomatik olarak yansıması | Catalog",
+      "status": "To Do",
+      "storyPoints": 21,
+      "customer": "Inveon",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-05-29T09:51:51.632+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-41",
+      "summary": "SD | PLP quick buy",
+      "status": "PM Approval",
+      "storyPoints": 5,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-29T18:05:54.582+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-05T17:49:26.177+0300"
+    },
+    {
+      "key": "SDL-14",
+      "summary": "SD | Ometria - Email Entegrasyonu",
+      "status": "PM Approval",
+      "storyPoints": 0,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Eftal Kerem Dursunlar - Inveon"
+      },
+      "taskOwner": "Eftal Kerem Dursunlar - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-05-15T17:46:45.294+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-48",
+      "summary": "SD | Bundle Product - Admin panel ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-02T14:59:49.551+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:27:16.022+0300"
+    },
+    {
+      "key": "SDL-52",
+      "summary": "SD | Algolia Search ve Blog Indexing - FE",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-02T16:19:17.684+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:27:53.794+0300"
+    },
+    {
+      "key": "SDL-53",
+      "summary": "SD | URL Hierarchy",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-02T16:38:23.931+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:29:43.070+0300"
+    },
+    {
+      "key": "LTBL-316",
+      "summary": "FED I Yurtiçi-Yurtdışı Adres Girişine Yönelik Form Değişkliklerinin Yapılması",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-05T09:34:50.171+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T16:18:15.820+0300"
+    },
+    {
+      "key": "INC-82994",
+      "summary": "Yorum Modülü - Guest Kullanıcı Yorumunda Kullanıcı İsminin Null Olarak Görüntülenmesi",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-06-26T17:40:07.717+0300",
+      "dueDate": "2025-07-25",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-63",
+      "summary": "SD | Sizebay",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-27T13:57:51.046+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-65",
+      "summary": "SD | Yotpo - FE",
+      "status": "PM Approval",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-06-27T14:30:58.474+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-69",
+      "summary": "SD | FeedOptimise",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Zeynep Yolcu - Inveon"
+      },
+      "taskOwner": "Zeynep Yolcu - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-07-02T17:01:24.602+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83111",
+      "summary": "Columbia | Size & Me Entegrasyonu - FE",
+      "status": "Canceled",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-04T10:16:39.005+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": "2025-10-22T17:27:54.390+0300"
+    },
+    {
+      "key": "INC-83112",
+      "summary": "Columbia | Size & Me Entegrasyonu - BE",
+      "status": "Canceled",
+      "storyPoints": 8,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-04T10:16:57.458+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": "2025-10-22T17:28:09.440+0300"
+    },
+    {
+      "key": "SDL-75",
+      "summary": "SD | Data Migration",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Eftal Kerem Dursunlar - Inveon"
+      },
+      "taskOwner": "Eftal Kerem Dursunlar - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-07-07T16:21:38.420+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83166",
+      "summary": "Hotiç | Sipariş Takip Alanına SMS ile Doğrulama Eklenmesi",
+      "status": "Waiting Domain",
+      "storyPoints": 3,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-08T11:11:13.846+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83169",
+      "summary": "Hotiç | Bültene Abone Ol Alanının Insider ile Entegrasyonu",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-08T11:21:38.085+0300",
+      "dueDate": "2025-11-26",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83181",
+      "summary": "Hotiç | Filtre Konumu Değiştirilmesi V2",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-09T09:40:44.682+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83228",
+      "summary": "Sneaks Up | Mobil Uygulama Kampanya Badge Gösterimi ",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-11T16:06:53.205+0300",
+      "dueDate": "2025-09-05",
+      "resolutionDate": "2025-10-23T14:48:09.158+0300"
+    },
+    {
+      "key": "INC-83329",
+      "summary": "Ayakkabı Dünyası | İptal/İade Sonrası Sayfanın Timeouta Düşmesi BE",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-07-22T17:07:17.813+0300",
+      "dueDate": "2025-07-25",
+      "resolutionDate": "2025-10-20T10:11:06.255+0300"
+    },
+    {
+      "key": "INC-83348",
+      "summary": "Columbia | URL Yönlendirmesi - FED",
+      "status": "To Do",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-07-23T12:21:39.006+0300",
+      "dueDate": "2025-07-24",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83365",
+      "summary": "Champion | Mağazadan Teslim Siparişlere  Özel Kampanya Kurulumu | BE",
+      "status": "Waiting Domain",
+      "storyPoints": 5,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-24T13:46:59.934+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83375",
+      "summary": "Columbia | Müşteri özel kupon kodu bilgisinin IO ile iletebilmesi FE",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-24T18:14:16.083+0300",
+      "dueDate": "2025-08-21",
+      "resolutionDate": "2025-10-22T17:27:31.385+0300"
+    },
+    {
+      "key": "INC-83395",
+      "summary": " Kupon Kodu Sayfasında Excel ile Kupon kodlarını indirebilme",
+      "status": "Done",
+      "storyPoints": 8,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Zeynep Yolcu - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-07-25T17:41:33.316+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-31T15:39:32.040+0300"
+    },
+    {
+      "key": "INC-83401",
+      "summary": "Auth yapısının Phantom-Core taşınması",
+      "status": "Done",
+      "storyPoints": 0,
+      "customer": "Inveon",
+      "assignee": {
+        "displayName": "Eftal Kerem Dursunlar - Inveon"
+      },
+      "taskOwner": "Eftal Kerem Dursunlar - Inveon",
+      "issueType": {
+        "name": "Task"
+      },
+      "created": "2025-07-28T09:50:50.450+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T09:59:26.722+0300"
+    },
+    {
+      "key": "INC-83519",
+      "summary": "TMB - Exception - CustomerController | AddOrUpdateCommunication",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-05T17:37:15.207+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-22T17:28:27.712+0300"
+    },
+    {
+      "key": "INC-83526",
+      "summary": "Hotiç | 04.08.2025 Deployment Paketi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "Boran Olcay - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-08-06T12:04:21.725+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T15:43:17.723+0300"
+    },
+    {
+      "key": "INC-83548",
+      "summary": "JeansLab - Failed executing DbCommand",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "Murat Cinek - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-07T00:17:18.115+0300",
+      "dueDate": "2025-12-05",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83556",
+      "summary": "QUIZ | CustomerService - GET FavoriteSubscription/GetWishListByCustomerId {guid}",
+      "status": "PR Requested",
+      "storyPoints": 3,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-07T09:39:14.459+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": "2025-11-13T12:21:12.489+0300"
+    },
+    {
+      "key": "INC-83594",
+      "summary": "Yargıcı - Aynı Paket İçerisindeki 2 Ürünlü Siparişe 2 SMS Gönderimi Yapılması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-08-08T15:20:42.272+0300",
+      "dueDate": "2025-08-13",
+      "resolutionDate": "2025-10-31T13:55:53.728+0300"
+    },
+    {
+      "key": "INC-83600",
+      "summary": "Hotiç | Kart Numarasının Kopyala Yapıştır Yapılabilmesi",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-08-10T07:26:05.662+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83601",
+      "summary": "Hotiç | İletişim Formuna Görsel/Belge Ekleme Alanı Eklenmesi FE",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-10T07:28:45.415+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83604",
+      "summary": "Yargıcı - İngilizce Dil Seçeneğinin Geliştirilmesi",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-10T22:16:32.024+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": "2025-10-20T11:34:53.201+0300"
+    },
+    {
+      "key": "INC-83607",
+      "summary": "Sneaks Up | Garanti Pay App Servis Ek Geliştirmeler",
+      "status": "Done",
+      "storyPoints": 21,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-11T10:27:08.180+0300",
+      "dueDate": "2025-08-21",
+      "resolutionDate": "2025-10-23T14:48:23.457+0300"
+    },
+    {
+      "key": "INC-83727",
+      "summary": "Columbia | POST FavoriteSubscription/Add",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-19T14:58:19.383+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83728",
+      "summary": "Columbia | POST Customer/VerifyRegister",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-19T14:59:03.617+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83730",
+      "summary": "Columbia | GET Order/GetAllById {id}",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-19T15:00:58.271+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83746",
+      "summary": "Yargıcı - FF Sipariş Aktarım Modelinde Değişiklik ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-19T18:25:13.179+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-27T16:14:22.419+0300"
+    },
+    {
+      "key": "INC-83826",
+      "summary": "Ayakkabı Dünyası | Tasarım Ek Maddeler",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-27T09:43:55.954+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-20T10:12:05.721+0300"
+    },
+    {
+      "key": "INC-83829",
+      "summary": "Columbia | Segment , Kişi bazlı Wording Kurguları Oluşturulması BE",
+      "status": "Waiting Domain",
+      "storyPoints": 5,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-08-27T11:38:03.828+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83831",
+      "summary": "Hızlı Görünüm Kategori Breadcrumb'larında Aktif Olmayan Kategorilerin Gözükmesi",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-08-27T14:08:19.359+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": "2025-10-31T15:41:26.719+0300"
+    },
+    {
+      "key": "INC-83838",
+      "summary": "Hotiç | OKC Siparişinin Cihaza Düşmemesi",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-08-28T11:18:05.574+0300",
+      "dueDate": "2025-08-29",
+      "resolutionDate": "2025-11-06T09:32:13.181+0300"
+    },
+    {
+      "key": "INC-83841",
+      "summary": "Yargıcı - Ayen'e Giden Stokların Mükerrer Kayıt Oluşturması ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Uygar Doğan - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-08-28T15:11:24.250+0300",
+      "dueDate": "2025-09-04",
+      "resolutionDate": "2025-10-27T16:17:57.268+0300"
+    },
+    {
+      "key": "INC-83848",
+      "summary": "cache clear request konusu",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-29T16:07:36.971+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83851",
+      "summary": "ERP Service",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-08-29T16:31:58.522+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83867",
+      "summary": "Aktifbank Pay'nkolay Entegrasyonu - FE",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-01T14:52:16.991+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "LTBL-357",
+      "summary": "Tasarım Revizeleri",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Hilal Özer - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-02T10:41:02.526+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T08:28:41.768+0300"
+    },
+    {
+      "key": "INC-83918",
+      "summary": "Champion | mikro ihracat GULF",
+      "status": "To Do",
+      "storyPoints": 8,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-03T20:26:02.515+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83920",
+      "summary": "Champion | Yeni depo eklenmesi",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-03T20:37:22.528+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-30T11:54:56.114+0300"
+    },
+    {
+      "key": "INC-83922",
+      "summary": "Sneaks Up | Smart Kategori Ek İsterler",
+      "status": "Waiting Domain",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-03T20:52:09.277+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83936",
+      "summary": "Hotiç | Aktarılmayan Siparişler",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Zeynep Yolcu - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-04T17:08:00.152+0300",
+      "dueDate": "2025-09-10",
+      "resolutionDate": "2025-10-22T13:52:52.953+0300"
+    },
+    {
+      "key": "INC-83938",
+      "summary": "Bizim Toptan | Checkout Taksit Seçenekleri Görsel Linkleri",
+      "status": "Done",
+      "storyPoints": 0,
+      "customer": "Bizim Toptan",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-04T18:07:47.737+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T12:53:21.354+0300"
+    },
+    {
+      "key": "INC-83939",
+      "summary": "LAV | Checkout Luhn Validation",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-04T18:29:50.236+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-28T10:29:22.686+0300"
+    },
+    {
+      "key": "INC-83950",
+      "summary": "Sneaks Up | Banner çözünürlük geliştirmesinin diğer sayfalarda sağlanması",
+      "status": "Waiting PM",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-05T11:11:38.025+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-11-03T20:20:34.481+0300"
+    },
+    {
+      "key": "INC-83958",
+      "summary": "Hotiç | ÖKC Çift Siparişler",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-05T14:49:00.268+0300",
+      "dueDate": "2025-09-26",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-83965",
+      "summary": "QUIZ | Stock notification EP hatası",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-05T16:17:04.734+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-22T10:32:31.833+0300"
+    },
+    {
+      "key": "INC-83968",
+      "summary": "Columbia  - LoopSmart Talebi - Xml'e ürün detayı eklenmesi",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-08T00:12:08.818+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-24T16:52:36.717+0300"
+    },
+    {
+      "key": "INC-83988",
+      "summary": "Kipling - Sepet Özeti Görünüm ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Kipling",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-08T13:25:04.591+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-10-20T15:28:13.771+0300"
+    },
+    {
+      "key": "INC-84000",
+      "summary": "Hotiç | İletişim Formuna Görsel/Belge Ekleme Alanı Eklenmesi (Backend)",
+      "status": "Waiting Domain",
+      "storyPoints": 8,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-09T16:01:27.495+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84008",
+      "summary": "Kipling - IndexNow Dosyasının Site Root Dizinine Eklenmesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Kipling",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-10T10:29:24.715+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-10-20T15:28:35.319+0300"
+    },
+    {
+      "key": "INC-84025",
+      "summary": "Yargıcı - GetBasket API hatası sonrası kullanıcı logout edilmeden hata gösterilmeli",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-11T09:51:18.083+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-10-27T16:14:36.862+0300"
+    },
+    {
+      "key": "INC-84037",
+      "summary": " Kupon Kodu Sayfasında Excel ile Kupon kodlarını indirebilme (Frontend)",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-11T16:34:14.980+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-31T15:40:42.722+0300"
+    },
+    {
+      "key": "INC-84038",
+      "summary": "Lidio Entegrasyonu | Faz - 2 BE",
+      "status": "In Progress",
+      "storyPoints": 13,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Aslıhan Hastaoğlu - Inveon"
+      },
+      "taskOwner": "Aslıhan Hastaoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-11T16:49:20.247+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84040",
+      "summary": "Yargıcı - İade İsteklerinde Ürün Görseli Yüklenebilmesi | FE",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-11T17:04:57.776+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84041",
+      "summary": "[BE] Sneaks Up | Smart Kategori Ek İsterler",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-11T17:24:44.175+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84055",
+      "summary": "QUIZ | Adres ve Transaction tablo temizlikleri",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-12T13:54:11.885+0300",
+      "dueDate": "2025-09-22",
+      "resolutionDate": "2025-10-31T14:04:47.732+0300"
+    },
+    {
+      "key": "INC-84070",
+      "summary": "Akbank Cuzdan Entegrasyonu FE",
+      "status": "Waiting Domain",
+      "storyPoints": 8,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Aslıhan Hastaoğlu - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-15T12:50:29.288+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "LTBL-360",
+      "summary": "Datalayer Düzenlemeleri",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-09-16T10:12:47.085+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84079",
+      "summary": "Ayakkabı Dünyası | Çok Satanlar Sıralaması Hk",
+      "status": "To Do",
+      "storyPoints": 5,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Uygar Doğan - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-16T11:45:14.551+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84094",
+      "summary": "Columbia - Ürün Detay Ürün Video Ekleme Sorunu | BE",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-17T12:07:25.680+0300",
+      "dueDate": "2025-09-18",
+      "resolutionDate": "2025-10-27T11:02:10.098+0300"
+    },
+    {
+      "key": "INC-84114",
+      "summary": "Hotiç | İade tutarında vade farkının eklenmemesi",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-18T12:48:42.917+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-11-24T14:16:21.492+0300"
+    },
+    {
+      "key": "INC-84117",
+      "summary": "Columbia  | Karışım Bilgisinin ön yüze yansımaması hk. ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-18T14:44:57.128+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:06:36.258+0300"
+    },
+    {
+      "key": "INC-84120",
+      "summary": "Yargıcı - Adres Bilgisi Yanlış İletilen MP Siparişi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-18T15:04:25.927+0300",
+      "dueDate": "2025-09-19",
+      "resolutionDate": "2025-10-27T16:14:10.854+0300"
+    },
+    {
+      "key": "INC-84136",
+      "summary": "Columbia & TMB | Sp ye yeni alan açılması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-19T13:32:27.316+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-27T17:15:48.019+0300"
+    },
+    {
+      "key": "INC-84145",
+      "summary": "Yargıcı - Kategori Sayfalarında Filtre Seçimi Yaşanırken Oluşan Yavaşlığın Kontrol Edilmesi ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Uygar Doğan - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-19T14:57:27.239+0300",
+      "dueDate": "2025-09-24",
+      "resolutionDate": "2025-10-27T16:14:56.241+0300"
+    },
+    {
+      "key": "INC-84146",
+      "summary": "Yargıcı - Kadın Kategorisinde Mobil Gösterimde Desk Görüntüsünün Gelmesi ",
+      "status": "In Progress",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-19T15:02:42.188+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84153",
+      "summary": "Sneaks Up | Loyalty ID değeri Nebime Akmaması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-22T11:03:56.124+0300",
+      "dueDate": "2025-09-26",
+      "resolutionDate": "2025-10-30T13:56:39.409+0300"
+    },
+    {
+      "key": "INC-84154",
+      "summary": "Sneaks Up | Kampanyalı siparişte hatalı indirim tutar hesaplaması",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-22T11:05:42.745+0300",
+      "dueDate": "2025-09-26",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84159",
+      "summary": "Sneaks Up | Stok bildirim maili yeni şablon | BE",
+      "status": "Waiting Domain",
+      "storyPoints": 1,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-22T11:08:40.946+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84162",
+      "summary": "Vetrina - Taksit Tablosu ",
+      "status": "CR Rejected",
+      "storyPoints": 0,
+      "customer": "Vetrina",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-22T11:22:37.064+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-09-22T11:54:48.671+0300"
+    },
+    {
+      "key": "INC-84176",
+      "summary": "Hotiç | ÖKC manuel sipariş sorunu",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-23T11:52:10.892+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-11-11T15:55:09.012+0300"
+    },
+    {
+      "key": "INC-84182",
+      "summary": "QUIZ | Yeni product data modelinin işlenmemesi",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-23T16:30:43.426+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": "2025-10-21T17:32:37.071+0300"
+    },
+    {
+      "key": "INC-84184",
+      "summary": "Columbia - DG Kuponu Erp'den Gelmesine Rağmen Db'de Görünmüyor",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-23T17:10:30.708+0300",
+      "dueDate": "2025-09-25",
+      "resolutionDate": "2025-10-24T16:53:22.857+0300"
+    },
+    {
+      "key": "INC-84188",
+      "summary": "Ayakkabı Dünyası | Tasarım Revizeler",
+      "status": "Done",
+      "storyPoints": 8,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-24T11:56:27.659+0300",
+      "dueDate": "2025-10-02",
+      "resolutionDate": "2025-10-27T12:25:43.586+0300"
+    },
+    {
+      "key": "SDL-111",
+      "summary": "SD | EVRI Parcelshop - BE",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Eftal Kerem Dursunlar - Inveon"
+      },
+      "taskOwner": "Eftal Kerem Dursunlar - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-09-24T16:16:49.466+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-21T09:38:07.542+0300"
+    },
+    {
+      "key": "INC-84191",
+      "summary": "Hotiç | Kampanyanın Yanlış Ürüne Uygulanması",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-24T17:26:57.432+0300",
+      "dueDate": "2025-10-07",
+      "resolutionDate": "2025-11-11T15:55:03.015+0300"
+    },
+    {
+      "key": "INC-84193",
+      "summary": "Champion | Mağazadan Teslim Siparişlere  Özel Kampanya Kurulumu | FE",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-24T17:54:28.634+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84206",
+      "summary": "Lav - Ürün Kartına Badge Düzenlemesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-25T11:14:17.748+0300",
+      "dueDate": "2025-09-25",
+      "resolutionDate": "2025-10-28T10:30:08.808+0300"
+    },
+    {
+      "key": "INC-84209",
+      "summary": "Ayakkabı Dünyası | Sipariş Aktarımı",
+      "status": "Waiting Domain",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-25T12:06:45.372+0300",
+      "dueDate": "2025-09-25",
+      "resolutionDate": null
+    },
+    {
+      "key": "LTBL-370",
+      "summary": "Ürün Listeleme ve Ürün Detay Revizeleri",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Hilal Özer - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-25T14:09:20.994+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T16:15:11.403+0300"
+    },
+    {
+      "key": "INC-84216",
+      "summary": "Lav - Ürün Detay Ödeme Seçenekleri Düzeni",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-25T15:14:36.273+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-30T17:17:09.341+0300"
+    },
+    {
+      "key": "INC-84228",
+      "summary": "Hotiç | Kategori Toggle Butonları (Frontend)",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-25T15:45:23.939+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-31T15:39:41.286+0300"
+    },
+    {
+      "key": "INC-84239",
+      "summary": "Hotiç Ürünlerin Yüklenmemesi ve 502 Hatası",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-25T16:17:09.632+0300",
+      "dueDate": "2025-09-26",
+      "resolutionDate": "2025-10-23T17:45:55.958+0300"
+    },
+    {
+      "key": "INC-84243",
+      "summary": "Sneaks Up | Stok bildirim maili yeni şablon | FE",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-25T17:34:02.595+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84251",
+      "summary": "Columbia | URL UTM Silinmesi ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-26T10:47:12.040+0300",
+      "dueDate": "2025-09-29",
+      "resolutionDate": "2025-10-24T16:52:43.454+0300"
+    },
+    {
+      "key": "INC-84254",
+      "summary": "Elastic service",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-09-26T11:22:49.946+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84260",
+      "summary": "Yargıcı - Ürün Kampanyasında Çarpan Faktörünün Çalışmaması ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-26T13:20:55.525+0300",
+      "dueDate": "2025-09-29",
+      "resolutionDate": "2025-10-27T16:13:58.605+0300"
+    },
+    {
+      "key": "INC-84261",
+      "summary": "Columbia | Mobil Menü Düzenlemesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-26T13:50:14.765+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:37.457+0300"
+    },
+    {
+      "key": "INC-84262",
+      "summary": "Yargıcı - İptal Bilgilerinin Ayen'e Yanlış Dükkan Id Bilgisi ile Gitmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-26T14:41:52.719+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-21T15:06:02.472+0300"
+    },
+    {
+      "key": "INC-84264",
+      "summary": "Yargıcı - İade Kodu Oluştuğu Halde Ekrana Basılmaması ",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-26T16:09:07.151+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-31T18:36:45.780+0300"
+    },
+    {
+      "key": "SDL-115",
+      "summary": "SD | Sepette stoğu olmayan ürün belirtilmeli",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-26T17:24:00.672+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:31:53.036+0300"
+    },
+    {
+      "key": "INC-84269",
+      "summary": "QUIZ | PB sorunları",
+      "status": "Waiting Domain",
+      "storyPoints": 5,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-26T18:16:54.447+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84274",
+      "summary": "Sneaks Up | Admin panel 503 hatası",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-29T10:00:22.976+0300",
+      "dueDate": "2025-10-09",
+      "resolutionDate": "2025-10-23T17:55:45.836+0300"
+    },
+    {
+      "key": "INC-84276",
+      "summary": "JeansLab - 02.10.2025 Deploy",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-09-29T11:05:18.870+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T15:12:31.221+0300"
+    },
+    {
+      "key": "INC-84277",
+      "summary": "Hotiç | Header Görünümü",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-09-29T11:30:18.677+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-31T13:18:08.998+0300"
+    },
+    {
+      "key": "INC-84279",
+      "summary": "Zorlu | Sıralama Hk",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-29T12:55:19.375+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-11-04T17:47:54.181+0300"
+    },
+    {
+      "key": "INC-84284",
+      "summary": "LAV - Ürün İsimlerinin Panele Entegre Olması ",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-29T14:49:12.682+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-28T10:30:42.057+0300"
+    },
+    {
+      "key": "INC-84285",
+      "summary": "LAV - Ürün İsimlerinin Düzenlenmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-29T14:50:27.278+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T16:20:21.205+0300"
+    },
+    {
+      "key": "INC-84287",
+      "summary": "TMB & Columbia - Ürün Detay Açıklama Alanına Materyal Bilgisi Eklenmesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-09-30T09:00:27.466+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-24T16:51:19.431+0300"
+    },
+    {
+      "key": "INC-84292",
+      "summary": "Sneaks Up | Sepet İşlemlerinde Performans Optimizasyonu ",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-09-30T11:01:21.784+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84300",
+      "summary": "Sneaks Up | Pasif 274 numaralı CRM kampanyası kullanım bilgisi hk",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Elifsena Yeşilkent - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-01T10:23:14.713+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-11-04T22:33:07.845+0300"
+    },
+    {
+      "key": "INC-84303",
+      "summary": "Columbia | Kategoriden çıkan ürünler (SLS inceleme taskı)",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-01T13:32:39.465+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-24T16:21:30.412+0300"
+    },
+    {
+      "key": "INC-84305",
+      "summary": "Hotiç | Sipariş Takip Alanına SMS ile Doğrulama Eklenmesi FE",
+      "status": "PM Approval",
+      "storyPoints": 5,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Abdullah Özdemir - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-01T13:49:56.597+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84311",
+      "summary": "Columbia  - PLP Filtre Sorunları",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:12:48.417+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:10.958+0300"
+    },
+    {
+      "key": "INC-84312",
+      "summary": "Columbia - Mobilde özel kategorilerde scroll edince hızlı filtrelerin yok olması",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:16:26.386+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:43.666+0300"
+    },
+    {
+      "key": "INC-84314",
+      "summary": "Columbia - Slider Placeholder çalışmıyor",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:25:14.482+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:56.225+0300"
+    },
+    {
+      "key": "INC-84315",
+      "summary": "Columbia  - Ana sayfa komponentlerin ekrana göre bozulması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:27:53.610+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:30.925+0300"
+    },
+    {
+      "key": "INC-84316",
+      "summary": "Sneaks Up | Sepette Layout Sorunu",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:36:39.532+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": "2025-11-19T17:58:40.318+0300"
+    },
+    {
+      "key": "INC-84318",
+      "summary": "Columbia -  Mobile Ürün Detay sayfasının takılması ve Ürün İsimleri Hakkında",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T15:40:42.577+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:04.571+0300"
+    },
+    {
+      "key": "INC-84325",
+      "summary": "TMB - Bir Kampanyadan X Kategorisini Devre Dışı Bırakmak - Pre",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-01T17:34:48.809+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84326",
+      "summary": "LAV - 2025 Q4 Deploy (1)",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-01T18:35:43.395+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T16:19:11.423+0300"
+    },
+    {
+      "key": "INC-84329",
+      "summary": "Columbia - Banner butonlarının ekrana göre yer değiştirmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-01T21:01:04.346+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:49.798+0300"
+    },
+    {
+      "key": "INC-84341",
+      "summary": "Columbia - Banner üzerine metin eklenmesi ve düzenlenebilmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-02T12:07:35.506+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:52:02.653+0300"
+    },
+    {
+      "key": "INC-84342",
+      "summary": "Columbia |  Mobil PDP'de Sepete Ekle butonunun sticky olması",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-02T12:18:49.921+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T17:03:22.812+0300"
+    },
+    {
+      "key": "INC-84348",
+      "summary": "Zorlu | Havale siparişlerinin C&C sürecinden kaldırılması ",
+      "status": "Waiting Domain",
+      "storyPoints": 3,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-02T16:26:16.753+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84352",
+      "summary": "Linens | Purchase eventi",
+      "status": "Waiting Domain",
+      "storyPoints": 1,
+      "customer": "Linens",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-02T23:08:54.398+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-11-07T09:53:21.799+0300"
+    },
+    {
+      "key": "INC-84353",
+      "summary": "TMB - Text Management Düzenlemesi",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-03T09:23:12.108+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-24T12:55:20.377+0300"
+    },
+    {
+      "key": "INC-84359",
+      "summary": "Yargıcı - MP Siparişleri İçin KVKK ve ETK İzinlerinin Dolu Gitmesi",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-03T15:36:24.972+0300",
+      "dueDate": "2025-10-22",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84361",
+      "summary": "Sneaks Up | APP - PWI Callback URL Fix",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-05T19:32:55.040+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T14:34:51.407+0300"
+    },
+    {
+      "key": "INC-84362",
+      "summary": "Sneaks Up | Rol atama / Rol karışması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-05T19:34:47.827+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-23T14:49:21.828+0300"
+    },
+    {
+      "key": "INC-84363",
+      "summary": "Sneaks Up | Listeleme/detay sayfalarında kampanya basge gösterimi (Teknik Analiz)",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Task"
+      },
+      "created": "2025-10-05T19:37:40.478+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-12T14:49:32.768+0300"
+    },
+    {
+      "key": "INC-84367",
+      "summary": "Yargıcı - Garanti BBVA BIN Listesi Kontrolü",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-05T22:16:08.987+0300",
+      "dueDate": "2025-11-06",
+      "resolutionDate": "2025-10-31T18:44:35.018+0300"
+    },
+    {
+      "key": "INC-84371",
+      "summary": "Yargıcı - Beden Tablosuna Dahil Edilmeyen Kategorilerde Tablonun Gelmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-06T00:42:46.931+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-27T16:17:51.071+0300"
+    },
+    {
+      "key": "INC-84373",
+      "summary": "Yargıcı - Müşteri İptallerinin İlgili Modelde 03 Olarak İletilmesi ",
+      "status": "Canceled",
+      "storyPoints": 5,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T01:00:27.544+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-31T15:17:43.242+0300"
+    },
+    {
+      "key": "INC-84374",
+      "summary": "Yargıcı - Checkout Adres Adımı İsterler ",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T01:14:28.867+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84375",
+      "summary": "Phantom - /catalog/api/TextManagement 500 Hatası ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-06T01:23:24.654+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-27T16:17:38.454+0300"
+    },
+    {
+      "key": "INC-84376",
+      "summary": "Yargıcı - Ürün Liste Sayfası Değişiklik İstekleri ",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T01:36:45.156+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-27T16:14:05.228+0300"
+    },
+    {
+      "key": "INC-84377",
+      "summary": "Sneaks Up | Deeplink dosyası güncelleme",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T09:18:30.860+0300",
+      "dueDate": "2025-10-14",
+      "resolutionDate": "2025-10-24T14:35:30.236+0300"
+    },
+    {
+      "key": "INC-84381",
+      "summary": "Yargıcı - YRGC52957 Siparişinde Ödeme Tipinin Boş Gitmesi",
+      "status": "Done",
+      "storyPoints": 8,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:15:13.209+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-27T16:18:09.697+0300"
+    },
+    {
+      "key": "INC-84383",
+      "summary": "TMB - ProductCard Hızlı Bakış Eklenmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:23:59.989+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-30T10:58:48.987+0300"
+    },
+    {
+      "key": "INC-84387",
+      "summary": "TMB - Filtrelenen Ürün Sayısı",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:33:12.575+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-30T10:58:55.455+0300"
+    },
+    {
+      "key": "INC-84388",
+      "summary": "TMB - Filtre İçi Scroll Eklenmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:37:30.837+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-30T10:59:01.565+0300"
+    },
+    {
+      "key": "INC-84389",
+      "summary": "TMB - Input Size",
+      "status": "PM Approval",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:39:47.174+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84390",
+      "summary": "TMB - Right Keyboard",
+      "status": "PR Requested",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:40:53.515+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84391",
+      "summary": "TMB - Input Placeholder",
+      "status": "PR Requested",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:42:17.278+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84392",
+      "summary": "TMB - Positive Inline Validation",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-06T10:43:43.209+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-30T10:59:07.703+0300"
+    },
+    {
+      "key": "INC-84406",
+      "summary": "Excel Import Performance Optimization",
+      "status": "To Do",
+      "storyPoints": 5,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-06T16:37:39.442+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84407",
+      "summary": "ShippingService GetDefaultShippingCompany Endpointi Cache Kontrolü ",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Mahmut Burak Kazçin - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-07T03:19:37.481+0300",
+      "dueDate": "2025-10-08",
+      "resolutionDate": "2025-10-24T16:53:11.974+0300"
+    },
+    {
+      "key": "INC-84408",
+      "summary": "BasketService GetCustomerForBasket Tekrarlayan Settings Kayıtlarının Kontrolü",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-07T03:21:40.742+0300",
+      "dueDate": "2025-10-08",
+      "resolutionDate": "2025-10-24T17:03:13.944+0300"
+    },
+    {
+      "key": "INC-84412",
+      "summary": "Ayakkabı Dünyası | Kırık Görsel Sorunu",
+      "status": "Waiting Domain",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-07T10:30:56.506+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84416",
+      "summary": "Yargıcı - Beden Tablosuna Dahil Edilmeyen Kategorilerde Tablonun Gelmesi | BE",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-07T15:00:04.306+0300",
+      "dueDate": "2025-10-09",
+      "resolutionDate": "2025-10-27T16:18:03.188+0300"
+    },
+    {
+      "key": "LTBL-379",
+      "summary": "FED - ApplePay Entegrasyonu",
+      "status": "To Do",
+      "storyPoints": 5,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Hilal Özer - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-08T10:31:02.709+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84420",
+      "summary": "Kipling - Revotas Info Paylaşım | BE",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Kipling",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-08T11:56:42.290+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-11-10T11:00:29.225+0300"
+    },
+    {
+      "key": "INC-84422",
+      "summary": "TMB - Text Management Excel Import Hatası",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-08T14:34:55.824+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-20T10:11:09.928+0300"
+    },
+    {
+      "key": "INC-84424",
+      "summary": "Columbia -  Mobile Ürün Detay sayfasının takılması ",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-08T16:12:33.130+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T14:51:21.919+0300"
+    },
+    {
+      "key": "INC-84425",
+      "summary": "TMB - Text Management Seciton 2 Görünmemesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-08T17:38:38.274+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-30T10:59:26.011+0300"
+    },
+    {
+      "key": "INC-84426",
+      "summary": "Vetrina - CDN İstekleri ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Vetrina",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-08T18:11:00.049+0300",
+      "dueDate": "2025-10-22",
+      "resolutionDate": "2025-10-31T19:57:59.212+0300"
+    },
+    {
+      "key": "INC-84427",
+      "summary": "Columbia Deployment | 10.09.2025",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-09T09:11:13.483+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T16:06:26.127+0300"
+    },
+    {
+      "key": "INC-84428",
+      "summary": "Columbia | İzin Verisi Hk. ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-09T09:53:22.140+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-24T17:59:23.706+0300"
+    },
+    {
+      "key": "INC-84431",
+      "summary": "Columbia | En iyi ürünü bul geliştirmesi fix",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-09T11:44:18.100+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-24T16:51:25.180+0300"
+    },
+    {
+      "key": "INC-84432",
+      "summary": "Yargıcı - 2025.Q4.1 Deploy",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-09T11:49:07.046+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-23T12:19:32.783+0300"
+    },
+    {
+      "key": "INC-84433",
+      "summary": "Sneaks Up | Deploy sonrası vade farkı iletilmemesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-09T14:05:32.100+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-31T14:47:20.282+0300"
+    },
+    {
+      "key": "INC-84437",
+      "summary": "Linens | Varsayılan Kategori Güncelleme",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Linens",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-09T16:39:08.703+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-27T21:52:15.199+0300"
+    },
+    {
+      "key": "INC-84451",
+      "summary": "Yargıcı - 10 Ekim 15:00 Yavaşlık",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-10T18:27:54.191+0300",
+      "dueDate": "2025-11-28",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84454",
+      "summary": "TMB - Web Deploy",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-13T09:21:50.230+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-30T11:01:38.644+0300"
+    },
+    {
+      "key": "INC-84460",
+      "summary": "Champion | Sİpariş Aktarımı",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Murat Cinek - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-13T14:01:43.957+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-11-03T16:05:25.452+0300"
+    },
+    {
+      "key": "INC-84461",
+      "summary": "JeansLab - Mağazaları Getiren EP'nin 400 Dönmesi ",
+      "status": "Canceled",
+      "storyPoints": 0,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-13T14:09:28.717+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T11:34:20.174+0300"
+    },
+    {
+      "key": "INC-84463",
+      "summary": "TMB - PLP Sıralama Varsayılan",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-13T15:05:52.407+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84464",
+      "summary": "TMB - Adres Imput Ortalı Hizalanması ",
+      "status": "To Do",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-13T15:10:12.212+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84466",
+      "summary": "TMB -  Site genelindeki input yüksekliklerinin her yerde 40 px olması",
+      "status": "PM Approval",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-13T15:14:38.092+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-124",
+      "summary": "SD | Sipariş detay bilgileri gelmemesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-13T15:15:23.698+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-23T12:06:05.459+0300"
+    },
+    {
+      "key": "INC-84470",
+      "summary": "TMB - Footer alanına sözleşmeler arasına margin eklenmesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-13T15:45:32.771+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-27T17:16:28.013+0300"
+    },
+    {
+      "key": "SDL-125",
+      "summary": "SD | Guest ile giriş yapılmış görünüyor",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-13T16:31:03.388+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T15:51:42.568+0300"
+    },
+    {
+      "key": "INC-84471",
+      "summary": "Kipling - Q4 Deploy (1)",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Kipling",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-13T17:24:27.996+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T15:20:54.274+0300"
+    },
+    {
+      "key": "INC-84472",
+      "summary": "Ayakkabı Dünyası | MP Data Düzenleme ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-13T19:04:10.867+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-27T11:18:35.774+0300"
+    },
+    {
+      "key": "INC-84475",
+      "summary": "TMB - Kupon Kodu Kampanyası Büyük Harf Küçük Harf Duyarlılığı",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-14T09:58:35.823+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84476",
+      "summary": "Sneaks Up | SU1713574 ve SU1702577 mükerrer siparişler hk",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-14T10:13:52.555+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-27T21:58:39.613+0300"
+    },
+    {
+      "key": "INC-84478",
+      "summary": "Champion | pod-name 'in kaldırılması",
+      "status": "In Progress",
+      "storyPoints": 1,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Çağatay Güzay - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-14T10:43:37.936+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84479",
+      "summary": "LAV - ERP Ürün Güncelleme Yansımaması ",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-14T10:53:56.228+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-11-10T09:26:17.538+0300"
+    },
+    {
+      "key": "SDL-131",
+      "summary": "SD | size guide sayfasının oluşturulması",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-14T13:36:18.707+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84481",
+      "summary": "Yargıcı - 2025.Q4.2 Deploy",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Elifsena Yeşilkent - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-14T13:59:36.653+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T16:31:25.101+0300"
+    },
+    {
+      "key": "INC-84483",
+      "summary": "Columbia- Stoğu biten ürünlerin sepetten otomatik çıkması | FE",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-14T14:15:22.796+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-24T15:41:42.780+0300"
+    },
+    {
+      "key": "INC-84487",
+      "summary": "Zorlu | Üyelik Formu Onay Alanları hk. | BE",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-14T14:37:52.673+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84488",
+      "summary": "Hotiç | ÖKC Ödeme alındı ama onay gelmiyor ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-14T14:44:58.400+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-28T11:27:16.820+0300"
+    },
+    {
+      "key": "INC-84490",
+      "summary": "Hotiç | Kategori Toggle Butonları | BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-14T14:49:29.151+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-11-11T15:55:13.536+0300"
+    },
+    {
+      "key": "INC-84492",
+      "summary": "Yargıcı - Paneldeki Siparişlerin ve Raporlardaki Siparişlerin 3 Saat Sonra Olması | FE",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Abdullah Özdemir - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-14T14:52:20.939+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-133",
+      "summary": "SD | Checkout düzenlemeleri",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-14T16:04:34.260+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84493",
+      "summary": "Hotiç | Kampanyanın Yanlış Ürüne Uygulanması | Pre",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Zeynep Yolcu - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-14T16:27:06.037+0300",
+      "dueDate": "2025-10-16",
+      "resolutionDate": "2025-10-21T11:10:19.002+0300"
+    },
+    {
+      "key": "INC-84495",
+      "summary": "Yargıcı - MP Siparişi Olmayan Siparişlerin Ayen’e Durum Bilgisi Gönderiminin Engellenmesi",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-14T17:31:56.370+0300",
+      "dueDate": "2025-10-27",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84503",
+      "summary": "Hotiç 23.10.2025 deploy",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "Zeynep Yolcu - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-15T11:28:43.089+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T15:37:20.267+0300"
+    },
+    {
+      "key": "INC-84504",
+      "summary": "Sneaks Up | Deploy Sonrasa Video Url gelmiyor",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-15T11:57:44.900+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-11-19T17:59:02.868+0300"
+    },
+    {
+      "key": "INC-84508",
+      "summary": "Yargıcı - Aktarılmayan Siparişler ",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-15T14:47:56.953+0300",
+      "dueDate": "2025-10-15",
+      "resolutionDate": "2025-10-31T15:15:51.768+0300"
+    },
+    {
+      "key": "INC-84513",
+      "summary": "Zorlu | Deploy | Ekim 2025 | Paket 2",
+      "status": "Deploy to Stage",
+      "storyPoints": 1,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-15T17:18:54.517+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-07T00:01:18.855+0300"
+    },
+    {
+      "key": "INC-84514",
+      "summary": "Ayakkabı Dünyası | Deploy | Ekim 2025 - Paket 3",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-15T17:35:15.630+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T12:25:23.220+0300"
+    },
+    {
+      "key": "INC-84517",
+      "summary": "JeansLab - Varyantların Gözükmemesi ve Daha Önce Eklenen Görsellerin Görsellerinin Olmaması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-16T12:01:10.208+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-10-23T18:34:26.261+0300"
+    },
+    {
+      "key": "INC-84518",
+      "summary": "TMB - XML Datasına Yıl Verisi Eklenmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-16T12:33:06.265+0300",
+      "dueDate": "2025-10-22",
+      "resolutionDate": "2025-10-23T12:08:59.441+0300"
+    },
+    {
+      "key": "INC-84519",
+      "summary": "LAV - Veri Aktarım Hatası",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Burak Güzey - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-16T13:54:54.360+0300",
+      "dueDate": "2025-10-20",
+      "resolutionDate": "2025-10-20T15:36:03.415+0300"
+    },
+    {
+      "key": "INC-84522",
+      "summary": "LAV - Üye Olamama Problemi Hk.",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-16T14:20:26.477+0300",
+      "dueDate": "2025-10-21",
+      "resolutionDate": "2025-10-21T14:04:13.581+0300"
+    },
+    {
+      "key": "INC-84523",
+      "summary": "Yargıcı - Yeni Eklenen İl ve İlçeler ",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-16T14:28:28.301+0300",
+      "dueDate": "2025-10-21",
+      "resolutionDate": "2025-10-24T15:41:58.351+0300"
+    },
+    {
+      "key": "INC-84524",
+      "summary": "Sneaks Up | PWI 3d Request statüsünde kalan siparişler hk.",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-16T15:03:44.184+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-10-27T21:46:00.530+0300"
+    },
+    {
+      "key": "SDL-141",
+      "summary": "SD | global-e fe fixler",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-16T16:13:58.147+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T15:30:25.366+0300"
+    },
+    {
+      "key": "INC-84526",
+      "summary": "Hotiç | Ürün entegrasyonu kontrolü",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Zeynep Yolcu - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-17T11:10:49.420+0300",
+      "dueDate": "2025-10-17",
+      "resolutionDate": "2025-10-31T12:57:31.380+0300"
+    },
+    {
+      "key": "INC-84527",
+      "summary": "Mesaj Listesinin Web Servis Apisinin İletilmesi",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Boran Olcay - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-17T11:19:51.367+0300",
+      "dueDate": "2025-10-20",
+      "resolutionDate": "2025-11-13T15:01:01.565+0300"
+    },
+    {
+      "key": "INC-84529",
+      "summary": "Columbia - Sipariş İptal&İade Hk.",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-17T11:29:33.688+0300",
+      "dueDate": "2025-10-10",
+      "resolutionDate": "2025-10-20T10:59:53.750+0300"
+    },
+    {
+      "key": "INC-84532",
+      "summary": "Ayakkabı Dünyası | Deploy | Ekim 2025 - Paket 2",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-17T12:46:42.135+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-20T10:11:25.791+0300"
+    },
+    {
+      "key": "INC-84536",
+      "summary": "Yargıcı - CRM API’sine Reklam Kimlikleri (Advertising IDs) Entegrasyonu | FE",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-17T14:05:50.488+0300",
+      "dueDate": "2025-11-27",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84537",
+      "summary": "Product | Admin panelden stok sıfırlanamaması",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-17T14:54:29.707+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84538",
+      "summary": "Yargıcı - Vade Farkı Sebepli Görünen Akmayan Siparişler",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-17T19:32:38.213+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-24T10:48:07.324+0300"
+    },
+    {
+      "key": "INC-84539",
+      "summary": "Yargıcı - Segmentify Kodlarının Eklenmesi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-17T19:44:18.658+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-27T16:15:17.555+0300"
+    },
+    {
+      "key": "INC-84540",
+      "summary": "Yargıcı - Ürün Detay & Liste Beden Seçeneklerinde Düzenleme Yapılması",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T00:24:11.878+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-27T16:15:10.760+0300"
+    },
+    {
+      "key": "INC-84541",
+      "summary": "Yargıcı - Sepette Düzenlemeler FE",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-20T00:27:53.740+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-27T16:14:43.078+0300"
+    },
+    {
+      "key": "INC-84542",
+      "summary": "Yargıcı - Renk Filtresinde Bazı Renklerin Seçildikten Sonra Seçimin Kaldırılamaması",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T00:31:49.041+0300",
+      "dueDate": "2025-10-21",
+      "resolutionDate": "2025-10-27T16:14:49.334+0300"
+    },
+    {
+      "key": "INC-84543",
+      "summary": "MongoDB Index Geliştirilmesi",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Inveon",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-20T10:06:01.777+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-31T09:17:52.013+0300"
+    },
+    {
+      "key": "INC-84545",
+      "summary": "Linens | SMS Problemi",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Linens",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T10:26:36.473+0300",
+      "dueDate": "2025-10-21",
+      "resolutionDate": "2025-10-21T18:24:44.559+0300"
+    },
+    {
+      "key": "SDL-145",
+      "summary": "Suit Direct | Scroll to top butonu eklenmesi",
+      "status": "PR Requested",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-20T11:03:31.389+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-04T16:36:22.724+0300"
+    },
+    {
+      "key": "INC-84547",
+      "summary": "Kipling - Sepet Sayfası UI Düzenlenmesi",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Kipling",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "İsrafil Karadaoğan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-20T11:22:31.261+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-31T14:13:42.651+0300"
+    },
+    {
+      "key": "INC-84551",
+      "summary": "Sneaks Up | Shadow Runner Garanti Pay Fix - Q405 ",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-20T15:14:27.704+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-22T09:31:03.356+0300"
+    },
+    {
+      "key": "INC-84552",
+      "summary": "Champion | (SEO) Google arama & Canonical duplike ürün link sorunu",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T15:15:58.390+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84553",
+      "summary": "Champion  | (SEO) ürün detay & kategori listesinde ürünün kategori bilgisi hk",
+      "status": "Waiting PM",
+      "storyPoints": 1,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T15:33:46.536+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": "2025-11-17T14:19:02.321+0300"
+    },
+    {
+      "key": "INC-84554",
+      "summary": "Zorlu | FTP de Kalitesi Bozulan Ürün Görselleri",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-20T15:51:44.317+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84565",
+      "summary": "Sneaks Up | Register Mail Uzantısı Kontrolü",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-21T11:08:10.507+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-11-19T17:58:54.421+0300"
+    },
+    {
+      "key": "INC-84567",
+      "summary": "Sneaks Up | 404 alan kategori",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-21T11:29:40.962+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-11-12T13:58:32.544+0300"
+    },
+    {
+      "key": "INC-84571",
+      "summary": "Sneaks Up | Özel karakterli maillerdeki fatura adresi hatası",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yasin Nazlıgül - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-21T14:48:20.896+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84574",
+      "summary": "Sneaks Up | Loyalty Üyelik Hatası",
+      "status": "PR Requested",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-21T14:57:25.269+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-11-19T17:59:43.557+0300"
+    },
+    {
+      "key": "INC-84575",
+      "summary": "Sneaks Up | SU1705201-0 ve SU1705201-1 414 hatası alan sipariş hk - 2 ",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-21T15:11:42.382+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-24T09:57:22.239+0300"
+    },
+    {
+      "key": "INC-84577",
+      "summary": "Columbia & TMB | Mobildev ETK İzin Güncellemelerinin Otomatik Alınması ve Nebim’e Aktarımı",
+      "status": "To Do",
+      "storyPoints": 13,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Aslıhan Hastaoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-21T16:14:18.317+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84579",
+      "summary": "Sneaks Up | Shadow Runner Admin Fix - Q406",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-21T16:22:55.314+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T14:35:30.648+0300"
+    },
+    {
+      "key": "INC-84580",
+      "summary": "Columbia - “Kombinini Tamamla” Sekmesinin Global Columbia.com ile Uyumlu Hale Getirilmesi",
+      "status": "Canceled",
+      "storyPoints": 0,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-21T16:50:38.717+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T16:05:53.166+0300"
+    },
+    {
+      "key": "INC-84581",
+      "summary": "QUIZ | Kırık link 404 yönlendirme",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-21T17:04:20.448+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-11-13T11:32:02.787+0300"
+    },
+    {
+      "key": "INC-84582",
+      "summary": "Ayakkabı Dünyası | Sipariş Aktarım",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-21T17:21:20.479+0300",
+      "dueDate": "2025-10-22",
+      "resolutionDate": "2025-10-23T10:47:31.003+0300"
+    },
+    {
+      "key": "INC-84584",
+      "summary": "Sneaks Up | Garanti Pay App Servis Ek Geliştirmeler (devam)",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-22T09:28:35.013+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-24T14:35:06.543+0300"
+    },
+    {
+      "key": "INC-84585",
+      "summary": "Columbia | Breadcrumbların Görünmemesi Hakkında",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T09:30:55.960+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-10-22T13:24:07.829+0300"
+    },
+    {
+      "key": "INC-84586",
+      "summary": "Sneaks Up | Invalid V3 Model Type ! aktarım hatası hk",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-22T10:14:39.928+0300",
+      "dueDate": "2025-10-22",
+      "resolutionDate": "2025-11-03T21:09:00.372+0300"
+    },
+    {
+      "key": "INC-84589",
+      "summary": "QUIZ | Sipariş geçmeden önce Givex ödemelerinin iptal edilmesi",
+      "status": "In Progress",
+      "storyPoints": 3,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Murat Cinek - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T11:44:42.807+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-11-13T11:32:07.491+0300"
+    },
+    {
+      "key": "INC-84591",
+      "summary": "TMB - CDN İmage Upload BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-22T14:02:21.762+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84592",
+      "summary": "Yargıcı - XML Oluştururken Namespaceler Kalkıyor",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T14:07:04.831+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-27T16:18:15.529+0300"
+    },
+    {
+      "key": "INC-84593",
+      "summary": "Sneaks Up | Kampanya Badge",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T14:51:13.810+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T21:41:54.834+0300"
+    },
+    {
+      "key": "SDL-147",
+      "summary": "SD | Sipariş detayları yüklenmiyor",
+      "status": "PM Approval",
+      "storyPoints": 3,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T14:52:38.965+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-04T16:52:56.981+0300"
+    },
+    {
+      "key": "INC-84594",
+      "summary": "Ayakkabı Dünyası | MP Feed Hediye Paketleri Hk",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-22T14:58:16.833+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-27T12:25:52.202+0300"
+    },
+    {
+      "key": "SDL-148",
+      "summary": "SD | PLP filtre değişiklikleri",
+      "status": "In Progress",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-22T15:11:29.706+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-10T12:22:10.074+0300"
+    },
+    {
+      "key": "INC-84595",
+      "summary": "Sneaks Up | SU1724898 vade farkı yansımayan sipariş hk",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-22T15:33:41.987+0300",
+      "dueDate": "2025-10-23",
+      "resolutionDate": "2025-11-12T13:51:46.172+0300"
+    },
+    {
+      "key": "INC-84598",
+      "summary": "TMB - Daha Fazla Göster Butonu Aktifleştirildiğinde Sayfa Scroll Edilemiyor",
+      "status": "To Do",
+      "storyPoints": 1,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Çağatay Güzay - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T18:06:25.627+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84599",
+      "summary": "Champion | Stoksuz Satış",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-22T18:26:41.434+0300",
+      "dueDate": "2025-10-28",
+      "resolutionDate": "2025-10-31T17:17:36.049+0300"
+    },
+    {
+      "key": "SDL-149",
+      "summary": "SD | MID tanımlanması",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "Uzay Tülay - Inveon"
+      },
+      "taskOwner": "Uzay Tülay - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-23T10:10:52.407+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T10:18:00.207+0300"
+    },
+    {
+      "key": "INC-84601",
+      "summary": "JeansLab - CDN İmage Upload BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Jeanslab",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-23T10:35:16.424+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-151",
+      "summary": "SD | Store locator sayfasının düzenlenmesi",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-23T11:40:31.129+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84604",
+      "summary": "Columbia | Filtre Sorunları - Mobil ",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-23T15:11:11.445+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-03T11:13:18.626+0300"
+    },
+    {
+      "key": "INC-84605",
+      "summary": "Columbia | Mobil Sticky Butonu hk",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yemlihan Sapan - Inveon"
+      },
+      "taskOwner": "Yemlihan Sapan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-23T15:16:22.569+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84606",
+      "summary": "ErpService Mongo Timeout Hk.",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-23T15:42:26.167+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-10T12:38:30.696+0300"
+    },
+    {
+      "key": "INC-84607",
+      "summary": "Columbia - CDN İmage Upload FE",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-23T15:44:01.024+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84609",
+      "summary": "Sneaks Up | Admin panel 503 hatası (ali log)",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-23T16:21:37.463+0300",
+      "dueDate": "2025-10-09",
+      "resolutionDate": "2025-10-24T09:29:25.478+0300"
+    },
+    {
+      "key": "INC-84610",
+      "summary": "Columbia | Xml Stok farkları hakkında",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Nahit Demir - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-23T16:27:28.598+0300",
+      "dueDate": "2025-10-24",
+      "resolutionDate": "2025-10-24T18:06:50.952+0300"
+    },
+    {
+      "key": "INC-84611",
+      "summary": "shipment servis migration düzenlemeleri",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Inveon",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-23T17:18:28.162+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": "2025-10-28T10:08:08.491+0300"
+    },
+    {
+      "key": "INC-84615",
+      "summary": "Zorlu | Bölünmüş Siparişlerde İade Talebi Hatası",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-24T09:21:41.617+0300",
+      "dueDate": "2025-10-29",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84618",
+      "summary": "Hotic - CDN İmage Upload FE",
+      "status": "Waiting Domain",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-24T09:54:02.142+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84620",
+      "summary": "Champion | CDN İmage Upload FE",
+      "status": "PR Requested",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Abdullah Özdemir - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-24T11:47:23.594+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84625",
+      "summary": "Sneaks Up | Akmayan sipariş PWI",
+      "status": "Done",
+      "storyPoints": 3,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-24T14:40:54.592+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-27T21:42:09.886+0300"
+    },
+    {
+      "key": "INC-84628",
+      "summary": "Columbia | Kullanıcı İzin Bilgilerinin Nebim'e iletilmemesi",
+      "status": "Canceled",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-24T17:26:42.289+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-24T17:46:17.214+0300"
+    },
+    {
+      "key": "INC-84631",
+      "summary": "Yargıcı - 8696466746679 Ürününe Gelen Stok Bilgisi ",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-27T08:53:30.906+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-31T13:42:58.042+0300"
+    },
+    {
+      "key": "INC-84634",
+      "summary": "Sneaks Up | Shadow Runner - Q407",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Murat Cinek - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-27T11:51:27.337+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-27T21:41:44.734+0300"
+    },
+    {
+      "key": "INC-84635",
+      "summary": "Champion | Trendyola yansımayan ürünler",
+      "status": "Waiting PM",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-27T12:31:13.612+0300",
+      "dueDate": "2025-11-17",
+      "resolutionDate": "2025-11-17T14:19:16.675+0300"
+    },
+    {
+      "key": "INC-84636",
+      "summary": "Champion - CDN İmage Upload BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-27T12:49:53.744+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84637",
+      "summary": "Columbia - CDN İmage Upload BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-27T12:50:56.759+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84638",
+      "summary": "Yargıcı - CDN İmage Upload BE",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-10-27T12:53:06.371+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84640",
+      "summary": "Sneaks Up | İndirim tutarı yansımayan sipariş (alper20)",
+      "status": "In Progress",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Şule Kaya - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-27T13:28:37.234+0300",
+      "dueDate": "2025-11-19",
+      "resolutionDate": "2025-11-19T17:58:33.869+0300"
+    },
+    {
+      "key": "INC-84647",
+      "summary": "Sneaks Up | Admin Panel Down Olması",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Uygar Doğan - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-27T14:42:01.755+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-31T14:48:44.649+0300"
+    },
+    {
+      "key": "INC-84648",
+      "summary": "Yargıcı - BIN Numaraları Kontrol",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-27T16:12:28.556+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-31T20:13:50.314+0300"
+    },
+    {
+      "key": "INC-84649",
+      "summary": "LAV | Mobilde Ürün İsmi Düzenlemeleri ",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Nahit Demir - Inveon"
+      },
+      "taskOwner": "Umut Osmanoğlu - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-27T16:33:55.413+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-30T18:42:17.912+0300"
+    },
+    {
+      "key": "INC-84661",
+      "summary": "Blackfriday Dashbordu için İncommerce Sorgusu Yaratılması",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Mert Dursun - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-28T11:23:59.970+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": "2025-10-31T09:16:43.205+0300"
+    },
+    {
+      "key": "INC-84662",
+      "summary": "LAV - 2025 Q4 Deploy (2)",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Lav",
+      "assignee": {
+        "displayName": "Ömer Yılmaz - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Deploy"
+      },
+      "created": "2025-10-28T11:45:57.786+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-30T18:41:53.974+0300"
+    },
+    {
+      "key": "INC-84664",
+      "summary": "Ayakkabı Dünyası | MP Kategorisiz Ürünler Sorunu",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Merve Özekinci - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-28T13:41:30.323+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-30T17:37:35.888+0300"
+    },
+    {
+      "key": "INC-84665",
+      "summary": "TMB - Siparişte 0 TL Görünen Ürünler",
+      "status": "PR Requested",
+      "storyPoints": 3,
+      "customer": "The Moose Bay",
+      "assignee": {
+        "displayName": "Ömer Sarıkaya - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-30T08:53:39.856+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-03T11:17:13.461+0300"
+    },
+    {
+      "key": "INC-84666",
+      "summary": "Zorlu | Akmayan Siparişler",
+      "status": "Waiting PM",
+      "storyPoints": 1,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T09:04:27.368+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-17T12:46:52.659+0300"
+    },
+    {
+      "key": "INC-84668",
+      "summary": "Columbia - Kolay İade Sayfa Hatası hk.",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Columbia",
+      "assignee": {
+        "displayName": "Aslıhan Kara - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T09:25:16.657+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-30T14:14:25.113+0300"
+    },
+    {
+      "key": "INC-84671",
+      "summary": "Sneaks Up | PWI Deployment Sonrası 3d'de kalan siparişler",
+      "status": "In Progress",
+      "storyPoints": 2,
+      "customer": "Sneaks Up",
+      "assignee": {
+        "displayName": "Yusuf Mert Çilo - Inveon"
+      },
+      "taskOwner": "Elifsena Yeşilkent - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-30T09:44:15.557+0300",
+      "dueDate": "2025-11-18",
+      "resolutionDate": "2025-11-18T17:35:59.048+0300"
+    },
+    {
+      "key": "INC-84673",
+      "summary": "Yargıcı - Sipariş Tarihinin Üstünden 15 Gün Geçtiyse Bilgilendirme SMS/Mailleri Gönderilmesin",
+      "status": "To Do",
+      "storyPoints": 3,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-30T10:05:18.266+0300",
+      "dueDate": "2025-11-13",
+      "resolutionDate": null
+    },
+    {
+      "key": "SDL-159",
+      "summary": "Store Locater Mağaza Detaylarının ve Yotpo Eklenmesi",
+      "status": "To Do",
+      "storyPoints": 1,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-30T10:18:06.127+0300",
+      "dueDate": null,
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84674",
+      "summary": "Champion | Hatalı Siparişler hk",
+      "status": "Waiting for Environment",
+      "storyPoints": 3,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Gönül Yıldırım - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-30T10:29:46.794+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-11T17:41:49.500+0300"
+    },
+    {
+      "key": "INC-84681",
+      "summary": "Champion | Trendyol'a Gitmeyen Faturalar",
+      "status": "Waiting Domain",
+      "storyPoints": 1,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Ali Gül - Inveon"
+      },
+      "taskOwner": "Ali Gül - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T11:31:53.979+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84689",
+      "summary": "Zorlu | Stage ortamda kategorilerin hataya düşmesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Zorlu",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T13:28:52.522+0300",
+      "dueDate": "2025-11-03",
+      "resolutionDate": "2025-10-31T10:03:02.252+0300"
+    },
+    {
+      "key": "INC-84695",
+      "summary": "Yargıcı - Ekim Akmayan Siparişler",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "Seçkin Özbek - Inveon"
+      },
+      "taskOwner": "Seçkin Özbek - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T14:19:18.590+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-31T16:37:20.778+0300"
+    },
+    {
+      "key": "INC-84704",
+      "summary": "Ayakkabı Dünyası | Müşteri Testleri",
+      "status": "Done",
+      "storyPoints": 5,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Merve Özekinci - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-10-30T16:57:45.525+0300",
+      "dueDate": "2025-11-03",
+      "resolutionDate": "2025-10-31T10:21:11.667+0300"
+    },
+    {
+      "key": "INC-84707",
+      "summary": "Champion | Stok Sorunları (ACİL)",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Champion",
+      "assignee": {
+        "displayName": "Uygar Doğan - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Change Request"
+      },
+      "created": "2025-10-30T17:17:10.936+0300",
+      "dueDate": "2025-11-03",
+      "resolutionDate": "2025-10-31T10:03:45.176+0300"
+    },
+    {
+      "key": "INC-84708",
+      "summary": "Yargıcı - Eksik İlçelerin Eklenmesi",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Yargıcı",
+      "assignee": {
+        "displayName": "İdil Sevgim Demir - Inveon"
+      },
+      "taskOwner": "Ömer Yılmaz - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-30T17:35:14.632+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T17:57:12.233+0300"
+    },
+    {
+      "key": "INC-84790",
+      "summary": "Ayakkabı Dünyası | Stage Ortam Ürünlerin Gelmemesi Hk",
+      "status": "Done",
+      "storyPoints": 1,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Gülce Abatay - Inveon"
+      },
+      "taskOwner": "Uygar Doğan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-31T14:11:31.173+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-10-31T17:12:40.161+0300"
+    },
+    {
+      "key": "SDL-160",
+      "summary": "SD | Mobil  düzenlemeleri",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Suit Direct",
+      "assignee": {
+        "displayName": "İbrahim Şengün - Inveon"
+      },
+      "taskOwner": "İbrahim Şengün - Inveon",
+      "issueType": {
+        "name": "Development"
+      },
+      "created": "2025-10-31T14:38:49.867+0300",
+      "dueDate": null,
+      "resolutionDate": "2025-11-10T12:05:45.972+0300"
+    },
+    {
+      "key": "INC-84846",
+      "summary": "Hotic - BIN Numaraları Kontrol",
+      "status": "Done",
+      "storyPoints": 2,
+      "customer": "Hotiç",
+      "assignee": {
+        "displayName": "Kadirhan Özokutan - Inveon"
+      },
+      "taskOwner": "Kadirhan Özokutan - Inveon",
+      "issueType": {
+        "name": "Second Level Support"
+      },
+      "created": "2025-10-31T19:55:52.047+0300",
+      "dueDate": "2025-10-31",
+      "resolutionDate": "2025-10-31T20:13:44.001+0300"
+    },
+    {
+      "key": "INC-84917",
+      "summary": "Quiz - CDN İmage Upload BE",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "Quiz",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-11-03T10:23:51.514+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84918",
+      "summary": "LTB - CDN İmage Upload BE",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "LTB",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-11-03T10:25:44.785+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84919",
+      "summary": "Macro - CDN İmage Upload BE",
+      "status": "PM Approval",
+      "storyPoints": 2,
+      "customer": "Inveon - Product",
+      "assignee": {
+        "displayName": "Serranur Değer - Inveon"
+      },
+      "taskOwner": "Oğuzhan Durmaz - Inveon",
+      "issueType": {
+        "name": "Technical Debt"
+      },
+      "created": "2025-11-03T10:28:10.560+0300",
+      "dueDate": "2025-10-30",
+      "resolutionDate": null
+    },
+    {
+      "key": "INC-84975",
+      "summary": "Ayakkabı Dünyası | İptal/İade Sonrası Sayfanın Timeouta Düşmesi",
+      "status": "To Do",
+      "storyPoints": 2,
+      "customer": "Ayakkabı Dünyası",
+      "assignee": {
+        "displayName": "Mert Kuğ - Inveon"
+      },
+      "taskOwner": "Mert Kuğ - Inveon",
+      "issueType": {
+        "name": "Bug"
+      },
+      "created": "2025-11-05T14:34:37.919+0300",
+      "dueDate": "2025-07-25",
+      "resolutionDate": null
+    }
+  ],
+  "metrics": {
+    "totalPoints": 797,
+    "completedPoints": 400,
+    "completionRate": 80,
+    "velocity": 400,
+    "bugCount": 102,
+    "customers": [
+      "Inveon - Product",
+      "Ayakkabı Dünyası",
+      "LTB",
+      "Jeanslab",
+      "Columbia",
+      "Suit Direct",
+      "Hotiç",
+      "Inveon",
+      "Sneaks Up",
+      "Champion",
+      "The Moose Bay",
+      "Quiz",
+      "Yargıcı",
+      "Bizim Toptan",
+      "Lav",
+      "Kipling",
+      "Zorlu",
+      "Vetrina",
+      "Linens"
+    ],
+    "targetPoints": 500,
+    "targetAchievement": 80,
+    "issuesByStatus": {
+      "done": 160,
+      "inProgress": 34,
+      "toDo": 118
+    }
+  },
+  "issueTypes": [
+    {
+      "type": "Change Request",
+      "count": 88,
+      "storyPoints": 324,
+      "doneCount": 41,
+      "donePoints": 139
+    },
+    {
+      "type": "Bug",
+      "count": 102,
+      "storyPoints": 235,
+      "doneCount": 55,
+      "donePoints": 129
+    },
+    {
+      "type": "Development",
+      "count": 33,
+      "storyPoints": 101,
+      "doneCount": 11,
+      "donePoints": 42
+    },
+    {
+      "type": "Technical Debt",
+      "count": 23,
+      "storyPoints": 54,
+      "doneCount": 2,
+      "donePoints": 7
+    },
+    {
+      "type": "Task",
+      "count": 3,
+      "storyPoints": 7,
+      "doneCount": 1,
+      "donePoints": 0
+    },
+    {
+      "type": "Deploy",
+      "count": 16,
+      "storyPoints": 21,
+      "doneCount": 15,
+      "donePoints": 20
+    },
+    {
+      "type": "Second Level Support",
+      "count": 47,
+      "storyPoints": 85,
+      "doneCount": 35,
+      "donePoints": 63
+    }
+  ],
+  "capturedAt": "2025-11-24T13:41:01.605Z"
+}

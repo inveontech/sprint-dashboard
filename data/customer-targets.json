@@ -1,0 +1,66 @@
+[
+  {
+    "customer": "Ayakkabı Dünyası",
+    "targetSP": 17
+  },
+  {
+    "customer": "Champion",
+    "targetSP": 29
+  },
+  {
+    "customer": "Columbia",
+    "targetSP": 37
+  },
+  {
+    "customer": "Hotiç",
+    "targetSP": 11
+  },
+  {
+    "customer": "Inveon - Product",
+    "targetSP": 20
+  },
+  {
+    "customer": "Jeanslab",
+    "targetSP": 20
+  },
+  {
+    "customer": "Kipling",
+    "targetSP": 9
+  },
+  {
+    "customer": "Lav",
+    "targetSP": 3
+  },
+  {
+    "customer": "Quiz",
+    "targetSP": 14
+  },
+  {
+    "customer": "Sneaks Up",
+    "targetSP": 34
+  },
+  {
+    "customer": "Suit Direct",
+    "targetSP": 11
+  },
+  {
+    "customer": "The Moose Bay",
+    "targetSP": 29
+  },
+  {
+    "customer": "Verina",
+    "targetSP": 6
+  },
+  {
+    "customer": "Yargıcı",
+    "targetSP": 26
+  },
+  {
+    "customer": "Yarış Dergisi",
+    "targetSP": 0
+  },
+  {
+    "customer": "Zorlu",
+    "targetSP": 20
+  }
+]

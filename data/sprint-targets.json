@@ -1,0 +1,51 @@
+[
+  {
+    "sprintId": 3351,
+    "sprintName": "2025.11.04 | Sprint 40",
+    "targetPoints": 440,
+    "customers": [],
+    "savedAt": "2025-11-20T13:55:48.336Z"
+  },
+  {
+    "sprintId": 3086,
+    "sprintName": "2025.10.20 | Sprint 39",
+    "targetPoints": 500,
+    "customers": [],
+    "savedAt": "2025-11-20T14:02:58.350Z"
+  },
+  {
+    "sprintId": 3014,
+    "sprintName": "2025.10.06 | Sprint 38",
+    "targetPoints": 560,
+    "customers": [],
+    "savedAt": "2025-11-20T14:04:45.239Z"
+  },
+  {
+    "sprintId": 2976,
+    "sprintName": "2025.09.22 | Sprint 37",
+    "targetPoints": 520,
+    "customers": [],
+    "savedAt": "2025-11-20T14:05:38.921Z"
+  },
+  {
+    "sprintId": 2875,
+    "sprintName": "2025.09.08 | Sprint 36",
+    "targetPoints": 525,
+    "customers": [],
+    "savedAt": "2025-11-20T14:06:37.828Z"
+  },
+  {
+    "sprintId": 2825,
+    "sprintName": "2025.08.25 | Sprint 35",
+    "targetPoints": 520,
+    "customers": [],
+    "savedAt": "2025-11-20T14:07:16.275Z"
+  },
+  {
+    "sprintId": 2776,
+    "sprintName": "2025.08.11 | Sprint 34",
+    "targetPoints": 440,
+    "customers": [],
+    "savedAt": "2025-11-20T14:08:04.131Z"
+  }
+]
