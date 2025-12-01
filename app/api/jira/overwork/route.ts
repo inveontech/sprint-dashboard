@@ -7,9 +7,9 @@ export async function GET() {
   try {
     const jira = new JiraClient();
 
-    // JQL: Find issues from Product: inCommerce project created in the last 3 months with workratio >= 100, excluding Done
-    // Using exact project name from Jira and workratio filter directly in JQL
-    const jql = `project = "Product: inCommerce" AND created >= -12w AND workratio >= 100 AND status != Done ORDER BY updated DESC`;
+    // JQL: Find issues from Product: inCommerce project created in the last 3 months with timetracking, excluding Done
+    // Filter by workratio >= 100 in backend after calculating from timetracking
+    const jql = `project = "Product: inCommerce" AND created >= -12w AND status != Done ORDER BY updated DESC`;
 
     const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
     const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', customerField, 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
@@ -101,10 +101,10 @@ export async function GET() {
       };
     });
 
-    // Return all issues (already filtered by JQL for workratio > 100)
-    const overworkedIssues = formattedIssues;
+    // Filter issues with workratio >= 100 (at or above estimate)
+    const overworkedIssues = formattedIssues.filter(issue => (issue.workratio || 0) >= 100);
 
-    console.log(`Issues returned from Jira (already filtered for >100%): ${overworkedIssues.length}`);
+    console.log(`Total issues fetched: ${formattedIssues.length}, Issues with workratio >= 100%: ${overworkedIssues.length}`);
 
     // Sort by workratio descending (highest overwork first)
     overworkedIssues.sort((a: any, b: any) => (b.workratio || 0) - (a.workratio || 0));
