@@ -36,8 +36,8 @@ export async function GET(request: Request) {
     
     const authHeader = `Basic ${Buffer.from(`${jiraEmail}:${jiraApiToken}`).toString('base64')}`;
     
-    // JQL to get issues in 2 or more sprints, only from INC project, excluding Done/Canceled/Won't Do/Backlog/CR Rejected/Missing Information
-    const jql = `project = INC AND "sprint count[number]" >= "2" AND status NOT IN (Done, Canceled, "Won't Do", Backlog, "CR Rejected", "Missing Information") ORDER BY created DESC`;
+    // JQL to get issues in 2 or more sprints, only from INC project, excluding Done/Canceled/Won't Do/Backlog/CR Rejected/Missing Information/Waiting Estimates
+    const jql = `project = INC AND "sprint count[number]" >= "2" AND status NOT IN (Done, Canceled, "Won't Do", Backlog, "CR Rejected", "Missing Information", "Waiting Estimates") ORDER BY created DESC`;
     
     console.log(`Multi-Sprint Issues JQL: ${jql}`);
     
