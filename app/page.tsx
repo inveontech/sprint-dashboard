@@ -106,11 +106,11 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Sprint Yönetim Platformu
+            Sprint Management System
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Ekip verimliliğini ölçün, sprint performansını analiz edin ve hedeflere ulaşmak için 
-            veri odaklı kararlar alın.
+            Takım performansını izleyin, sprint kapasitesini optimize edin ve başarılı dağıtımlar için 
+            gerçek zamanlı metriklere dayalı karar verin.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
