@@ -58,7 +58,7 @@ export default function PMDashboardPage() {
   const [sprintName, setSprintName] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [expandedCustomer, setExpandedCustomer] = useState<string | null>(null);
-  const [expandedTopIssues, setExpandedTopIssues] = useState(true);
+  const [expandedTopIssues, setExpandedTopIssues] = useState(false);
 
   // Reset customer filter on page mount
   useEffect(() => {
