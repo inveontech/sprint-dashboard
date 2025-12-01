@@ -77,7 +77,11 @@ export async function GET() {
       const timeSpent = timetracking.timeSpentSeconds || 0;
       const remainingEstimate = timetracking.remainingEstimateSeconds || 0;
       // Original estimate = timeSpent + remainingEstimate (in case Jira updated originalEstimate)
-      const timeEstimate = (timeSpent + remainingEstimate) || timetracking.originalEstimateSeconds || 0;
+      // If both are 0, try originalEstimateSeconds as fallback
+      let timeEstimate = timeSpent + remainingEstimate;
+      if (timeEstimate === 0) {
+        timeEstimate = timetracking.originalEstimateSeconds || 0;
+      }
       // Calculate workratio as percentage: (timeSpent / timeEstimate) * 100
       const workratio = timeEstimate > 0 ? Math.round((timeSpent / timeEstimate) * 100) : 0;
 
