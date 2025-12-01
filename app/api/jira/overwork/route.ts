@@ -11,7 +11,8 @@ export async function GET() {
     // Using exact project name from Jira and workratio filter directly in JQL
     const jql = `project = "Product: inCommerce" AND created >= -24w AND workratio > 100 ORDER BY updated DESC`;
 
-    const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', 'customfield_10000', 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
+    const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
+    const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', customerField, 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
     const encodedJql = encodeURIComponent(jql);
     const url = `https://${process.env.JIRA_HOST}/rest/api/3/search/jql?jql=${encodedJql}&fields=${fieldsParam}&maxResults=1000`;
     
@@ -39,15 +40,16 @@ export async function GET() {
 
     // Map issues to our format
     const formattedIssues = issues.map((issue: any) => {
-      const customerField = issue.fields['customfield_10000'];
+      const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
+      const customerFieldValue = issue.fields[customerField];
       let customer = 'Unknown';
-      if (customerField) {
-        if (typeof customerField === 'string') {
-          customer = customerField;
-        } else if (customerField.value) {
-          customer = customerField.value;
-        } else if (customerField.name) {
-          customer = customerField.name;
+      if (customerFieldValue) {
+        if (typeof customerFieldValue === 'string') {
+          customer = customerFieldValue;
+        } else if (customerFieldValue.value) {
+          customer = customerFieldValue.value;
+        } else if (customerFieldValue.name) {
+          customer = customerFieldValue.name;
         }
       }
 
