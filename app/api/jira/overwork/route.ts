@@ -75,7 +75,9 @@ export async function GET() {
       // Extract timeSpent and originalEstimate from timetracking object
       const timetracking = issue.fields.timetracking || {};
       const timeSpent = timetracking.timeSpentSeconds || 0;
-      const timeEstimate = timetracking.originalEstimateSeconds || 0;
+      const remainingEstimate = timetracking.remainingEstimateSeconds || 0;
+      // Original estimate = timeSpent + remainingEstimate (in case Jira updated originalEstimate)
+      const timeEstimate = (timeSpent + remainingEstimate) || timetracking.originalEstimateSeconds || 0;
       // Calculate workratio as percentage: (timeSpent / timeEstimate) * 100
       const workratio = timeEstimate > 0 ? Math.round((timeSpent / timeEstimate) * 100) : 0;
 
