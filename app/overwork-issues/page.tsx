@@ -177,7 +177,7 @@ export default function OverworkIssuesPage() {
                     <TableHead>Customer</TableHead>
                     <TableHead>Assignee</TableHead>
                     <TableHead>Time Ratio</TableHead>
-                    <TableHead>Est / Spent</TableHead>
+                    <TableHead className="whitespace-nowrap">Est / Spent</TableHead>
                     <TableHead>Days Open</TableHead>
                   </TableRow>
                 </TableHeader>
