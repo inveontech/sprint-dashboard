@@ -17,62 +17,62 @@ import {
 
 const modules = [
   {
-    title: 'Sprint Raporu',
-    description: 'Aktif sprint durumunu ve görev ilerleme durumunu görüntüleyin.',
+    title: 'Sprint Reports',
+    description: 'Track active sprint status, task progress, and team velocity in real-time.',
     href: '/sprint-reports',
     icon: BarChart3,
   },
   {
-    title: 'Sprint Karşılaştırması',
-    description: 'Geçmiş sprintleri karşılaştırarak performans trendlerini analiz edin.',
+    title: 'Sprint Comparison',
+    description: 'Compare historical sprints to identify performance patterns and improvement opportunities.',
     href: '/sprint-comparison',
     icon: TrendingUp,
   },
   {
-    title: 'Multi Sprint İçgörüler',
-    description: 'Birden fazla sprinti kapsayan backlog ve problem takibi.',
+    title: 'Multi-Sprint Insights',
+    description: 'Analyze trends across multiple sprints with comprehensive backlog and issue tracking.',
     href: '/sprint-insights/multi-sprint',
     icon: Layers,
   },
   {
-    title: 'AI Analizi',
-    description: 'Yapay zeka destekli sprint içgörüleri ve öneriler alın.',
+    title: 'AI Analysis',
+    description: 'Get intelligent insights and actionable recommendations powered by AI analysis.',
     href: '/ai-analysis',
     icon: Sparkles,
   },
   {
-    title: 'Developer Performans',
-    description: 'Geliştirici bazlı performans metriklerini takip edin.',
+    title: 'Developer Performance',
+    description: 'Monitor individual contributor metrics and track development team productivity.',
     href: '/developer-performance',
     icon: Users,
   },
   {
     title: 'PM Dashboard',
-    description: 'Proje yönetim metrikleri ve ilerleme takibi.',
+    description: 'Project management overview with key metrics and progress indicators.',
     href: '/pm-dashboard',
     icon: UserCheck,
   },
   {
-    title: 'Geciken Görevler',
-    description: 'Geciken ve yaklaşan görevleri izleyin.',
+    title: 'Overdue Tasks',
+    description: 'Identify and manage overdue items and upcoming deadlines.',
     href: '/overdue-tasks',
     icon: AlertCircle,
   },
   {
     title: 'Overwork Issues',
-    description: 'Tahminden fazla çalışma yapılan görevleri inceleyin.',
+    description: 'Detect work items exceeding estimates and manage team workload.',
     href: '/overwork-issues',
     icon: Activity,
   },
   {
-    title: 'Test Sonuçları',
-    description: 'Başarısız testleri ve sorunlu alanları inceleyin.',
+    title: 'Test Failures',
+    description: 'Track failing tests and identify quality assurance issues before deployment.',
     href: '/test-failures',
     icon: XCircle,
   },
   {
-    title: 'Ayarlar',
-    description: 'Dashboard tercihlerini ve hedefleri yapılandırın.',
+    title: 'Settings',
+    description: 'Configure dashboard preferences, targets, and notification settings.',
     href: '/settings',
     icon: Settings,
   },
@@ -136,10 +136,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-            Modüller
+            Modules
           </h3>
           <p className="text-gray-600 dark:text-gray-400">
-            Sprint yönetimi için gerekli tüm araçlara erişim sağlayın
+            Access all essential tools for comprehensive sprint management and team performance tracking
           </p>
         </div>
 
