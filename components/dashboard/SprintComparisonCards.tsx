@@ -74,7 +74,7 @@ export default function SprintComparisonCards({ sprints, selectedCustomer }: Spr
                 </p>
               </div>
               <p className="text-xs text-gray-500 mt-1">
-                {latestDoneSP} / {latestTargetSP} SP
+                {latestDoneSP} done / {latestTargetSP} target
               </p>
             </div>
           </div>
