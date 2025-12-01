@@ -48,7 +48,7 @@ function formatSprintName(name: string): string {
 }
 
 // Custom tooltip component
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label, showCustomer }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     const planned = data.planned || 0;
@@ -59,7 +59,9 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     return (
       <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3">
         <p className="font-semibold text-gray-900 dark:text-white mb-2">{label}</p>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Customer: {customer}</p>
+        {showCustomer && (
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Customer: {customer}</p>
+        )}
         <div className="space-y-1">
           <p className="text-sm">
             <span className="text-blue-600 dark:text-blue-400">Total SP:</span>{' '}
@@ -135,51 +137,53 @@ export default function VelocityChart({ sprints, selectedCustomer }: VelocityCha
   }, [sprints, selectedCustomer]);
 
   return (
-    <ResponsiveContainer width="100%" height={350}>
-      <LineChart
-        data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 60 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
-        <XAxis
-          dataKey="name"
-          angle={-45}
-          textAnchor="end"
-          height={80}
-          tick={{ fill: textColor, fontSize: 12 }}
-        />
-        <YAxis
-          label={{ value: 'Story Points', angle: -90, position: 'insideLeft', fill: textColor }}
-          tick={{ fill: textColor }}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend
-          wrapperStyle={{ paddingTop: '20px' }}
-          iconType="line"
-          formatter={(value) => (
-            <span style={{ color: textColor }}>{value}</span>
-          )}
-        />
-        <Line
-          type="monotone"
-          dataKey="total"
-          stroke="#0066FF"
-          strokeWidth={2}
-          strokeDasharray="5 5"
-          name="Total Points"
-          dot={{ r: 4 }}
-          activeDot={{ r: 6 }}
-        />
-        <Line
-          type="monotone"
-          dataKey="completed"
-          stroke="#00C853"
-          strokeWidth={2}
-          name="Completed Points"
-          dot={{ r: 4 }}
-          activeDot={{ r: 6 }}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div>
+      <ResponsiveContainer width="100%" height={350}>
+        <LineChart
+          data={data}
+          margin={{ top: 5, right: 30, left: 50, bottom: 60 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
+          <XAxis
+            dataKey="name"
+            angle={-45}
+            textAnchor="end"
+            height={80}
+            tick={{ fill: textColor, fontSize: 12 }}
+          />
+          <YAxis
+            label={{ value: 'Story Points', angle: -90, position: 'insideLeft', fill: textColor, dy: -10, style: { textAnchor: 'middle' } }}
+            tick={{ fill: textColor }}
+          />
+          <Tooltip content={<CustomTooltip showCustomer={!!selectedCustomer} />} />
+          <Legend
+            wrapperStyle={{ paddingTop: '20px' }}
+            iconType="line"
+            formatter={(value) => (
+              <span style={{ color: textColor }}>{value}</span>
+            )}
+          />
+          <Line
+            type="monotone"
+            dataKey="total"
+            stroke="#0066FF"
+            strokeWidth={2}
+            strokeDasharray="5 5"
+            name="Total Points"
+            dot={{ r: 4 }}
+            activeDot={{ r: 6 }}
+          />
+          <Line
+            type="monotone"
+            dataKey="completed"
+            stroke="#00C853"
+            strokeWidth={2}
+            name="Completed Points"
+            dot={{ r: 4 }}
+            activeDot={{ r: 6 }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }

@@ -105,7 +105,7 @@ export default function CustomerIssueTypeCharts() {
         const targetProgress = targetSP ? Math.round((customer.completedPoints / targetSP) * 100) : null;
         
         return (
-          <Card key={customer.customer}>
+          <Card key={customer.customer} className="flex flex-col">
             <CardHeader>
               <CardTitle className="text-lg">{customer.customer}</CardTitle>
               <div className="flex flex-col gap-1 text-sm text-gray-600 dark:text-gray-400">
@@ -135,12 +135,17 @@ export default function CustomerIssueTypeCharts() {
                 )}
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-1">
               <IssueTypeChart 
                 data={customer.issuesByType}
                 title="Done Issue Type Dağılımı (SP)"
               />
             </CardContent>
+            <div className="px-6 pb-4 mt-auto">
+              <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">
+                Son sprintte tamamlanan taskların issue type bazında story point dağılımını gösterir.
+              </p>
+            </div>
           </Card>
         );
       })}

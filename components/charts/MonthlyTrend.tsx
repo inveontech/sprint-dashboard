@@ -87,46 +87,48 @@ export default function MonthlyTrend({ sprints }: MonthlyTrendProps) {
   }
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
-        <XAxis 
-          dataKey="name" 
-          className="text-xs"
-          angle={-45}
-          textAnchor="end"
-          height={80}
-        />
-        <YAxis 
-          className="text-xs"
-          label={{ value: 'Hedefe Ulaşma %', angle: -90, position: 'insideLeft' }}
-          domain={[0, 100]}
-        />
-        <Tooltip 
-          contentStyle={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px'
-          }}
-          formatter={(value: any, name: any) => [`${value}%`, name]}
-        />
-        <Legend 
-          wrapperStyle={{ paddingTop: '20px' }}
-          iconType="line"
-        />
-        {uniqueCustomers.map((customer, index) => (
-          <Line
-            key={customer}
-            type="monotone"
-            dataKey={customer}
-            stroke={COLORS[index % COLORS.length]}
-            strokeWidth={2}
-            dot={{ fill: COLORS[index % COLORS.length], r: 4 }}
-            connectNulls
+    <div>
+      <ResponsiveContainer width="100%" height={300}>
+        <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
+          <XAxis 
+            dataKey="name" 
+            className="text-xs"
+            angle={-45}
+            textAnchor="end"
+            height={80}
           />
-        ))}
-      </LineChart>
-    </ResponsiveContainer>
+          <YAxis 
+            className="text-xs"
+            label={{ value: 'Hedefe Ulaşma %', angle: -90, position: 'insideLeft' }}
+            domain={[0, 100]}
+          />
+          <Tooltip 
+            contentStyle={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}
+            formatter={(value: any, name: any) => [`${value}%`, name]}
+          />
+          <Legend 
+            wrapperStyle={{ paddingTop: '20px' }}
+            iconType="line"
+          />
+          {uniqueCustomers.map((customer, index) => (
+            <Line
+              key={customer}
+              type="monotone"
+              dataKey={customer}
+              stroke={COLORS[index % COLORS.length]}
+              strokeWidth={2}
+              dot={{ fill: COLORS[index % COLORS.length], r: 4 }}
+              connectNulls
+            />
+          ))}
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 

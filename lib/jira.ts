@@ -213,7 +213,39 @@ export class JiraClient {
       // Check if sprint is closed and we have a snapshot
       if (fs.existsSync(snapshotPath)) {
         console.log(`📸 Loading snapshot for sprint ${sprintId}`);
-        const snapshotData = JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'));
+        let snapshotData = JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'));
+        
+        // Fetch changelog for all issues in snapshot (batch processing)
+        // Disabled for now due to rate limiting - using created date for status calculation
+        /*
+        if (snapshotData.issues && snapshotData.issues.length > 0 && !this.mock) {
+          console.log(`📜 Fetching changelog for ${snapshotData.issues.length} snapshot issues...`);
+          const BATCH_SIZE = 20;
+          const DELAY_BETWEEN_BATCHES = 200;
+          
+          for (let i = 0; i < snapshotData.issues.length; i += BATCH_SIZE) {
+            const batch = snapshotData.issues.slice(i, i + BATCH_SIZE);
+            
+            const changelogPromises = batch.map((issue: any) =>
+              this.fetchIssueChangelog(issue.key)
+                .then(changelog => ({ key: issue.key, changelog }))
+            );
+            
+            const results = await Promise.all(changelogPromises);
+            results.forEach(result => {
+              const issue = snapshotData.issues.find((i: any) => i.key === result.key);
+              if (issue) {
+                issue.changelog = result.changelog;
+              }
+            });
+            
+            if (i + BATCH_SIZE < snapshotData.issues.length) {
+              await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_BATCHES));
+            }
+          }
+          console.log(`✅ Changelog fetched for snapshot issues`);
+        }
+        */
         
         // Apply customer filter if provided
         if (customerFilter && snapshotData.issues) {
@@ -515,6 +547,36 @@ export class JiraClient {
         }
       });
 
+      // Fetch changelog for all issues (batch processing to avoid rate limits)
+      // Disabled for now due to rate limiting - using created date for status calculation
+      /*
+      console.log(`📜 Fetching changelog for ${issues.length} issues...`);
+      const BATCH_SIZE = 20;
+      const DELAY_BETWEEN_BATCHES = 200; // Reduced delay for faster processing
+      
+      for (let i = 0; i < issues.length; i += BATCH_SIZE) {
+        const batch = issues.slice(i, i + BATCH_SIZE);
+        
+        const changelogPromises = batch.map((issue: any) =>
+          this.fetchIssueChangelog(issue.key)
+            .then(changelog => ({ key: issue.key, changelog }))
+        );
+        
+        const results = await Promise.all(changelogPromises);
+        results.forEach(result => {
+          const issue = issues.find((i: any) => i.key === result.key);
+          if (issue) {
+            issue.changelog = result.changelog;
+          }
+        });
+        
+        if (i + BATCH_SIZE < issues.length) {
+          await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_BATCHES));
+        }
+      }
+      console.log(`✅ Changelog fetched for all issues`);
+      */
+
       // Map issues
       const processedIssues = issues.map((i: any) => {
         const customerField = i.fields[this.config.customerField];
@@ -569,6 +631,7 @@ export class JiraClient {
           created: i.fields.created,
           dueDate: i.fields.duedate,
           resolutionDate: i.fields.resolutiondate,
+          changelog: i.changelog,
         };
       });
 
@@ -733,7 +796,7 @@ export class JiraClient {
 
   async getCustomerTargets(): Promise<Map<string, number>> {
     try {
-      const jql = `project = INC OR category = "Phantom Rollout" OR "SP Target Type" = Customer`;
+      const jql = `project = "Product: inCommerce" OR category = "Phantom Rollout" OR "SP Target Type" = Customer`;
       const url = `https://${this.config.host}/rest/api/3/search`;
       
       const response = await fetch(url, {
@@ -798,7 +861,7 @@ export class JiraClient {
 
   async getDomainTargets(): Promise<Map<string, number>> {
     try {
-      const jql = `(project = INC OR category = "Phantom Rollout" OR "SP Target Type" = Developer) AND ("Product Domain[Dropdown]" = "Pre Checkout" OR "Product Domain[Dropdown]" = "Post Checkout")`;
+      const jql = `(project = "Product: inCommerce" OR category = "Phantom Rollout" OR "SP Target Type" = Developer) AND ("Product Domain[Dropdown]" = "Pre Checkout" OR "Product Domain[Dropdown]" = "Post Checkout")`;
       const url = `https://${this.config.host}/rest/api/3/search`;
       
       const response = await fetch(url, {
@@ -967,6 +1030,33 @@ export class JiraClient {
     } catch (error) {
       console.error(`Failed to get status for ${issueKey} at date:`, error);
       return null;
+    }
+  }
+
+  async fetchIssueChangelog(issueKey: string) {
+    try {
+      if (this.mock) {
+        return { histories: [] };
+      }
+
+      const url = `https://${this.config.host}/rest/api/3/issue/${issueKey}?expand=changelog&fields=status,created`;
+      const response = await this.fetchWithRetry(url, {
+        headers: {
+          'Authorization': `Basic ${Buffer.from(`${this.config.email}:${this.config.apiToken}`).toString('base64')}`,
+          'Accept': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        console.warn(`Failed to fetch changelog for ${issueKey}: ${response.status}`);
+        return { histories: [] };
+      }
+
+      const data = await response.json();
+      return data.changelog || { histories: [] };
+    } catch (error) {
+      console.error(`Failed to fetch changelog for ${issueKey}:`, error);
+      return { histories: [] };
     }
   }
 

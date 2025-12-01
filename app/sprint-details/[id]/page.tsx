@@ -18,6 +18,7 @@ interface Issue {
   assignee?: string;
   priority?: string;
   issueType?: string;
+  created?: string;
 }
 
 interface SprintData {
@@ -125,7 +126,7 @@ export default function SprintDetailsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="px-6 py-6">
           <div className="flex items-center gap-4">
             <Button variant="outline" size="sm" onClick={() => router.back()}>
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -171,7 +172,7 @@ export default function SprintDetailsPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="px-6 py-8">
         {/* Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <Card>

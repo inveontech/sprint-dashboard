@@ -78,16 +78,15 @@ export default function TestFailuresPage() {
   const maxTimeInFailed = totalIssues > 0 
     ? Math.max(...failures.map(f => f.timeInTestFailed))
     : 0;
+  
+  const selectedSprint = allSprints.find(s => s.id.toString() === selectedSprintId);
 
   return (
     <div className="p-8">
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-3xl font-bold">Test Hataları</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Test Failed statüsünden geçen tasklar
-            </p>
+            <h1 className="text-3xl font-bold">Test Failures</h1>
           </div>
           <SprintSelector
             sprints={allSprints}
@@ -210,7 +209,10 @@ export default function TestFailuresPage() {
 
           {!loading && failures.length === 0 && (
             <div className="text-center py-8 text-gray-500">
-              Test Failed statüsünden geçen task bulunamadı
+              {selectedSprint 
+                ? `Bu sprintte (${selectedSprint.name}) hiçbir task test failed statüsüne uğramadı`
+                : 'Test Failed statüsünden geçen task bulunamadı'
+              }
             </div>
           )}
         </CardContent>

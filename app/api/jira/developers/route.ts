@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { JiraClient } from '@/lib/jira';
+import path from 'path';
+import fs from 'fs';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,12 +15,25 @@ export async function GET(request: Request) {
     // Fetch developer targets from Jira
     const developerTargets = await jiraClient.getDeveloperTargets();
     console.log(`Loaded ${developerTargets.size} developer targets`);
+    console.error(`[DEBUG] Developer targets in map:`, Array.from(developerTargets.keys()));
     
     // Get sprint by ID or latest sprint
     let sprint;
     if (sprintId) {
-      const allSprints = await jiraClient.getClosedSprints(200);
+      // First try getClosedSprints
+      let allSprints = await jiraClient.getClosedSprints(200);
       sprint = allSprints.find(s => s.id.toString() === sprintId);
+      
+      // If sprint not found in closed sprints list but snapshot exists, load from snapshot
+      if (!sprint) {
+        const snapshotPath = path.join(process.cwd(), 'data', 'sprint-snapshots', `${sprintId}.json`);
+        if (fs.existsSync(snapshotPath)) {
+          const snapshotData = JSON.parse(fs.readFileSync(snapshotPath, 'utf-8'));
+          if (snapshotData.sprint) {
+            sprint = snapshotData.sprint;
+          }
+        }
+      }
     } else {
       const allSprints = await jiraClient.getClosedSprints(1);
       sprint = allSprints[0];
@@ -27,9 +42,6 @@ export async function GET(request: Request) {
     if (!sprint) {
       return NextResponse.json([]);
     }
-    
-    console.log(`Processing sprint: ${sprint.name}`);
-    console.log(`Sprint will use snapshot with status at sprint end`);
     
     // Aggregate developer metrics from selected sprint
     const developerMap = new Map<string, {
@@ -41,8 +53,6 @@ export async function GET(request: Request) {
     
     // getSprintDetails will use snapshot if available (with historical status)
     const details = await jiraClient.getSprintDetails(sprint.id);
-    
-    console.log(`Processing ${details.issues.length} issues from sprint ${sprint.id}`);
     
     for (const issue of details.issues) {
       // Use Task Owner field instead of assignee

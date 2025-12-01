@@ -83,6 +83,8 @@ export default function DeveloperPerformancePage() {
     fetchDevelopers();
   }, [selectedSprintId]);
 
+  const selectedSprint = allSprints.find(s => s.id.toString() === selectedSprintId);
+
   const sortedDevelopers = [...developers].sort((a, b) => {
     return b.completedPoints - a.completedPoints;
   });
@@ -95,10 +97,7 @@ export default function DeveloperPerformancePage() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-3xl font-bold">Developer Başarıları</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Sprint bazlı developer performans metrikleri ve issue type dağılımları
-            </p>
+            <h1 className="text-3xl font-bold">Developer Performance</h1>
           </div>
           <SprintSelector
             sprints={allSprints}
@@ -171,7 +170,12 @@ export default function DeveloperPerformancePage() {
       )}
 
       {!loading && sortedDevelopers.length === 0 && (
-        <div className="text-center py-8 text-gray-500">Developer verisi bulunamadı</div>
+        <div className="text-center py-8 text-gray-500">
+          {selectedSprint ? 
+            `Bu sprintte (${selectedSprint.name}) hiçbir developer verisi bulunamadı` :
+            "Developer verisi bulunamadı"
+          }
+        </div>
       )}
     </div>
   );

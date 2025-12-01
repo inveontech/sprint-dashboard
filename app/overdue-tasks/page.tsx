@@ -88,10 +88,7 @@ export default function OverdueTasksPage() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-3xl font-bold">Geçmiş Due Date&apos;ler</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Developer bazında gecikmiş görev yüzdeleri
-            </p>
+            <h1 className="text-3xl font-bold">Overdue Tasks</h1>
           </div>
           <SprintSelector
             sprints={allSprints}

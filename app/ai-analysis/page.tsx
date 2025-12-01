@@ -53,17 +53,14 @@ export default function AIAnalysisPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="px-6 py-6">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-            AI Sprint Analizi
+            AI Sprint Analysis
           </h1>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            Sprint'leri seçin ve OpenAI ile detaylı analiz yapın
-          </p>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="px-6 py-8">
         {loading && (
           <div className="space-y-4">
             {[1, 2, 3].map((i) => (
@@ -103,7 +100,6 @@ export default function AIAnalysisPage() {
                             {sprint.endDate ? formatDate(sprint.endDate, 'dd MMM yyyy') : 'N/A'}
                           </p>
                         </div>
-                        <Badge variant="secondary">{sprint.customer || 'N/A'}</Badge>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-2 mb-3 text-sm">

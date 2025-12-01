@@ -240,28 +240,38 @@ export default function WaitingIssuesCharts() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <Card>
+      <Card className="flex flex-col">
         <CardHeader>
           <CardTitle className="text-lg">PM Approval - Marka Dağılımı</CardTitle>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Toplam: {pmApprovalData.reduce((sum, item) => sum + item.count, 0)} issue ({pmTotalSP} SP)
           </p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-1">
           {renderChart(pmApprovalData, 'PM Approval')}
         </CardContent>
+        <div className="px-6 pb-4 mt-auto">
+          <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">
+            Aktif sprintte PM Approval statüsünde bekleyen taskların marka bazlı dağılımını gösterir.
+          </p>
+        </div>
       </Card>
 
-      <Card>
+      <Card className="flex flex-col">
         <CardHeader>
           <CardTitle className="text-lg">WFS (Waiting) - Marka Dağılımı</CardTitle>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             Toplam: {wfsData.reduce((sum, item) => sum + item.count, 0)} issue ({wfsTotalSP} SP)
           </p>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex-1">
           {renderChart(wfsData, 'WFS')}
         </CardContent>
+        <div className="px-6 pb-4 mt-auto">
+          <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">
+            Waiting for Environment, Waiting Domain ve Waiting PM statülerindeki taskların marka bazlı dağılımını gösterir.
+          </p>
+        </div>
       </Card>
     </div>
   );

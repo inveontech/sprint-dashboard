@@ -191,10 +191,10 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="px-6 py-6">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              inCommerce Sprint Dashboard
+              Sprint Summary
             </h1>
           </div>
           <div className="flex flex-wrap gap-4 items-center">
@@ -211,13 +211,13 @@ export default function DashboardPage() {
       </header>
 
       {/* Environment Warnings */}
-      <div className="max-w-7xl mx-auto px-4 pt-4">
+      <div className="px-6 pt-4">
         <EnvWarningBanner envStatus={envStatus} />
       </div>
 
       {/* Loading State */}
       {loading && (
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="px-6 py-8">
           <div className="space-y-6">
             {/* Loading Header Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -237,7 +237,7 @@ export default function DashboardPage() {
 
       {/* Error State */}
       {error && !loading && (
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="px-6 py-4">
           <Alert variant="destructive">
             <AlertDescription>
               {error}
@@ -256,7 +256,7 @@ export default function DashboardPage() {
 
       {/* Main Content */}
       {!loading && !error && (
-        <main className="max-w-7xl mx-auto px-4 py-8">
+        <main className="px-6 py-8">
               {/* Current Sprint Overview */}
               <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">Son Sprint Detayları{selectedCustomer ? ` - ${selectedCustomer}` : ''}</h2>

@@ -40,7 +40,7 @@ const features = [
     iconColor: 'text-emerald-600 dark:text-emerald-400',
   },
   {
-    title: 'AI Sprint Analizi',
+    title: 'AI Sprint Analysis',
     description: 'Yapay zeka destekli sprint içgörüleri ve öneriler alın.',
     href: '/ai-analysis',
     icon: Sparkles,

@@ -41,55 +41,57 @@ export default function CompletionChart({ sprints, selectedCustomer }: Completio
   }));
 
   return (
-    <ResponsiveContainer width="100%" height={350}>
-      <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 60 }}>
-        <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
-        <XAxis 
-          dataKey="name" 
-          className="text-xs"
-          angle={-45}
-          textAnchor="end"
-          height={80}
-        />
-        <YAxis 
-          className="text-xs"
-          domain={[0, 100]}
-          label={{ value: 'Completion %', angle: -90, position: 'insideLeft' }}
-        />
-        <Tooltip 
-          contentStyle={{ 
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px'
-          }}
-          formatter={(value: any, name: any, props: any) => {
-            if (name === 'rate') {
-              return [
-                `${value}% (${props.payload.completed}/${props.payload.total} SP)`,
-                'Completion Rate'
-              ];
-            }
-            return [value, name];
-          }}
-        />
-        <ReferenceLine 
-          y={80} 
-          stroke="#666" 
-          strokeDasharray="3 3" 
-          label={{ value: 'Target 80%', position: 'right' }}
-        />
-        <Legend />
-        <Line 
-          type="monotone" 
-          dataKey="rate" 
-          stroke="#3b82f6" 
-          strokeWidth={2}
-          dot={{ fill: '#3b82f6', r: 4 }}
-          activeDot={{ r: 6 }}
-          name="Completion Rate"
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div>
+      <ResponsiveContainer width="100%" height={350}>
+        <LineChart data={data} margin={{ top: 5, right: 80, left: 50, bottom: 60 }}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
+          <XAxis 
+            dataKey="name" 
+            className="text-xs"
+            angle={-45}
+            textAnchor="end"
+            height={80}
+          />
+          <YAxis 
+            className="text-xs"
+            domain={[0, 100]}
+            label={{ value: 'Completion %', angle: -90, position: 'insideLeft', dy: -10, style: { textAnchor: 'middle' } }}
+          />
+          <Tooltip 
+            contentStyle={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}
+            formatter={(value: any, name: any, props: any) => {
+              if (name === 'rate') {
+                return [
+                  `${value}% (${props.payload.completed}/${props.payload.total} SP)`,
+                  'Completion Rate'
+                ];
+              }
+              return [value, name];
+            }}
+          />
+          <ReferenceLine 
+            y={80} 
+            stroke="#666" 
+            strokeDasharray="3 3" 
+            label={{ value: 'Target 80%', position: 'insideTopRight', fill: '#666', fontSize: 12 }}
+          />
+          <Legend />
+          <Line 
+            type="monotone" 
+            dataKey="rate" 
+            stroke="#3b82f6" 
+            strokeWidth={2}
+            dot={{ fill: '#3b82f6', r: 4 }}
+            activeDot={{ r: 6 }}
+            name="Completion Rate"
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 

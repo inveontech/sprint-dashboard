@@ -21,6 +21,21 @@ interface PMMetrics {
     avgWaitDays: number;
     totalWaitDays: number;
   };
+  waitingForCustomer: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
+  waitingForEnvironment: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
+  mergeRequested: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
   merged: {
     count: number;
     avgWaitDays: number;
@@ -40,8 +55,10 @@ interface PMMetrics {
 export default function PMDashboardPage() {
   const { selectedCustomer, setCustomer } = useDashboardStore();
   const [metrics, setMetrics] = useState<PMMetrics[]>([]);
+  const [sprintName, setSprintName] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [expandedCustomer, setExpandedCustomer] = useState<string | null>(null);
+  const [expandedTopIssues, setExpandedTopIssues] = useState(true);
 
   // Reset customer filter on page mount
   useEffect(() => {
@@ -58,7 +75,14 @@ export default function PMDashboardPage() {
       
       const response = await fetch(`/api/jira/pm-metrics?${params.toString()}`);
       const data = await response.json();
-      setMetrics(Array.isArray(data) ? data : []);
+      
+      if (data.sprintName) {
+        setSprintName(data.sprintName);
+        setMetrics(Array.isArray(data.metrics) ? data.metrics : []);
+      } else {
+        // Backward compatibility
+        setMetrics(Array.isArray(data) ? data : []);
+      }
     } catch (error) {
       console.error('Failed to fetch PM metrics:', error);
       setMetrics([]);
@@ -74,59 +98,101 @@ export default function PMDashboardPage() {
   const totalTasks = metrics.reduce((sum, m) => sum + m.totalTasks, 0);
   const avgPMApproval = metrics.reduce((sum, m) => sum + m.pmApproval.avgWaitDays, 0) / (metrics.length || 1);
   const avgWaitingPM = metrics.reduce((sum, m) => sum + m.waitingPM.avgWaitDays, 0) / (metrics.length || 1);
+  const avgWaitingForCustomer = metrics.reduce((sum, m) => sum + m.waitingForCustomer.avgWaitDays, 0) / (metrics.length || 1);
+  const avgMergeRequested = metrics.reduce((sum, m) => sum + m.mergeRequested.avgWaitDays, 0) / (metrics.length || 1);
+  const avgMerged = metrics.reduce((sum, m) => sum + m.merged.avgWaitDays, 0) / (metrics.length || 1);
 
   return (
-    <div className="p-8">
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-3xl font-bold">PM Dashboard</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Marka bazında PM statülerinde bekleme süreleri
-            </p>
-          </div>
-          <div className="flex gap-4 items-center">
-            <CustomerSelector />
-            <Button onClick={fetchMetrics} variant="outline" size="sm">
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Refresh
-            </Button>
-          </div>
-        </div>
+    <div className="p-6">
+      <div className="mb-8">
+        <h1 className="text-2xl font-semibold">PM Dashboard</h1>
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm">Toplam Task</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalTasks}</div>
-            <p className="text-xs text-gray-600 dark:text-gray-400">PM statülerinde</p>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting PM</p>
+          <div className="text-3xl font-semibold">{avgWaitingPM.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+        </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm">Ort. PM Approval Bekleme</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-orange-600">{avgPMApproval.toFixed(1)} gün</div>
-            <p className="text-xs text-gray-600 dark:text-gray-400">Ortalama</p>
-          </CardContent>
-        </Card>
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting Customer</p>
+          <div className="text-3xl font-semibold">{avgWaitingForCustomer.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+        </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm">Ort. Waiting PM Bekleme</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-blue-600">{avgWaitingPM.toFixed(1)} gün</div>
-            <p className="text-xs text-gray-600 dark:text-gray-400">Ortalama</p>
-          </CardContent>
-        </Card>
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merge Req</p>
+          <div className="text-3xl font-semibold">{avgMergeRequested.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+        </div>
+
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merged</p>
+          <div className="text-3xl font-semibold">{avgMerged.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+        </div>
       </div>
+
+      {/* Top 5 Waiting Issues */}
+      {!loading && metrics.length > 0 && (
+        <div className="mb-8">
+          <div
+            className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 border border-gray-200 dark:border-gray-700 rounded-lg flex items-center justify-between transition-colors"
+            onClick={() => setExpandedTopIssues(!expandedTopIssues)}
+          >
+            <div>
+              <h2 className="text-lg font-semibold">Top 5 En Çok Bekleyen İşler</h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">En uzun süre güncellenmemiş 5 işi gösterir</p>
+            </div>
+            <div className="text-gray-400">
+              {expandedTopIssues ? (
+                <ChevronUp className="w-5 h-5" />
+              ) : (
+                <ChevronDown className="w-5 h-5" />
+              )}
+            </div>
+          </div>
+
+          {expandedTopIssues && (
+            <div className="mt-3 space-y-2">
+              {(() => {
+                // Collect all issues from all customers and sort by daysSinceUpdate
+                const allIssues = metrics.flatMap(m => m.issues);
+                const topIssues = allIssues
+                  .sort((a, b) => b.daysSinceUpdate - a.daysSinceUpdate)
+                  .slice(0, 5);
+                
+                return topIssues.map((issue) => (
+                  <div key={issue.key} className="flex items-start justify-between p-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded text-sm">
+                    <div className="flex-1">
+                      <a
+                        href={`https://inveon.atlassian.net/browse/${issue.key}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        {issue.key}
+                      </a>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                        {issue.summary}
+                      </p>
+                      <div className="flex gap-4 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                        <span className="font-medium">{issue.daysOpen}g açık</span>
+                        <span className="font-medium">{issue.daysSinceUpdate}g güncellenmedi</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                      <Badge variant="outline" className="text-xs">{issue.status}</Badge>
+                    </div>
+                  </div>
+                ));
+              })()}
+            </div>
+          )}
+        </div>
+      )}
 
       {loading && (
         <div className="text-center py-8 text-gray-500">
@@ -142,97 +208,88 @@ export default function PMDashboardPage() {
 
       {/* Customer Metrics Table */}
       {!loading && metrics.length > 0 && (
-        <div className="space-y-4">
+        <div className="space-y-3">
           {metrics.map((customerMetrics) => (
-            <Card key={customerMetrics.customer}>
-              <CardHeader
-                className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800"
+            <div key={customerMetrics.customer} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+              <div
+                className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 flex items-center justify-between transition-colors"
                 onClick={() => setExpandedCustomer(
                   expandedCustomer === customerMetrics.customer ? null : customerMetrics.customer
                 )}
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{customerMetrics.customer}</CardTitle>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      {customerMetrics.totalTasks} task
-                    </p>
+                <div className="flex-1">
+                  <p className="font-medium">{customerMetrics.customer}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{customerMetrics.totalTasks} task</p>
+                </div>
+                
+                <div className="grid grid-cols-5 gap-3 flex-1 mx-6">
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 whitespace-nowrap">PM Approval</p>
+                    <p className="font-semibold">{customerMetrics.pmApproval.avgWaitDays.toFixed(1)}g</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{customerMetrics.pmApproval.count} task</p>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 flex-1">
-                    <div className="text-center">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">PM Approval</div>
-                      <div className="text-lg font-bold text-orange-600">
-                        {customerMetrics.pmApproval.avgWaitDays.toFixed(1)}d
-                      </div>
-                      <div className="text-xs text-gray-500">{customerMetrics.pmApproval.count} task</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">Waiting PM</div>
-                      <div className="text-lg font-bold text-blue-600">
-                        {customerMetrics.waitingPM.avgWaitDays.toFixed(1)}d
-                      </div>
-                      <div className="text-xs text-gray-500">{customerMetrics.waitingPM.count} task</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">Merged</div>
-                      <div className="text-lg font-bold text-green-600">
-                        {customerMetrics.merged.avgWaitDays.toFixed(1)}d
-                      </div>
-                      <div className="text-xs text-gray-500">{customerMetrics.merged.count} task</div>
-                    </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 whitespace-nowrap">Waiting PM</p>
+                    <p className="font-semibold">{customerMetrics.waitingPM.avgWaitDays.toFixed(1)}g</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{customerMetrics.waitingPM.count} task</p>
                   </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 whitespace-nowrap">Waiting Customer</p>
+                    <p className="font-semibold">{customerMetrics.waitingForCustomer.avgWaitDays.toFixed(1)}g</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{customerMetrics.waitingForCustomer.count} task</p>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 whitespace-nowrap">Merge Req</p>
+                    <p className="font-semibold">{customerMetrics.mergeRequested.avgWaitDays.toFixed(1)}g</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{customerMetrics.mergeRequested.count} task</p>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 whitespace-nowrap">Merged</p>
+                    <p className="font-semibold">{customerMetrics.merged.avgWaitDays.toFixed(1)}g</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">{customerMetrics.merged.count} task</p>
+                  </div>
+                </div>
+
+                <div className="text-gray-400">
                   {expandedCustomer === customerMetrics.customer ? (
                     <ChevronUp className="w-5 h-5" />
                   ) : (
                     <ChevronDown className="w-5 h-5" />
                   )}
                 </div>
-              </CardHeader>
+              </div>
 
               {expandedCustomer === customerMetrics.customer && customerMetrics.issues.length > 0 && (
-                <CardContent>
-                  <div className="border-t pt-4">
-                    <h3 className="font-semibold mb-3">PM Statüsündeki Tasklar</h3>
-                    <div className="space-y-2">
-                      {customerMetrics.issues.map((issue) => (
-                        <div key={issue.key} className="flex items-start justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded">
-                          <div className="flex-1">
-                            <a
-                              href={`https://inveon.atlassian.net/browse/${issue.key}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-600 hover:underline font-medium"
-                            >
-                              {issue.key}
-                            </a>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                              {issue.summary}
-                            </p>
-                            <div className="flex gap-4 mt-2 text-xs text-gray-500">
-                              <span>Oluşturulma: {new Date(issue.created).toLocaleDateString('tr-TR')}</span>
-                              <span className="text-orange-600 font-medium">{issue.daysOpen} gün açık</span>
-                              <span className="text-red-600 font-medium">{issue.daysSinceUpdate} gün güncellenmedi</span>
-                              {issue.assignee && (
-                                <span className="text-blue-600 font-medium">👤 {issue.assignee}</span>
-                              )}
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-3 ml-4">
-                            <Badge variant="outline">{issue.status}</Badge>
-                            <div className="text-right">
-                              <div className="text-lg font-bold text-red-600">
-                                {issue.daysOpen.toFixed(1)} gün
-                              </div>
-                              <div className="text-xs text-gray-500">toplam açık</div>
-                            </div>
+                <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/30 p-4">
+                  <div className="space-y-2">
+                    {customerMetrics.issues.map((issue) => (
+                      <div key={issue.key} className="flex items-start justify-between p-3 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded text-sm">
+                        <div className="flex-1">
+                          <a
+                            href={`https://inveon.atlassian.net/browse/${issue.key}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                          >
+                            {issue.key}
+                          </a>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                            {issue.summary}
+                          </p>
+                          <div className="flex gap-4 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                            <span className="font-medium">{issue.daysOpen}g açık</span>
+                            <span className="font-medium">{issue.daysSinceUpdate}g güncellenmedi</span>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                        <div className="flex items-center gap-3 ml-4 flex-shrink-0">
+                          <Badge variant="outline" className="text-xs">{issue.status}</Badge>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </CardContent>
+                </div>
               )}
-            </Card>
+            </div>
           ))}
         </div>
       )}

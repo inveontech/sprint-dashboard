@@ -14,7 +14,7 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 ml-64 bg-gray-50 dark:bg-gray-950">
+      <main className="flex-1 ml-72 bg-gray-50 dark:bg-gray-950">
         {children}
       </main>
     </div>
