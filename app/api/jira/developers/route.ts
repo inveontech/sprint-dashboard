@@ -82,15 +82,18 @@ export async function GET(request: Request) {
         dev.completedPoints += points;
       }
       
-      if (!dev.issuesByType.has(issueType)) {
-        dev.issuesByType.set(issueType, { total: 0, completed: 0, points: 0 });
-      }
-      
-      const typeData = dev.issuesByType.get(issueType)!;
-      typeData.total++;
-      typeData.points += points;
+      // Only track issue types for completed issues (Done status)
       if (isCompleted) {
-        typeData.completed++;
+        if (!dev.issuesByType.has(issueType)) {
+          dev.issuesByType.set(issueType, { total: 0, completed: 0, points: 0 });
+        }
+        
+        const typeData = dev.issuesByType.get(issueType)!;
+        typeData.total++;
+        typeData.points += points;
+        if (isCompleted) {
+          typeData.completed++;
+        }
       }
     }
     
