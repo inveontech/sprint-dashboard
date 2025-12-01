@@ -227,7 +227,7 @@ export default function OverworkIssuesPage() {
                         </TableCell>
                         <TableCell className={`text-sm font-semibold ${
                           issue.daysOpen > 20
-                            ? 'text-purple-600 dark:text-purple-400'
+                            ? 'text-teal-600 dark:text-teal-400'
                             : 'text-gray-700 dark:text-gray-300'
                         }`}>
                           {issue.daysOpen}d
