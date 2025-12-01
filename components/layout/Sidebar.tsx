@@ -10,7 +10,7 @@ import { ROLE_NAMES } from '@/lib/permissions';
 interface MenuItem {
   title: string;
   href?: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   permission?: string | null;
   children?: MenuItem[];
 }
@@ -102,7 +102,6 @@ const menuItems: MenuItem[] = [
   },
 ];
 
-// Pages that viewers can access (restricted list)
 const VIEWER_ALLOWED_PAGES = ['/', '/sprint-reports', '/sprint-comparison'];
 
 export function Sidebar() {
@@ -118,30 +117,24 @@ export function Sidebar() {
     );
   };
 
-  // Check if user has permission for an item
   const hasPermission = (item: MenuItem): boolean => {
     if (!user) return false;
     
-    // Viewer role has restricted access
     if (user.role === 'viewer') {
       if (item.href) {
         return VIEWER_ALLOWED_PAGES.includes(item.href);
       }
-      // For parent items, check if any child is allowed
       if (item.children) {
         return item.children.some(child => child.href && VIEWER_ALLOWED_PAGES.includes(child.href));
       }
       return false;
     }
     
-    // No permission required
     if (!item.permission) return true;
     
-    // Check permission
     return user.permissions.includes(item.permission as typeof user.permissions[number]);
   };
 
-  // Filter children based on permissions
   const filterChildren = (children: MenuItem[] | undefined): MenuItem[] => {
     if (!children) return [];
     return children.filter(child => hasPermission(child));
@@ -178,21 +171,19 @@ export function Sidebar() {
     const isExpanded = expandedCategories.includes(item.title);
     const childActive = isChildActive(item.children);
 
-    // Skip parent if no visible children
     if (hasChildren && filteredChildren.length === 0) return null;
 
     if (hasChildren) {
+      const buttonBaseClass = 'w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition-colors';
+      const buttonActiveClass = childActive 
+        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium' 
+        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800';
+      
       return (
         <div key={item.title}>
           <button
             onClick={() => toggleCategory(item.title)}
-            className={\`
-              w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg transition-colors
-              \${childActive 
-                ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium' 
-                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-              }
-            \`}
+            className={buttonBaseClass + ' ' + buttonActiveClass}
           >
             <span>{item.title}</span>
             {isExpanded ? (
@@ -210,18 +201,17 @@ export function Sidebar() {
       );
     }
 
+    const linkBaseClass = 'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors';
+    const linkActiveClass = isActive 
+      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium' 
+      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800';
+    const paddingClass = isChild ? ' pl-6' : '';
+
     return (
       <Link
         key={item.href}
         href={item.href!}
-        className={\`
-          flex items-center gap-3 px-4 py-3 rounded-lg transition-colors
-          \${isChild ? 'pl-6' : ''}
-          \${isActive 
-            ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium' 
-            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-          }
-        \`}
+        className={linkBaseClass + paddingClass + ' ' + linkActiveClass}
       >
         <Icon className="w-5 h-5" />
         <span>{item.title}</span>
@@ -231,19 +221,16 @@ export function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col">
-      {/* Logo/Header */}
       <div className="p-6 border-b border-gray-200 dark:border-gray-800">
         <h1 className="text-xl font-bold text-gray-900 dark:text-white">
           Sprint Management System
         </h1>
       </div>
 
-      {/* Menu Items */}
       <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
         {menuItems.map(item => renderMenuItem(item))}
       </nav>
 
-      {/* User Info & Logout */}
       <div className="p-4 border-t border-gray-200 dark:border-gray-800">
         {isLoading ? (
           <div className="animate-pulse">
@@ -252,7 +239,6 @@ export function Sidebar() {
           </div>
         ) : user ? (
           <div className="space-y-3">
-            {/* User Info */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                 <User className="w-5 h-5 text-white" />
@@ -267,15 +253,13 @@ export function Sidebar() {
               </div>
             </div>
 
-            {/* Role Badge */}
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-gray-400" />
-              <span className={\`text-xs px-2 py-0.5 rounded-full font-medium \${getRoleBadgeColor(user.role)}\`}>
+              <span className={'text-xs px-2 py-0.5 rounded-full font-medium ' + getRoleBadgeColor(user.role)}>
                 {ROLE_NAMES[user.role]}
               </span>
             </div>
 
-            {/* Logout Button */}
             <button
               onClick={handleLogout}
               className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
@@ -290,7 +274,6 @@ export function Sidebar() {
           </div>
         )}
         
-        {/* Version */}
         <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
           <p className="text-xs text-gray-500 dark:text-gray-400">
             Inveon Sprint Dashboard v1.0.0

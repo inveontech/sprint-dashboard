@@ -7,11 +7,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, Lock, Mail, Eye, EyeOff } from 'lucide-react';
+import { useAuth } from '@/components/providers/AuthProvider';
 
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect') || '/';
+  const { login } = useAuth();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,33 +27,16 @@ function LoginForm() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const result = await login(email, password);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        setError(data.message || 'Login failed');
+      if (!result.success) {
+        setError(result.error || 'Login failed');
         setIsLoading(false);
         return;
       }
 
-      // Store tokens
-      localStorage.setItem('access_token', data.accessToken);
-      localStorage.setItem('refresh_token', data.refreshToken);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      
-      // Set cookie for middleware
-      document.cookie = `access_token=${data.accessToken}; path=/; max-age=${data.expiresIn}; SameSite=Lax`;
-
-      // Redirect
-      router.push(redirect);
-      router.refresh();
+      // Use window.location for a full page navigation to ensure cookies are properly set
+      window.location.href = redirect;
     } catch (err) {
       setError('An unexpected error occurred. Please try again.');
       setIsLoading(false);
