@@ -196,7 +196,7 @@ export default function OverworkIssuesPage() {
                             {issue.key}
                           </a>
                         </TableCell>
-                        <TableCell className="max-w-md">
+                        <TableCell className="max-w-xs">
                           <div className="truncate" title={issue.summary}>
                             {issue.summary}
                           </div>
@@ -230,7 +230,7 @@ export default function OverworkIssuesPage() {
                             <span className="text-sm font-semibold min-w-fit">{issue.workratio || 0}%</span>
                           </div>
                         </TableCell>
-                        <TableCell className="text-sm">
+                        <TableCell className="text-sm whitespace-nowrap">
                           {formatTime(issue.timeEstimate)} / {formatTime(issue.timeSpent)}
                         </TableCell>
                         <TableCell className="text-sm">{issue.daysOpen}d</TableCell>
