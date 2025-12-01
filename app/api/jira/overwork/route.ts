@@ -7,9 +7,9 @@ export async function GET() {
   try {
     const jira = new JiraClient();
 
-    // JQL: Find issues from Product: inCommerce project created in the last 3 months with workratio > 100, excluding Done
+    // JQL: Find issues from Product: inCommerce project created in the last 3 months with workratio >= 100, excluding Done
     // Using exact project name from Jira and workratio filter directly in JQL
-    const jql = `project = "Product: inCommerce" AND created >= -12w AND workratio > 100 AND status != Done ORDER BY updated DESC`;
+    const jql = `project = "Product: inCommerce" AND created >= -12w AND workratio >= 100 AND status != Done ORDER BY updated DESC`;
 
     const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
     const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', customerField, 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
