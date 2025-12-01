@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
               <Activity className="w-4 h-4" />
-              <span>Jira Senkronize</span>
+              <span>Real-time Jira Sync</span>
             </div>
           </div>
         </div>
