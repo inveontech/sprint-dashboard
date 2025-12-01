@@ -90,8 +90,8 @@ export default function Home() {
                 <BarChart3 className="w-6 h-6 text-white dark:text-slate-900" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-gray-900 dark:text-white">Sprint Dashboard</h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Inveon inCommerce</p>
+                <h1 className="text-xl font-semibold text-gray-900 dark:text-white">Sprint Management System</h1>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Inveon</p>
               </div>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
