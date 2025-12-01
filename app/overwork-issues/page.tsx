@@ -225,7 +225,13 @@ export default function OverworkIssuesPage() {
                         <TableCell className="text-sm whitespace-nowrap">
                           {formatTime(issue.timeEstimate)} / {formatTime(issue.timeSpent)}
                         </TableCell>
-                        <TableCell className="text-sm">{issue.daysOpen}d</TableCell>
+                        <TableCell className={`text-sm font-semibold ${
+                          issue.daysOpen > 20
+                            ? 'text-red-600 dark:text-red-400'
+                            : 'text-gray-700 dark:text-gray-300'
+                        }`}>
+                          {issue.daysOpen}d
+                        </TableCell>
                       </TableRow>
                     ))}
                 </TableBody>
