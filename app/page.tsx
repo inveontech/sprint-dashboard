@@ -112,23 +112,6 @@ export default function Home() {
             Takım performansını izleyin, sprint kapasitesini optimize edin ve başarılı dağıtımlar için 
             gerçek zamanlı metriklere dayalı karar verin.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/sprint-reports"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
-            >
-              <BarChart3 className="w-5 h-5" />
-              Sprint Raporuna Git
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/ai-analysis"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              <Sparkles className="w-5 h-5" />
-              AI Analizi
-            </Link>
-          </div>
         </div>
       </section>
 
