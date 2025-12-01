@@ -7,6 +7,7 @@ import { RefreshCw, ChevronDown, ChevronUp } from "lucide-react";
 import { format } from "date-fns";
 import { useDashboardStore } from "@/lib/store";
 import SprintSelector from "@/components/dashboard/SprintSelector";
+import { PageHeader } from "@/components/layout/PageHeader";
 
 interface OverdueIssue {
   key: string;
@@ -84,23 +85,26 @@ export default function OverdueTasksPage() {
   const avgPercentage = totalTasks > 0 ? Math.round((totalOverdue / totalTasks) * 100) : 0;
 
   return (
-    <div className="p-8">
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-3xl font-bold">Overdue Tasks</h1>
-          </div>
-          <SprintSelector
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Header */}
+      <header className="bg-white dark:bg-gray-800 border-b">
+        <div className="px-6 py-8">
+          <div className="flex items-center justify-between">
+            <PageHeader title="Overdue Tasks" description="Geciken ve yaklaşan görevleri izleyin" />
+            <SprintSelector
             sprints={allSprints}
             selectedMode={selectedSprintId}
             onModeChange={setSelectedSprintId}
             loading={loading}
           />
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      {/* Main Content */}
+      <main className="px-6 py-8">
+        {/* Summary Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <Card>
           <CardHeader>
             <CardTitle className="text-sm">Toplam Gecikmeli</CardTitle>
@@ -235,6 +239,7 @@ export default function OverdueTasksPage() {
           )}
         </CardContent>
       </Card>
+      </main>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 interface OverworkIssue {
   key: string;
@@ -115,8 +116,8 @@ export default function OverworkIssuesPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="px-6 py-6">
-          <h1 className="text-2xl font-bold">Overwork Issues</h1>
+        <div className="px-6 py-8">
+          <PageHeader title="Overwork Issues" description="Tahminden fazla çalışılan görevleri izleyin" />
         </div>
       </header>
 
