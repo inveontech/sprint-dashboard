@@ -134,15 +134,6 @@ export default function Home() {
 
       {/* Modules Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-            Modules
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400">
-            Access all essential tools for comprehensive sprint management and team performance tracking
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {modules.map((module) => {
             const Icon = module.icon;
