@@ -6,6 +6,9 @@ WORKDIR /app
 # Copy package files
 COPY package.json package-lock.json* ./
 
+# Copy environment file for build
+COPY .env.example .env.local
+
 # Install dependencies
 RUN npm ci
 
