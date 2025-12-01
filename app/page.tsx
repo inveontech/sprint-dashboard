@@ -12,6 +12,7 @@ import {
   UserCheck,
   ArrowRight,
   Activity,
+  Layers,
 } from 'lucide-react';
 
 const modules = [
@@ -26,6 +27,12 @@ const modules = [
     description: 'Geçmiş sprintleri karşılaştırarak performans trendlerini analiz edin.',
     href: '/sprint-comparison',
     icon: TrendingUp,
+  },
+  {
+    title: 'Multi Sprint İçgörüler',
+    description: 'Birden fazla sprinti kapsayan backlog ve problem takibi.',
+    href: '/sprint-insights/multi-sprint',
+    icon: Layers,
   },
   {
     title: 'AI Analizi',
