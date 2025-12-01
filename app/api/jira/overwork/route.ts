@@ -14,10 +14,10 @@ export async function GET() {
     const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
     const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', customerField, 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
     const encodedJql = encodeURIComponent(jql);
-    const url = `https://${process.env.JIRA_HOST}/rest/api/3/search/jql?jql=${encodedJql}&fields=${fieldsParam}&maxResults=1000`;
+    const url = `https://${process.env.JIRA_HOST}/rest/api/3/search/jql?jql=${encodedJql}&fields=${fieldsParam}&maxResults=100&startAt=0`;
     
-    console.log(`Overwork API URL: ${url}`);
-
+    console.log(`Fetching overwork issues...`);
+    
     const response = await fetch(url, {
       headers: {
         'Authorization': `Basic ${Buffer.from(`${process.env.JIRA_EMAIL}:${process.env.JIRA_API_TOKEN}`).toString('base64')}`,
@@ -37,8 +37,6 @@ export async function GET() {
     const issues = data.issues || [];
 
     console.log(`Total issues fetched: ${issues.length}`);
-
-    // Map issues to our format
     const formattedIssues = issues.map((issue: any) => {
       const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
       const customerFieldValue = issue.fields[customerField];
@@ -109,6 +107,9 @@ export async function GET() {
     const overworkedIssues = formattedIssues.filter((issue: any) => (issue.workratio || 0) >= 100);
 
     console.log(`Total issues fetched: ${formattedIssues.length}, Issues with workratio >= 100%: ${overworkedIssues.length}`);
+    if (overworkedIssues.length > 0) {
+      console.log(`First: ${overworkedIssues[0].key} (${overworkedIssues[0].workratio}%), Last: ${overworkedIssues[overworkedIssues.length-1].key} (${overworkedIssues[overworkedIssues.length-1].workratio}%)`);
+    }
 
     // Sort by workratio descending (highest overwork first)
     overworkedIssues.sort((a: any, b: any) => (b.workratio || 0) - (a.workratio || 0));

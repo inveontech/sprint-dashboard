@@ -85,6 +85,8 @@ export function initializeSnapshotScheduler() {
   });
 
   // Also run on startup (after 10 seconds delay to ensure app is ready)
+  // Disabled - causes timeout issues
+  /*
   setTimeout(async () => {
     console.log('🚀 Running initial snapshot capture on startup...');
     try {
@@ -131,7 +133,9 @@ export function initializeSnapshotScheduler() {
       console.error('Error during startup snapshot capture:', error);
     }
   }, 10000);
+  */
 
+  // Don't wait for initial snapshot capture - just return the task
   console.log('✅ Snapshot scheduler initialized (every Monday 8:00 AM)');
   return task;
 }

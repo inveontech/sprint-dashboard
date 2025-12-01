@@ -8,9 +8,12 @@ export async function register() {
     
     try {
       const { initializeSnapshotScheduler } = await import('@/lib/snapshot-scheduler');
+      console.log('Starting snapshot scheduler...');
       initializeSnapshotScheduler();
+      console.log('Snapshot scheduler started successfully');
     } catch (error) {
       console.error('Failed to initialize snapshot scheduler:', error);
+      // Continue anyway - don't crash server
     }
   }
 }
