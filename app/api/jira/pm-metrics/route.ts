@@ -15,6 +15,21 @@ interface PMMetrics {
     avgWaitDays: number;
     totalWaitDays: number;
   };
+  waitingForCustomer: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
+  waitingForEnvironment: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
+  mergeRequested: {
+    count: number;
+    avgWaitDays: number;
+    totalWaitDays: number;
+  };
   merged: {
     count: number;
     avgWaitDays: number;
