@@ -12,21 +12,40 @@ Next.js 14 App Router ile geliştirilmiş sprint metrikleri ve analitik dashboar
 
 ## Kurulum
 
-1. Bağımlılıkları yükleyin:
+### Gereksinimler
+
+- Node.js 20+
+- PostgreSQL 14+
+- Redis 6+
+
+### 1. Bağımlılıkları yükleyin:
 
 ```bash
 npm install
 ```
 
-2. `.env.example` dosyasını kopyalayıp `.env` olarak kaydedin:
+### 2. `.env.example` dosyasını kopyalayıp `.env` olarak kaydedin:
 
 ```bash
 cp .env.example .env
 ```
 
-3. `.env` dosyasını düzenleyin:
+### 3. `.env` dosyasını düzenleyin:
 
 ```env
+# Veritabanı (zorunlu)
+DATABASE_URL=postgresql://user:password@localhost:5432/sprint_dashboard
+
+# Redis (zorunlu)
+REDIS_URL=redis://localhost:6379
+
+# JWT Secret (zorunlu - production'da değiştirin!)
+JWT_SECRET=your-super-secret-jwt-key
+
+# Admin kullanıcı (ilk kurulum için)
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=your-secure-password
+
 # Mock mod (Jira bağlantısı olmadan test için)
 JIRA_MOCK=true
 
@@ -44,13 +63,30 @@ JIRA_TASK_OWNER_FIELD=customfield_10656
 OPENAI_API_KEY=your-openai-api-key
 ```
 
-4. Geliştirme sunucusunu başlatın:
+### 4. Veritabanını hazırlayın:
+
+```bash
+# PostgreSQL'de veritabanı oluşturun
+sudo -u postgres psql -c "CREATE DATABASE sprint_dashboard;"
+sudo -u postgres psql -c "CREATE USER youruser WITH PASSWORD 'yourpassword';"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE sprint_dashboard TO youruser;"
+sudo -u postgres psql -c "ALTER USER youruser CREATEDB;"
+sudo -u postgres psql -d sprint_dashboard -c "GRANT ALL ON SCHEMA public TO youruser;"
+
+# Prisma migration'larını uygulayın
+npx prisma migrate dev
+
+# Admin kullanıcısını oluşturun
+npx prisma db seed
+```
+
+### 5. Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
 ```
 
-5. Tarayıcıda `http://localhost:3010` adresini açın.
+### 6. Tarayıcıda `http://localhost:3010` adresini açın.
 
 ## Environment Variables
 
