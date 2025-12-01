@@ -106,7 +106,7 @@ export async function GET() {
     });
 
     // Filter issues with workratio >= 100 (at or above estimate)
-    const overworkedIssues = formattedIssues.filter(issue => (issue.workratio || 0) >= 100);
+    const overworkedIssues = formattedIssues.filter((issue: any) => (issue.workratio || 0) >= 100);
 
     console.log(`Total issues fetched: ${formattedIssues.length}, Issues with workratio >= 100%: ${overworkedIssues.length}`);
 
