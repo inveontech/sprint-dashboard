@@ -6,6 +6,8 @@ export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     console.log('🔧 Initializing server services...');
     
+    // Snapshot scheduler disabled for stability
+    /*
     try {
       const { initializeSnapshotScheduler } = await import('@/lib/snapshot-scheduler');
       console.log('Starting snapshot scheduler...');
@@ -15,5 +17,6 @@ export async function register() {
       console.error('Failed to initialize snapshot scheduler:', error);
       // Continue anyway - don't crash server
     }
+    */
   }
 }
