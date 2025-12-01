@@ -37,8 +37,9 @@ export async function POST(request: Request) {
     // Get count before cleanup
     const countBefore = await getAuditLogCount();
     
-    // Delete logs older than 90 days
-    const deletedCount = await cleanupOldAuditLogs(90);
+    // Delete logs older than 14 days (keep last 2 weeks)
+    const RETENTION_DAYS = 14;
+    const deletedCount = await cleanupOldAuditLogs(RETENTION_DAYS);
     
     // Get count after cleanup
     const countAfter = await getAuditLogCount();
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
         deletedCount,
         countBefore,
         countAfter,
-        retentionDays: 90,
+        retentionDays: RETENTION_DAYS,
         executedAt: new Date().toISOString(),
       }
     });
@@ -96,7 +97,7 @@ export async function GET(request: Request) {
       success: true,
       stats: {
         totalCount: count,
-        retentionDays: 90,
+        retentionDays: 14,
         queriedAt: new Date().toISOString(),
       }
     });

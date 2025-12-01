@@ -127,9 +127,10 @@ export async function getRecentAuditLogs(
 /**
  * Delete audit logs older than specified days
  * Called by cleanup cron job
+ * Default: Keep last 14 days of logs
  */
 export async function cleanupOldAuditLogs(
-  daysOld: number = 90
+  daysOld: number = 14
 ): Promise<number> {
   const cutoffDate = new Date();
   cutoffDate.setDate(cutoffDate.getDate() - daysOld);
