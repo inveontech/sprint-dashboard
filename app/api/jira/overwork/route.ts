@@ -7,9 +7,9 @@ export async function GET() {
   try {
     const jira = new JiraClient();
 
-    // JQL: Find issues from Product: inCommerce project created in the last 3 months with timetracking, excluding Done
-    // Filter by workratio >= 100 in backend after calculating from timetracking
-    const jql = `project = "Product: inCommerce" AND created >= -12w AND status != Done ORDER BY updated DESC`;
+    // JQL: Find issues from Product: inCommerce project with timetracking data
+    // We'll filter for spent >= estimate in backend calculation
+    const jql = `project = "Product: inCommerce" AND created >= -12w AND status != Done AND timeSpent > 0 ORDER BY updated DESC`;
 
     const customerField = process.env.JIRA_CUSTOMER_FIELD || 'customfield_10000';
     const fieldsParam = encodeURIComponent(['key', 'summary', 'status', 'issuetype', 'created', 'updated', 'assignee', customerField, 'customfield_10002', 'customfield_10656', 'timetracking', 'priority', 'duedate'].join(','));
@@ -74,12 +74,11 @@ export async function GET() {
       const timetracking = issue.fields.timetracking || {};
       const timeSpent = timetracking.timeSpentSeconds || 0;
       const remainingEstimate = timetracking.remainingEstimateSeconds || 0;
-      // Original estimate = timeSpent + remainingEstimate (in case Jira updated originalEstimate)
-      // If both are 0, try originalEstimateSeconds as fallback
-      let timeEstimate = timeSpent + remainingEstimate;
-      if (timeEstimate === 0) {
-        timeEstimate = timetracking.originalEstimateSeconds || 0;
-      }
+      const originalEstimate = timetracking.originalEstimateSeconds || 0;
+      
+      // Calculate timeEstimate: prefer originalEstimate, fallback to timeSpent + remainingEstimate
+      let timeEstimate = originalEstimate > 0 ? originalEstimate : (timeSpent + remainingEstimate);
+      
       // Calculate workratio as percentage: (timeSpent / timeEstimate) * 100
       const workratio = timeEstimate > 0 ? Math.round((timeSpent / timeEstimate) * 100) : 0;
 
@@ -98,15 +97,20 @@ export async function GET() {
         daysSinceUpdate,
         timeEstimate,
         timeSpent,
+        originalEstimate,
         workratio,
         dueDate: issue.fields.duedate,
       };
     });
 
-    // Filter issues with workratio >= 100 (at or above estimate)
-    const overworkedIssues = formattedIssues.filter((issue: any) => (issue.workratio || 0) >= 100);
+    // Filter issues with spent >= estimate (workratio >= 100)
+    const overworkedIssues = formattedIssues.filter((issue: any) => {
+      const timeSpent = issue.timeSpent || 0;
+      const timeEstimate = issue.timeEstimate || 1;
+      return timeSpent >= timeEstimate;
+    });
 
-    console.log(`Total issues fetched: ${formattedIssues.length}, Issues with workratio >= 100%: ${overworkedIssues.length}`);
+    console.log(`Total issues fetched: ${formattedIssues.length}, Issues with spent >= estimate: ${overworkedIssues.length}`);
     if (overworkedIssues.length > 0) {
       console.log(`First: ${overworkedIssues[0].key} (${overworkedIssues[0].workratio}%), Last: ${overworkedIssues[overworkedIssues.length-1].key} (${overworkedIssues[overworkedIssues.length-1].workratio}%)`);
     }
