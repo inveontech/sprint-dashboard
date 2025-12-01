@@ -122,10 +122,7 @@ export function Sidebar() {
               }
             `}
           >
-            <div className="flex items-center gap-3">
-              <Icon className="w-5 h-5" />
-              <span>{item.title}</span>
-            </div>
+            <span>{item.title}</span>
             {isExpanded ? (
               <ChevronDown className="w-4 h-4" />
             ) : (
@@ -154,7 +151,6 @@ export function Sidebar() {
           }
         `}
       >
-        <Icon className="w-5 h-5" />
         <span>{item.title}</span>
       </Link>
     );
