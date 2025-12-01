@@ -6,9 +6,6 @@ WORKDIR /app
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Copy environment file for build
-COPY .env.example .env.local
-
 # Install dependencies
 RUN npm ci
 
@@ -21,6 +18,14 @@ RUN npx prisma generate
 # Copy source code
 COPY . .
 
+# Build-time environment variables (non-sensitive, needed for Next.js build)
+# These are placeholders - actual values come from runtime environment
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV DATABASE_URL="postgresql://placeholder:placeholder@localhost:5432/placeholder"
+ENV REDIS_URL="redis://localhost:6379"
+ENV REDIS_MOCK="true"
+ENV JIRA_MOCK="true"
+
 # Build the application
 RUN npm run build
 
@@ -30,6 +35,7 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Create non-root user for security
 RUN addgroup --system --gid 1001 nodejs
@@ -61,26 +67,24 @@ USER nextjs
 
 EXPOSE 3010
 
+# Runtime configuration defaults (non-sensitive only)
+# These can be overridden by docker-compose or kubernetes
 ENV PORT=3010
 ENV HOSTNAME="0.0.0.0"
-
-# Database configuration
-ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/sprint_dashboard"
-
-# Redis configuration (can be overridden by docker-compose)
-ENV REDIS_URL="redis://localhost:6379"
 ENV REDIS_MOCK="false"
+ENV RUN_SEED="false"
 
-# Auth configuration
-ENV JWT_SECRET="UBMJHNUfx222pFiizP1QRdPijB4Cunsqh0HCLd6QDH4="
-ENV SESSION_TTL="86400"
-ENV REFRESH_TOKEN_TTL="604800"
+# IMPORTANT: The following MUST be provided at runtime via environment variables:
+# - DATABASE_URL (required)
+# - REDIS_URL (required)
+# - JWT_SECRET (required - generate with: openssl rand -base64 32)
+# - SESSION_TTL (optional, default: 86400)
+# - REFRESH_TOKEN_TTL (optional, default: 604800)
+# - ADMIN_EMAIL (required for first run)
+# - ADMIN_PASSWORD (required for first run)
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:3010/ || exit 1
-
-# Set to "true" on first deployment to seed admin user
-ENV RUN_SEED="true"
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
