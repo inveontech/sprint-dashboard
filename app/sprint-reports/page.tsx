@@ -7,6 +7,7 @@ import { formatDate } from '@/lib/utils';
 import MetricCard from '@/components/dashboard/MetricCard';
 import CustomerSelector from '@/components/dashboard/CustomerSelector';
 import SprintSelector from '@/components/dashboard/SprintSelector';
+import { PageHeader } from '@/components/layout/PageHeader';
 // DateRangeTabs removed
 import RefreshButton from '@/components/dashboard/RefreshButton';
 import VelocityChart from '@/components/charts/VelocityChart';
@@ -191,11 +192,9 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="px-6 py-6">
+        <div className="px-6 py-8">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Sprint Summary
-            </h1>
+            <PageHeader title="Sprint Reports" description="Aktif sprint durumunu ve görev ilerleme durumunu görüntüleyin" />
           </div>
           <div className="flex flex-wrap gap-4 items-center">
             <SprintSelector

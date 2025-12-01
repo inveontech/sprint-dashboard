@@ -8,6 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { useDashboardStore } from '@/lib/store';
 import { formatDate } from '@/lib/utils';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 export default function AIAnalysisPage() {
   const { analyzeSprint, sprintAnalysis, analyzingSprint, analysisError, selectedSprint } = useDashboardStore();
@@ -53,10 +54,8 @@ export default function AIAnalysisPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="px-6 py-6">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-            AI Sprint Analysis
-          </h1>
+        <div className="px-6 py-8">
+          <PageHeader title="AI Analysis" description="Yapay zeka tarafından desteklenen sprint içgörüleri ve öneriler alın" />
         </div>
       </header>
 
