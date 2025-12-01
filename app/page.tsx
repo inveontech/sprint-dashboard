@@ -108,10 +108,6 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Sprint Management System
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Takım performansını izleyin, sprint kapasitesini optimize edin ve başarılı dağıtımlar için 
-            gerçek zamanlı metriklere dayalı karar verin.
-          </p>
         </div>
       </section>
 
