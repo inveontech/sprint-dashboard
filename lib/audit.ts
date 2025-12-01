@@ -1,5 +1,5 @@
 import { prisma } from './prisma';
-import { AuditAction } from '@prisma/client';
+import { AuditAction, Prisma } from '@prisma/client';
 
 // Re-export AuditAction enum for use in other files
 export { AuditAction };
@@ -44,7 +44,8 @@ export async function logCommand(
         action,
         userId,
         targetId: targetId ?? null,
-        details: details ?? null,
+        // Prisma requires explicit JsonNull for null JSON values
+        details: details ? (details as Prisma.InputJsonValue) : Prisma.JsonNull,
         ipAddress: ipAddress ?? null,
       },
     });
