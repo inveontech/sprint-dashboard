@@ -214,21 +214,13 @@ export default function OverworkIssuesPage() {
                         <TableCell>{issue.customer}</TableCell>
                         <TableCell>{issue.assignee}</TableCell>
                         <TableCell>
-                          <div className="flex items-center gap-2">
-                            <div className="w-12 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                              <div
-                                className={`h-full ${
-                                  (issue.workratio || 0) > 200
-                                    ? 'bg-red-500'
-                                    : (issue.workratio || 0) > 150
-                                    ? 'bg-orange-500'
-                                    : 'bg-yellow-500'
-                                }`}
-                                style={{ width: `${Math.min((issue.workratio || 0) / 2, 100)}%` }}
-                              />
-                            </div>
-                            <span className="text-sm font-semibold min-w-fit">{issue.workratio || 0}%</span>
-                          </div>
+                          <span className={`text-sm font-semibold ${
+                            (issue.workratio || 0) > 150
+                              ? 'text-red-600 dark:text-red-400'
+                              : 'text-gray-700 dark:text-gray-300'
+                          }`}>
+                            {issue.workratio || 0}%
+                          </span>
                         </TableCell>
                         <TableCell className="text-sm whitespace-nowrap">
                           {formatTime(issue.timeEstimate)} / {formatTime(issue.timeSpent)}
