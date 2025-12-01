@@ -52,6 +52,12 @@ const modules = [
     icon: AlertCircle,
   },
   {
+    title: 'Overwork Issues',
+    description: 'Tahminden fazla çalışma yapılan görevleri inceleyin.',
+    href: '/overwork-issues',
+    icon: Activity,
+  },
+  {
     title: 'Test Sonuçları',
     description: 'Başarısız testleri ve sorunlu alanları inceleyin.',
     href: '/test-failures',
