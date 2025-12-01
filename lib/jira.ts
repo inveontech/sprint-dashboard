@@ -330,6 +330,25 @@ export class JiraClient {
           };
         }
         
+        // Check if snapshot has targetPoints = 0, then load from sprint-targets.json
+        if (snapshotData.metrics?.targetPoints === 0) {
+          try {
+            const sprintTargetsPath = path.join(process.cwd(), 'data', 'sprint-targets.json');
+            const sprintTargetsData = fs.readFileSync(sprintTargetsPath, 'utf-8');
+            const sprintTargets = JSON.parse(sprintTargetsData);
+            const sprintTarget = sprintTargets.find((t: any) => t.sprintId === sprintId);
+            if (sprintTarget && sprintTarget.targetPoints > 0) {
+              const targetPoints = sprintTarget.targetPoints;
+              snapshotData.metrics.targetPoints = targetPoints;
+              snapshotData.metrics.targetAchievement = targetPoints > 0 ? Math.round(((snapshotData.metrics?.completedPoints || 0) / targetPoints) * 100) : 0;
+              snapshotData.metrics.completionRate = targetPoints > 0 ? Math.round(((snapshotData.metrics?.completedPoints || 0) / targetPoints) * 100) : 0;
+              console.log(`📊 Loaded sprint target: ${targetPoints} SP from sprint-targets.json for sprint ${sprintId}`);
+            }
+          } catch (error) {
+            console.warn(`Could not load sprint target from sprint-targets.json: ${error}`);
+          }
+        }
+        
         return snapshotData;
       }
       
