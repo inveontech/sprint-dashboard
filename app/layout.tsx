@@ -6,7 +6,7 @@ import { LayoutWrapper } from "@/components/layout/LayoutWrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Inveon Developer Reports",
+  title: "Inveon | Sprint Management System",
   description: "Sprint metrics, developer performance, and task analytics",
 };
 
