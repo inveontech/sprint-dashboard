@@ -46,18 +46,12 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copy Prisma client and schema (needed for migrations in production)
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
-COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
+# Copy ALL node_modules (needed for Prisma 7 CLI with many dependencies)
+COPY --from=builder /app/node_modules ./node_modules
+
+# Copy Prisma schema and config
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
-
-# Copy seed script dependencies
-COPY --from=builder /app/node_modules/ts-node ./node_modules/ts-node
-COPY --from=builder /app/node_modules/typescript ./node_modules/typescript
-COPY --from=builder /app/node_modules/@types ./node_modules/@types
-COPY --from=builder /app/node_modules/dotenv ./node_modules/dotenv
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /docker-entrypoint.sh
