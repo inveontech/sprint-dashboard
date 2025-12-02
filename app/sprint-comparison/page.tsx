@@ -1,17 +1,19 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense, lazy } from 'react';
 import { TrendingUp, Target, Bug } from 'lucide-react';
 import { useDashboardStore } from '@/lib/store';
 import MetricCard from '@/components/dashboard/MetricCard';
 import CustomerSelector from '@/components/dashboard/CustomerSelector';
-import VelocityChart from '@/components/charts/VelocityChart';
-import CompletionChart from '@/components/charts/CompletionChart';
-import SuccessTrendChart from '@/components/charts/SuccessTrendChart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { PageHeader } from '@/components/layout/PageHeader';
+
+// Lazy loaded chart components
+const VelocityChart = lazy(() => import('@/components/charts/VelocityChart'));
+const CompletionChart = lazy(() => import('@/components/charts/CompletionChart'));
+const SuccessTrendChart = lazy(() => import('@/components/charts/SuccessTrendChart'));
 
 // Helper functions
 function calculateAvgVelocity(sprints: any[]): number {
@@ -197,7 +199,9 @@ export default function SprintComparisonPage() {
               <CardTitle>Son 6 Sprint Başarı Trendi{selectedCustomer ? ` - ${selectedCustomer}` : ''}</CardTitle>
             </CardHeader>
             <CardContent>
-              <SuccessTrendChart sprints={sprints} selectedCustomer={selectedCustomer} />
+              <Suspense fallback={<div className="h-[300px] flex items-center justify-center text-gray-500">Grafik yükleniyor...</div>}>
+                <SuccessTrendChart sprints={sprints} selectedCustomer={selectedCustomer} />
+              </Suspense>
             </CardContent>
             <div className="px-6 pb-4">
               <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">
@@ -213,7 +217,9 @@ export default function SprintComparisonPage() {
                 <CardTitle>Velocity Trendi</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                <VelocityChart sprints={sprints} selectedCustomer={selectedCustomer} />
+                <Suspense fallback={<div className="h-[300px] flex items-center justify-center text-gray-500">Grafik yükleniyor...</div>}>
+                  <VelocityChart sprints={sprints} selectedCustomer={selectedCustomer} />
+                </Suspense>
               </CardContent>
               <div className="px-6 pb-4 mt-auto">
                 <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">
@@ -226,7 +232,9 @@ export default function SprintComparisonPage() {
                 <CardTitle>Tamamlanma Oranı</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                <CompletionChart sprints={sprints} selectedCustomer={selectedCustomer} />
+                <Suspense fallback={<div className="h-[300px] flex items-center justify-center text-gray-500">Grafik yükleniyor...</div>}>
+                  <CompletionChart sprints={sprints} selectedCustomer={selectedCustomer} />
+                </Suspense>
               </CardContent>
               <div className="px-6 pb-4 mt-auto">
                 <p className="text-xs text-gray-500 dark:text-gray-400 italic border-t pt-3">

@@ -158,7 +158,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       console.error('Logout error:', error);
     } finally {
       clearAuth();
-      router.push('/login');
+      router.push('/');
     }
   };
 

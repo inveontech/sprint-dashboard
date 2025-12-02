@@ -515,7 +515,6 @@ export default function SettingsPage() {
   }
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
@@ -523,11 +522,6 @@ export default function SettingsPage() {
           <PageHeader title="Settings" description="Dashboard tercihlerini, hedeflerini ve bildirim ayarlarını yapılandırın" />
         </div>
       </header>
-=======
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Ayarlar</h1>
->>>>>>> 827a71cac76a01662f40071ec871e47cf0ad5ccd
 
       {/* Main Content */}
       <main className="px-6 py-8">
@@ -887,97 +881,87 @@ export default function SettingsPage() {
                     </tbody>
                   </table>
                 </div>
-<<<<<<< HEAD
-              )}
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          </>
+        )}
+
+        {/* Cache Tab - Admin Only */}
+        {activeTab === 'cache' && currentUserRole === 'admin' && (
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Database className="h-5 w-5" />
+                Redis Cache Yönetimi
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg dark:bg-yellow-900/20 dark:border-yellow-800">
+                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                    ⚠️ Cache temizleme işlemi, tüm oturum bilgilerini ve geçici verileri siler. 
+                    Kullanıcıların yeniden giriş yapması gerekebilir.
+                  </p>
+                </div>
+
+                {/* Cache Stats */}
+                {cacheStats && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-blue-50 rounded-lg dark:bg-blue-900/20">
+                      <div className="text-2xl font-bold text-blue-600">{cacheStats.totalKeys || 0}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Toplam Cache Key</div>
+                    </div>
+                    <div className="p-4 bg-purple-50 rounded-lg dark:bg-purple-900/20">
+                      <div className="text-2xl font-bold text-purple-600">{cacheStats.sessionKeys || 0}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Aktif Oturum</div>
+                    </div>
+                    <div className="p-4 bg-green-50 rounded-lg dark:bg-green-900/20">
+                      <div className="text-2xl font-bold text-green-600">{cacheStats.userKeys || 0}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Kullanıcı Verisi</div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Actions */}
+                <div className="flex gap-3">
+                  <Button 
+                    onClick={loadCacheStats}
+                    variant="outline"
+                    disabled={cacheClearing}
+                  >
+                    <RefreshCw className={`h-4 w-4 mr-2 ${cacheClearing ? 'animate-spin' : ''}`} />
+                    İstatistikleri Yenile
+                  </Button>
+                  <Button 
+                    onClick={handleClearCache}
+                    className="bg-red-600 hover:bg-red-700 text-white"
+                    disabled={cacheClearing}
+                  >
+                    <Trash2 className="h-4 w-4 mr-2" />
+                    {cacheClearing ? 'Temizleniyor...' : 'Tüm Cache\'i Temizle'}
+                  </Button>
+                </div>
+
+                {/* Key Breakdown */}
+                {cacheStats?.breakdown && (
+                  <div className="mt-6">
+                    <h4 className="font-medium mb-3">Cache Key Dağılımı</h4>
+                    <div className="space-y-2">
+                      {Object.entries(cacheStats.breakdown as Record<string, number>).map(([key, count]) => (
+                        <div key={key} className="flex justify-between items-center p-2 bg-gray-50 rounded dark:bg-gray-800">
+                          <code className="text-sm">{key}</code>
+                          <Badge variant="secondary">{count as number}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
         </div>
       </main>
-=======
-              </CardContent>
-            </Card>
-          </>
-        )}
-
-        {/* Cache Tab */}
-        {activeTab === 'cache' && currentUserRole === 'admin' && (
-          <>
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Database className="h-5 w-5" />
-                  Redis Cache Yönetimi
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg dark:bg-yellow-900/20 dark:border-yellow-800">
-                    <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                      ⚠️ Cache temizleme işlemi, tüm oturum bilgilerini ve geçici verileri siler. 
-                      Kullanıcıların yeniden giriş yapması gerekebilir.
-                    </p>
-                  </div>
-
-                  {/* Cache Stats */}
-                  {cacheStats && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="p-4 bg-blue-50 rounded-lg dark:bg-blue-900/20">
-                        <div className="text-2xl font-bold text-blue-600">{cacheStats.totalKeys || 0}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400">Toplam Cache Key</div>
-                      </div>
-                      <div className="p-4 bg-purple-50 rounded-lg dark:bg-purple-900/20">
-                        <div className="text-2xl font-bold text-purple-600">{cacheStats.sessionKeys || 0}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400">Aktif Oturum</div>
-                      </div>
-                      <div className="p-4 bg-green-50 rounded-lg dark:bg-green-900/20">
-                        <div className="text-2xl font-bold text-green-600">{cacheStats.userKeys || 0}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400">Kullanıcı Verisi</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Actions */}
-                  <div className="flex gap-3">
-                    <Button 
-                      onClick={loadCacheStats}
-                      variant="outline"
-                      disabled={cacheClearing}
-                    >
-                      <RefreshCw className={`h-4 w-4 mr-2 ${cacheClearing ? 'animate-spin' : ''}`} />
-                      İstatistikleri Yenile
-                    </Button>
-                    <Button 
-                      onClick={handleClearCache}
-                      className="bg-red-600 hover:bg-red-700 text-white"
-                      disabled={cacheClearing}
-                    >
-                      <Trash2 className="h-4 w-4 mr-2" />
-                      {cacheClearing ? 'Temizleniyor...' : 'Tüm Cache\'i Temizle'}
-                    </Button>
-                  </div>
-
-                  {/* Key Breakdown */}
-                  {cacheStats?.breakdown && (
-                    <div className="mt-6">
-                      <h4 className="font-medium mb-3">Cache Key Dağılımı</h4>
-                      <div className="space-y-2">
-                        {Object.entries(cacheStats.breakdown as Record<string, number>).map(([key, count]) => (
-                          <div key={key} className="flex justify-between items-center p-2 bg-gray-50 rounded dark:bg-gray-800">
-                            <code className="text-sm">{key}</code>
-                            <Badge variant="secondary">{count as number}</Badge>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </>
-        )}
-      </div>
->>>>>>> 827a71cac76a01662f40071ec871e47cf0ad5ccd
     </div>
   );
 }

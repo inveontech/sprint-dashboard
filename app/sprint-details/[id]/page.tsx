@@ -171,8 +171,7 @@ export default function SprintDetailsPage() {
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Main Content */}
       <main className="px-6 py-8">

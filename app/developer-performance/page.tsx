@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
-import { IssueTypeChart } from "@/components/charts/IssueTypeChart";
 import { useDashboardStore } from "@/lib/store";
 import SprintSelector from "@/components/dashboard/SprintSelector";
+
+// Lazy loaded chart component
+const IssueTypeChart = lazy(() => import("@/components/charts/IssueTypeChart").then(m => ({ default: m.IssueTypeChart })));
 import { PageHeader } from "@/components/layout/PageHeader";
 
 interface DeveloperData {
@@ -160,10 +162,12 @@ export default function DeveloperPerformancePage() {
                 </div>
               </CardHeader>
               <CardContent>
-                <IssueTypeChart 
-                  data={dev.issuesByType}
-                  title="Issue Type Dağılımı (SP)"
-                />
+                <Suspense fallback={<div className="h-[200px] flex items-center justify-center text-gray-500">Grafik yükleniyor...</div>}>
+                  <IssueTypeChart 
+                    data={dev.issuesByType}
+                    title="Issue Type Dağılımı (SP)"
+                  />
+                </Suspense>
               </CardContent>
             </Card>
           );
