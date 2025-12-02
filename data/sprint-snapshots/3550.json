@@ -546,7 +546,7 @@
       "storyPoints": 3,
       "customer": "The Moose Bay",
       "assignee": {
-        "displayName": "Ömer Sarıkaya - Inveon"
+        "displayName": "Çağatay Güzay - Inveon"
       },
       "taskOwner": "Abdullah Özdemir - Inveon",
       "issueType": {
@@ -1020,7 +1020,7 @@
       "storyPoints": 2,
       "customer": "Ayakkabı Dünyası",
       "assignee": {
-        "displayName": "Abdullah Özdemir - Inveon"
+        "displayName": "Gülce Abatay - Inveon"
       },
       "taskOwner": "Çağatay Güzay - Inveon",
       "issueType": {
@@ -1291,7 +1291,7 @@
       "storyPoints": 2,
       "customer": "Sneaks Up",
       "assignee": {
-        "displayName": "Ömer Yılmaz - Inveon"
+        "displayName": "Şule Kaya - Inveon"
       },
       "taskOwner": "Ömer Yılmaz - Inveon",
       "issueType": {
@@ -2463,7 +2463,7 @@
       "storyPoints": 2,
       "customer": "Ayakkabı Dünyası",
       "assignee": {
-        "displayName": "Abdullah Özdemir - Inveon"
+        "displayName": "Gülce Abatay - Inveon"
       },
       "taskOwner": "Abdullah Özdemir - Inveon",
       "issueType": {
@@ -2497,7 +2497,7 @@
       "storyPoints": 3,
       "customer": "Ayakkabı Dünyası",
       "assignee": {
-        "displayName": "Ömer Yılmaz - Inveon"
+        "displayName": "Nahit Demir - Inveon"
       },
       "taskOwner": "Ömer Yılmaz - Inveon",
       "issueType": {
@@ -2615,7 +2615,7 @@
       "storyPoints": 5,
       "customer": "The Moose Bay",
       "assignee": {
-        "displayName": "Ömer Sarıkaya - Inveon"
+        "displayName": "Yusuf Mert Çilo - Inveon"
       },
       "taskOwner": "Uygar Doğan - Inveon",
       "issueType": {
@@ -2623,7 +2623,7 @@
       },
       "created": "2025-11-13T14:44:08.068+0300",
       "dueDate": "2025-11-27",
-      "resolutionDate": null
+      "resolutionDate": "2025-12-01T14:35:36.629+0300"
     },
     {
       "key": "CGK-46",
@@ -3693,7 +3693,7 @@
       },
       "created": "2025-11-28T11:21:46.521+0300",
       "dueDate": "2025-12-11",
-      "resolutionDate": null
+      "resolutionDate": "2025-12-01T15:30:59.800+0300"
     },
     {
       "key": "INC-85430",
@@ -3832,5 +3832,5 @@
       "donePoints": 4
     }
   ],
-  "capturedAt": "2025-12-01T10:51:58.502Z"
+  "capturedAt": "2025-12-01T12:44:30.834Z"
 }

@@ -6,17 +6,20 @@ export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     console.log('🔧 Initializing server services...');
     
-    // Snapshot scheduler disabled for stability
-    /*
+    // Initialize audit log cleanup scheduler (daily at 3:00 AM, keeps last 14 days)
+    try {
+      const { initializeAuditCleanupScheduler } = await import('@/lib/audit-scheduler');
+      initializeAuditCleanupScheduler();
+    } catch (error) {
+      console.error('❌ Failed to initialize audit cleanup scheduler:', error);
+    }
+    
+    // Initialize snapshot scheduler (every Monday at 8:00 AM)
     try {
       const { initializeSnapshotScheduler } = await import('@/lib/snapshot-scheduler');
-      console.log('Starting snapshot scheduler...');
       initializeSnapshotScheduler();
-      console.log('Snapshot scheduler started successfully');
     } catch (error) {
-      console.error('Failed to initialize snapshot scheduler:', error);
-      // Continue anyway - don't crash server
+      console.error('❌ Failed to initialize snapshot scheduler:', error);
     }
-    */
   }
 }

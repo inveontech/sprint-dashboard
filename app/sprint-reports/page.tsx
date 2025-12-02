@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense, lazy } from 'react';
 import { Calendar, TrendingUp, Target, Bug } from 'lucide-react';
 import { useDashboardStore } from '@/lib/store';
 import { formatDate } from '@/lib/utils';
@@ -10,12 +10,7 @@ import SprintSelector from '@/components/dashboard/SprintSelector';
 import { PageHeader } from '@/components/layout/PageHeader';
 // DateRangeTabs removed
 import RefreshButton from '@/components/dashboard/RefreshButton';
-import VelocityChart from '@/components/charts/VelocityChart';
-import CompletionChart from '@/components/charts/CompletionChart';
-import MonthlyTrend from '@/components/charts/MonthlyTrend';
-import CustomerIssueTypeCharts from '@/components/charts/CustomerIssueTypeCharts';
-import SuccessTrendChart from '@/components/charts/SuccessTrendChart';
-import WaitingIssuesCharts from '@/components/charts/WaitingIssuesCharts';
+import { LoadingSkeleton } from '@/components/ui/loading-skeleton';
 import SprintComparisonCards from '@/components/dashboard/SprintComparisonCards';
 import { EnvWarningBanner } from '@/components/dashboard/EnvWarningBanner';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,6 +19,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
+
+// Lazy loaded chart components
+const VelocityChart = lazy(() => import('@/components/charts/VelocityChart'));
+const CompletionChart = lazy(() => import('@/components/charts/CompletionChart'));
+const MonthlyTrend = lazy(() => import('@/components/charts/MonthlyTrend'));
+const CustomerIssueTypeCharts = lazy(() => import('@/components/charts/CustomerIssueTypeCharts'));
+const SuccessTrendChart = lazy(() => import('@/components/charts/SuccessTrendChart'));
+const WaitingIssuesCharts = lazy(() => import('@/components/charts/WaitingIssuesCharts'));
 
 // Helper functions
 function calculateAvgVelocity(sprints: any[]): number {
@@ -266,14 +269,18 @@ export default function DashboardPage() {
               {!selectedCustomer && (
                 <div className="mb-8">
                   <h2 className="text-xl font-bold mb-4">Bekleyen İşler - PM Approval ve WFS</h2>
-                  <WaitingIssuesCharts />
+                  <Suspense fallback={<LoadingSkeleton text="Bekleyen işler yükleniyor..." />}>
+                    <WaitingIssuesCharts />
+                  </Suspense>
                 </div>
               )}
 
               {/* Customer Issue Type Distribution */}
               <div className="mb-8">
                 <h2 className="text-xl font-bold mb-4">Marka Bazlı Issue Type Dağılımı (Done)</h2>
-                <CustomerIssueTypeCharts />
+                <Suspense fallback={<LoadingSkeleton text="Dağılım grafikleri yükleniyor..." />}>
+                  <CustomerIssueTypeCharts />
+                </Suspense>
               </div>
 
               {/* Sprint List Table */}

@@ -6,7 +6,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -p 3010",
     "build": "next build",
     "start": "PORT=3010 node .next/standalone/server.js",
     "start:next": "next start -p 3010",
@@ -14,27 +14,34 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.0",
+    "@prisma/client": "^5.22.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-tabs": "^1.1.1",
+    "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
+    "ioredis": "^5.8.2",
     "jira.js": "^5.2.2",
+    "jose": "^6.1.2",
     "lucide-react": "^0.424.0",
     "next": "^14.2.5",
     "node-cron": "^3.0.3",
     "openai": "^6.9.1",
+    "prisma": "^5.22.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recharts": "^2.12.7",
     "tailwind-merge": "^2.4.0",
+    "zod": "^4.1.13",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@types/node": "^20.14.12",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.19.25",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -43,6 +50,10 @@
     "eslint-config-next": "^15.0.3",
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.7",
-    "typescript": "^5.5.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }

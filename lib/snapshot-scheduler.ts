@@ -84,58 +84,7 @@ export function initializeSnapshotScheduler() {
     }
   });
 
-  // Also run on startup (after 10 seconds delay to ensure app is ready)
-  // Disabled - causes timeout issues
-  /*
-  setTimeout(async () => {
-    console.log('🚀 Running initial snapshot capture on startup...');
-    try {
-      const jiraClient = new JiraClient();
-      const closedSprints = await jiraClient.getClosedSprints(50);
-      
-      const snapshotDir = path.join(process.cwd(), 'data', 'sprint-snapshots');
-      if (!fs.existsSync(snapshotDir)) {
-        fs.mkdirSync(snapshotDir, { recursive: true });
-      }
-
-      let capturedCount = 0;
-      for (const sprint of closedSprints) {
-        const snapshotPath = path.join(snapshotDir, `${sprint.id}.json`);
-        if (!fs.existsSync(snapshotPath)) {
-          try {
-            const details = await jiraClient.getSprintDetails(sprint.id);
-            const snapshotData = {
-              sprint: {
-                id: sprint.id,
-                name: sprint.name,
-                state: sprint.state,
-                startDate: sprint.startDate,
-                endDate: sprint.endDate,
-                completeDate: sprint.completeDate,
-              },
-              issues: details.issues,
-              metrics: details.metrics,
-              issueTypes: details.issueTypes,
-              capturedAt: new Date().toISOString(),
-            };
-            fs.writeFileSync(snapshotPath, JSON.stringify(snapshotData, null, 2), 'utf-8');
-            capturedCount++;
-          } catch (error) {
-            console.error(`Failed to capture sprint ${sprint.id}:`, error);
-          }
-        }
-      }
-      
-      if (capturedCount > 0) {
-        console.log(`✅ Captured ${capturedCount} missing snapshots on startup`);
-      }
-    } catch (error) {
-      console.error('Error during startup snapshot capture:', error);
-    }
-  }, 10000);
-  */
-
-  // Don't wait for initial snapshot capture - just return the task
-  console.log('✅ Snapshot scheduler initialized (every Monday 8:00 AM)');
+  task.start();
+  console.log('📅 Snapshot scheduler initialized (every Monday 8:00 AM)');
   return task;
 }

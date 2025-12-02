@@ -6,14 +6,25 @@ WORKDIR /app
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Copy environment file for build
-COPY .env.example .env.local
-
 # Install dependencies
 RUN npm ci
 
+# Copy prisma schema (needed for generate)
+COPY prisma ./prisma/
+
+# Generate Prisma Client
+RUN npx prisma generate
+
 # Copy source code
 COPY . .
+
+# Build-time environment variables (non-sensitive, needed for Next.js build)
+# These are placeholders - actual values come from runtime environment
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV DATABASE_URL="postgresql://placeholder:placeholder@localhost:5432/placeholder"
+ENV REDIS_URL="redis://localhost:6379"
+ENV REDIS_MOCK="true"
+ENV JIRA_MOCK="true"
 
 # Build the application
 RUN npm run build
@@ -24,6 +35,7 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Create non-root user for security
 RUN addgroup --system --gid 1001 nodejs
@@ -34,6 +46,20 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
+# Copy Prisma client and schema (needed for migrations in production)
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder /app/prisma ./prisma
+
+# Copy seed script dependencies
+COPY --from=builder /app/node_modules/ts-node ./node_modules/ts-node
+COPY --from=builder /app/node_modules/typescript ./node_modules/typescript
+COPY --from=builder /app/node_modules/@types ./node_modules/@types
+
+# Copy entrypoint script
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
 # Copy data files
 COPY --from=builder /app/data ./data
 
@@ -41,7 +67,24 @@ USER nextjs
 
 EXPOSE 3010
 
+# Runtime configuration defaults (non-sensitive only)
+# These can be overridden by docker-compose or kubernetes
 ENV PORT=3010
 ENV HOSTNAME="0.0.0.0"
+ENV REDIS_MOCK="false"
+ENV RUN_SEED="false"
 
-CMD ["node", "server.js"]
+# IMPORTANT: The following MUST be provided at runtime via environment variables:
+# - DATABASE_URL (required)
+# - REDIS_URL (required)
+# - JWT_SECRET (required - generate with: openssl rand -base64 32)
+# - SESSION_TTL (optional, default: 86400)
+# - REFRESH_TOKEN_TTL (optional, default: 604800)
+# - ADMIN_EMAIL (required for first run)
+# - ADMIN_PASSWORD (required for first run)
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3010/ || exit 1
+
+ENTRYPOINT ["/docker-entrypoint.sh"]

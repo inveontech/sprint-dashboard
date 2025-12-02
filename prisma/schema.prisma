@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum Role {
+  ADMIN
+  PM
+  DEVELOPER
+  VIEWER
+}
+
+enum AuditAction {
+  USER_CREATE
+  USER_UPDATE
+  USER_DELETE
+  USER_LOGIN
+  USER_LOGOUT
+  PASSWORD_CHANGE
+}
+
+// ============================================================================
+// Models
+// ============================================================================
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  passwordHash String
+  role         Role      @default(VIEWER)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  lastLoginAt  DateTime?
+
+  // Relations
+  auditLogs    AuditLog[] @relation("UserAuditLogs")
+  targetedLogs AuditLog[] @relation("TargetAuditLogs")
+
+  @@map("users")
+}
+
+model AuditLog {
+  id        String      @id @default(cuid())
+  action    AuditAction
+  details   Json?
+  ipAddress String?
+  createdAt DateTime    @default(now())
+
+  // Relations
+  userId    String
+  user      User        @relation("UserAuditLogs", fields: [userId], references: [id], onDelete: Cascade)
+  
+  targetId  String?
+  target    User?       @relation("TargetAuditLogs", fields: [targetId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([targetId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
