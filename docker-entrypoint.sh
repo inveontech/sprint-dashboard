@@ -5,13 +5,13 @@ echo "🚀 Starting Sprint Dashboard..."
 
 # Run database migrations
 echo "📦 Running database migrations..."
-npx prisma migrate deploy
+node node_modules/prisma/build/index.js migrate deploy
 
 # Check if this is the first run (no admin user exists)
 # The seed script handles this check internally
 if [ "$RUN_SEED" = "true" ]; then
   echo "🌱 Running database seed..."
-  npx prisma db seed
+  node node_modules/prisma/build/index.js db seed
 fi
 
 echo "✅ Database ready!"
