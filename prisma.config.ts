@@ -1,0 +1,16 @@
+import 'dotenv/config';
+import { defineConfig, env } from 'prisma/config';
+
+export default defineConfig({
+  // the main entry for your schema
+  schema: 'prisma/schema.prisma',
+  // where migrations should be generated and seed script
+  migrations: {
+    path: 'prisma/migrations',
+    seed: 'npx ts-node --compiler-options {"module":"CommonJS"} prisma/seed.ts',
+  },
+  // The database URL
+  datasource: {
+    url: env('DATABASE_URL'),
+  },
+});
