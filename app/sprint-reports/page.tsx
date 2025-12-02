@@ -194,7 +194,7 @@ export default function DashboardPage() {
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
           <div className="flex items-center justify-between mb-4">
-            <PageHeader title="Sprint Reports" description="Aktif sprint durumunu ve görev ilerleme durumunu görüntüleyin" />
+            <PageHeader title="Sprint Reports" />
           </div>
           <div className="flex flex-wrap gap-4 items-center">
             <SprintSelector
