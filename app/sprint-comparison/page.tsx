@@ -11,6 +11,7 @@ import SuccessTrendChart from '@/components/charts/SuccessTrendChart';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 // Helper functions
 function calculateAvgVelocity(sprints: any[]): number {
@@ -117,11 +118,9 @@ export default function SprintComparisonPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="px-6 py-6">
+        <div className="px-6 py-8">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Sprint Historical Analysis
-            </h1>
+            <PageHeader title="Sprint Comparison" description="Geçmiş sprintleri karşılaştırarak performans trendlerini analiz edin" />
           </div>
           <div className="flex flex-wrap gap-4 items-center">
             <CustomerSelector />

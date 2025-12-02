@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 interface Issue {
   key: string;
@@ -126,18 +127,20 @@ export default function SprintDetailsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
-        <div className="px-6 py-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={() => router.back()}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back
-            </Button>
-            {customerFilter && (
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Marka Filtresi: {customerFilter}
-              </p>
-            )}
-            <div className="ml-auto flex items-center gap-4">
+        <div className="px-6 py-8">
+          <div className="mb-6">
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" onClick={() => router.back()}>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back
+              </Button>
+              <PageHeader 
+                title={`Sprint ${sprintId}`}
+                description={customerFilter ? `Marka Filtresi: ${customerFilter}` : undefined}
+              />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 ml-auto">
               <div className="flex items-center gap-2">
                 <label className="text-sm text-gray-600 dark:text-gray-400">Status:</label>
                 <select

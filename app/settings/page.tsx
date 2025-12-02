@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Save, Plus, Trash2, Archive, Edit2 } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useDashboardStore } from "@/lib/store";
+import { PageHeader } from "@/components/layout/PageHeader";
 
 interface DeveloperTarget {
   name: string;
@@ -293,21 +294,31 @@ export default function SettingsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Ayarlar</h1>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <header className="bg-white dark:bg-gray-800 border-b">
+          <div className="px-6 py-8">
+            <PageHeader title="Settings" description="Dashboard tercihlerini, hedeflerini ve bildirim ayarlarını yapılandırın" />
+          </div>
+        </header>
+        <main className="px-6 py-8">
           <p>Yükleniyor...</p>
-        </div>
+        </main>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Hedef Yönetimi</h1>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Header */}
+      <header className="bg-white dark:bg-gray-800 border-b">
+        <div className="px-6 py-8">
+          <PageHeader title="Settings" description="Dashboard tercihlerini, hedeflerini ve bildirim ayarlarını yapılandırın" />
+        </div>
+      </header>
 
-        {message && (
+      {/* Main Content */}
+      <main className="px-6 py-8">
+        <div className="max-w-7xl mx-auto">        {message && (
           <Alert className={`mb-6 ${message.type === 'success' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
             <AlertDescription>{message.text}</AlertDescription>
           </Alert>
@@ -575,7 +586,8 @@ export default function SettingsPage() {
             </div>
           </CardContent>
         </Card>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

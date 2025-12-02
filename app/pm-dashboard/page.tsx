@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { RefreshCw, ChevronDown, ChevronUp } from "lucide-react";
 import { useDashboardStore } from "@/lib/store";
 import CustomerSelector from "@/components/dashboard/CustomerSelector";
+import { PageHeader } from "@/components/layout/PageHeader";
 
 interface PMMetrics {
   customer: string;
@@ -103,13 +104,18 @@ export default function PMDashboardPage() {
   const avgMerged = metrics.reduce((sum, m) => sum + m.merged.avgWaitDays, 0) / (metrics.length || 1);
 
   return (
-    <div className="p-6">
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold">PM Dashboard</h1>
-      </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Header */}
+      <header className="bg-white dark:bg-gray-800 border-b">
+        <div className="px-6 py-8">
+          <PageHeader title="PM Dashboard" description="Proje yönetim metrikleri ve ilerleme takibi" />
+        </div>
+      </header>
 
-      {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      {/* Main Content */}
+      <main className="px-6 py-8">
+        {/* Summary Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
           <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting PM</p>
           <div className="text-3xl font-semibold">{avgWaitingPM.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
@@ -293,6 +299,7 @@ export default function PMDashboardPage() {
           ))}
         </div>
       )}
+      </main>
     </div>
   );
 }

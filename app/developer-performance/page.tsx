@@ -7,6 +7,7 @@ import { RefreshCw } from "lucide-react";
 import { IssueTypeChart } from "@/components/charts/IssueTypeChart";
 import { useDashboardStore } from "@/lib/store";
 import SprintSelector from "@/components/dashboard/SprintSelector";
+import { PageHeader } from "@/components/layout/PageHeader";
 
 interface DeveloperData {
   developer: string;
@@ -93,20 +94,24 @@ export default function DeveloperPerformancePage() {
   const totalCompleted = sortedDevelopers.reduce((sum, d) => sum + d.completedPoints, 0);
 
   return (
-    <div className="p-8">
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-3xl font-bold">Developer Performance</h1>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Header */}
+      <header className="bg-white dark:bg-gray-800 border-b">
+        <div className="px-6 py-8">
+          <div className="flex items-center justify-between">
+            <PageHeader title="Developer Performance" description="Geliştirici bazlı performans metriklerini takip edin" />
+            <SprintSelector
+              sprints={allSprints}
+              selectedMode={selectedSprintId}
+              onModeChange={setSelectedSprintId}
+              loading={loading}
+            />
           </div>
-          <SprintSelector
-            sprints={allSprints}
-            selectedMode={selectedSprintId}
-            onModeChange={setSelectedSprintId}
-            loading={loading}
-          />
         </div>
-      </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="px-6 py-8">
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -177,6 +182,7 @@ export default function DeveloperPerformancePage() {
           }
         </div>
       )}
+      </main>
     </div>
   );
 }
