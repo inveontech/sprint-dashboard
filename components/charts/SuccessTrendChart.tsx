@@ -49,17 +49,24 @@ export default function SuccessTrendChart({ sprints, selectedCustomer }: Success
       .map((sprint) => {
         // Find target for this sprint
         const target = targets.find(t => t.sprintId === sprint.id);
-        const targetPoints = target?.targetPoints || 0;
-        const completedPoints = sprint.metrics?.completedPoints || 0;
+        const targetPoints = target?.targetPoints || sprint.metrics?.targetPoints || 0;
+        const completedPoints = sprint.metrics?.completedPoints || sprint.metrics?.velocity || 0;
+        const totalPoints = sprint.metrics?.totalPoints || 0;
         
-        // Calculate success rate: Completed SP / Target SP
-        const successRate = targetPoints > 0 
-          ? Math.round((completedPoints / targetPoints) * 100) 
-          : 0;
+        // Calculate success rate: Completed SP / Target SP (or Total SP if no target)
+        let successRate = 0;
+        if (targetPoints > 0) {
+          successRate = Math.round((completedPoints / targetPoints) * 100);
+        } else if (totalPoints > 0) {
+          // Fallback: use total points if no target
+          successRate = Math.round((completedPoints / totalPoints) * 100);
+        }
+        
+        console.log(`Sprint ${sprint.name}: Completed=${completedPoints}, Target=${targetPoints}, Total=${totalPoints}, Success=${successRate}%`);
         
         return {
           name: sprint.name.split('|')[1]?.trim() || sprint.name,
-          success: successRate,
+          success: Math.min(successRate, 100), // Cap at 100%
           completed: completedPoints,
           target: targetPoints,
         };
