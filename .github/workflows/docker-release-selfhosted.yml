@@ -1,3 +1,15 @@
+name: Docker Recreate 
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: inveonacr.azurecr.io
+
+jobs:
   deploy:
     needs: build-and-push
     runs-on: sprint-dashboard
