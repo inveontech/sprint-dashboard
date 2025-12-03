@@ -30,7 +30,7 @@ function LoginForm() {
       const result = await login(email, password);
 
       if (!result.success) {
-        setError(result.error || 'Login failed');
+        setError(result.error === 'Invalid email or password' ? 'E-posta veya şifre yanlış' : result.error || 'Giriş başarısız oldu');
         setIsLoading(false);
         return;
       }
@@ -46,19 +46,19 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && (
-        <Alert variant="destructive" className="border-red-500/50 bg-red-500/10">
-          <AlertDescription className="text-red-400">
+        <Alert variant="destructive" className="border-red-300 bg-red-50">
+          <AlertDescription className="text-red-800">
             {error}
           </AlertDescription>
         </Alert>
       )}
 
       <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-slate-300">
+        <label htmlFor="email" className="text-sm font-medium text-gray-700">
           Email
         </label>
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           <input
             id="email"
             type="email"
@@ -67,17 +67,17 @@ function LoginForm() {
             placeholder="name@company.com"
             required
             disabled={isLoading}
-            className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-600 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+            className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="password" className="text-sm font-medium text-slate-300">
+        <label htmlFor="password" className="text-sm font-medium text-gray-700">
           Password
         </label>
         <div className="relative">
-          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           <input
             id="password"
             type={showPassword ? 'text' : 'password'}
@@ -86,12 +86,12 @@ function LoginForm() {
             placeholder="••••••••"
             required
             disabled={isLoading}
-            className="w-full pl-10 pr-12 py-2.5 rounded-lg bg-slate-900/50 border border-slate-600 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+            className="w-full pl-10 pr-12 py-2.5 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
             {showPassword ? (
               <EyeOff className="h-4 w-4" />
@@ -105,7 +105,7 @@ function LoginForm() {
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full py-2.5 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium"
+        className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium"
       >
         {isLoading ? (
           <>
@@ -122,22 +122,18 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-white p-4">
       <div className="w-full max-w-md">
-        {/* Logo/Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-4">
-            <span className="text-2xl font-bold text-white">SD</span>
-          </div>
-          <h1 className="text-2xl font-bold text-white">Sprint Dashboard</h1>
-          <p className="text-slate-400 mt-1">Inveon inCommerce Team</p>
+          <h1 className="text-2xl font-bold text-gray-900">Sprint Management System</h1>
+          <p className="text-gray-600 mt-1">Giriş yaparak başlayın</p>
         </div>
 
-        <Card className="border-slate-700 bg-slate-800/50 backdrop-blur">
+        <Card className="border-gray-200 bg-white shadow-lg">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-xl text-white">Welcome back</CardTitle>
-            <CardDescription className="text-slate-400">
-              Enter your credentials to access the dashboard
+            <CardTitle className="text-xl text-gray-900">Hoş Geldiniz</CardTitle>
+            <CardDescription className="text-gray-600">
+              Panele erişmek için kimlik bilgilerinizi girin
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -151,9 +147,9 @@ export default function LoginPage() {
           </CardContent>
         </Card>
 
-        <p className="text-center text-sm text-slate-500 mt-6">
+        <p className="text-center text-sm text-gray-600 mt-6">
           Hesabınız yok mu?{' '}
-          <Link href="/signup" className="text-blue-400 hover:text-blue-300 underline">
+          <Link href="/signup" className="text-blue-600 hover:text-blue-800 underline">
             Hesap Oluştur
           </Link>
         </p>

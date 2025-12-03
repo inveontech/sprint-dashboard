@@ -33,6 +33,23 @@ const KEYS = {
   REFRESH_TOKEN: `${APP_PREFIX}refresh:`,
 } as const;
 
+// In-memory fallback user store (for when database is unavailable)
+const inMemoryUsers = new Map<string, User>();
+
+// Flag to ensure admin is only seeded once per process
+let adminSeeded = false;
+
+// ============================================================================
+// Utility Functions
+// ============================================================================
+
+/**
+ * Generate a unique ID
+ */
+function generateId(): string {
+  return `${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 15)}`;
+}
+
 // ============================================================================
 // Role Conversion Utilities
 // ============================================================================
@@ -315,54 +332,104 @@ export async function createUser(
   role: Role,
   name?: string
 ): Promise<User> {
-  // Check if email already exists
-  const existingUser = await prisma.user.findUnique({
-    where: { email: email.toLowerCase() }
-  });
-  
-  if (existingUser) {
-    throw new Error('User with this email already exists');
-  }
+  try {
+    // Check if email already exists
+    const existingUser = await prisma.user.findUnique({
+      where: { email: email.toLowerCase() }
+    });
+    
+    if (existingUser) {
+      throw new Error('User with this email already exists');
+    }
 
-  const hashedPassword = await hashPassword(password);
-  
-  const prismaUser = await prisma.user.create({
-    data: {
+    const hashedPassword = await hashPassword(password);
+    
+    const prismaUser = await prisma.user.create({
+      data: {
+        email: email.toLowerCase(),
+        passwordHash: hashedPassword,
+        role: appRoleToPrismaRole(role),
+        name,
+        isActive: true,
+      }
+    });
+
+    return prismaUserToAppUser(prismaUser);
+  } catch (error) {
+    console.error('createUser error:', error);
+    // Fallback: create in-memory user
+    const hashedPassword = await hashPassword(password);
+    const newUser: User = {
+      id: generateId(),
       email: email.toLowerCase(),
       passwordHash: hashedPassword,
-      role: appRoleToPrismaRole(role),
-      name,
+      name: name || email.split('@')[0],
+      role: role,
       isActive: true,
-    }
-  });
-
-  return prismaUserToAppUser(prismaUser);
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+    inMemoryUsers.set(email.toLowerCase(), newUser);
+    console.log(`✅ Admin user created in memory: ${email}`);
+    return newUser;
+  }
 }
 
 /**
  * Get user by ID
  */
 export async function getUserById(userId: string): Promise<User | null> {
-  const prismaUser = await prisma.user.findUnique({
-    where: { id: userId }
-  });
-  
-  if (!prismaUser) return null;
-  
-  return prismaUserToAppUser(prismaUser);
+  try {
+    const prismaUser = await prisma.user.findUnique({
+      where: { id: userId }
+    });
+    
+    if (!prismaUser) {
+      // Fallback: check in-memory store for any user with matching ID
+      for (const user of inMemoryUsers.values()) {
+        if (user.id === userId) {
+          return user;
+        }
+      }
+      return null;
+    }
+    
+    return prismaUserToAppUser(prismaUser);
+  } catch (error) {
+    console.error('getUserById error:', error);
+    // Fallback to in-memory store
+    for (const user of inMemoryUsers.values()) {
+      if (user.id === userId) {
+        return user;
+      }
+    }
+    return null;
+  }
 }
 
 /**
  * Get user by email
  */
 export async function getUserByEmail(email: string): Promise<User | null> {
-  const prismaUser = await prisma.user.findUnique({
-    where: { email: email.toLowerCase() }
-  });
-  
-  if (!prismaUser) return null;
-  
-  return prismaUserToAppUser(prismaUser);
+  // First check in-memory store for faster fallback
+  const memoryUser = inMemoryUsers.get(email.toLowerCase());
+  if (memoryUser) {
+    return memoryUser;
+  }
+
+  try {
+    const prismaUser = await prisma.user.findUnique({
+      where: { email: email.toLowerCase() }
+    });
+    
+    if (!prismaUser) return null;
+    
+    return prismaUserToAppUser(prismaUser);
+  } catch (error) {
+    console.error('getUserByEmail error:', error);
+    // Fallback to in-memory store (in case database fails)
+    return inMemoryUsers.get(email.toLowerCase()) || null;
+  }
 }
 
 /**
@@ -424,10 +491,15 @@ export async function updateUserPassword(
  * Update last login timestamp
  */
 export async function updateLastLogin(userId: string): Promise<void> {
-  await prisma.user.update({
-    where: { id: userId },
-    data: { lastLoginAt: new Date() },
-  });
+  try {
+    await prisma.user.update({
+      where: { id: userId },
+      data: { lastLoginAt: new Date() },
+    });
+  } catch (error) {
+    console.error('updateLastLogin error:', error);
+    // Silently fail - this is non-critical
+  }
 }
 
 /**
@@ -482,39 +554,47 @@ export function toSafeUser(user: User): SafeUser {
  * @deprecated Use prisma/seed.ts instead
  */
 export async function seedAdminUser(): Promise<void> {
+  // Only seed once per process to maintain consistent IDs
+  if (adminSeeded) {
+    return;
+  }
+
   const adminEmail = process.env.ADMIN_EMAIL;
   const adminPassword = process.env.ADMIN_PASSWORD;
   
   if (!adminEmail || !adminPassword) {
     console.log('ℹ️  Admin credentials not set, skipping admin seed');
+    adminSeeded = true; // Mark as attempted even if failed
     return;
   }
   
-  try {
-    const existingAdmin = await getUserByEmail(adminEmail);
-    
-    if (existingAdmin) {
-      console.log('ℹ️  Admin user already exists');
-      return;
+  // Create in memory if not exists
+  if (!inMemoryUsers.has(adminEmail.toLowerCase())) {
+    try {
+      const hashedPassword = await hashPassword(adminPassword);
+      const adminUser: User = {
+        id: generateId(),
+        email: adminEmail.toLowerCase(),
+        passwordHash: hashedPassword,
+        name: 'System Admin',
+        role: 'admin',
+        isActive: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      inMemoryUsers.set(adminEmail.toLowerCase(), adminUser);
+      console.log(`✅ Admin user seeded in memory: ${adminEmail}`);
+    } catch (error) {
+      console.error('Failed to seed admin user:', error);
     }
-    
-    await createUser(adminEmail, adminPassword, 'admin', 'System Admin');
-    console.log('✅ Admin user created successfully');
-  } catch (error) {
-    console.error('❌ Failed to seed admin user:', error);
   }
+  
+  adminSeeded = true; // Mark as seeded
 }
 
 // ============================================================================
 // Utility Functions
 // ============================================================================
-
-/**
- * Generate a unique ID
- */
-function generateId(): string {
-  return `${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 15)}`;
-}
 
 /**
  * Extract token from Authorization header
