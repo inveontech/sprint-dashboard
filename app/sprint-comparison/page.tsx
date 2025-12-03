@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState, useRef, Suspense, lazy } from 'react';
+import { useRouter } from 'next/navigation';
 import { TrendingUp, Target, Bug } from 'lucide-react';
 import { useDashboardStore } from '@/lib/store';
+import { fetchWithAuth } from '@/lib/api-client';
 import MetricCard from '@/components/dashboard/MetricCard';
 import CustomerSelector from '@/components/dashboard/CustomerSelector';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -69,7 +71,7 @@ export default function SprintComparisonPage() {
           params.append('customer', selectedCustomer);
         }
         
-        const response = await fetch(`/api/jira/sprints?${params.toString()}`);
+        const response = await fetchWithAuth(`/api/jira/sprints?${params.toString()}`);
         const data = await response.json();
         
         console.log('API Response:', data);

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, ChevronDown, ChevronUp } from "lucide-react";
 import { useDashboardStore } from "@/lib/store";
+import { fetchWithAuth } from "@/lib/api-client";
 import CustomerSelector from "@/components/dashboard/CustomerSelector";
 import { PageHeader } from "@/components/layout/PageHeader";
 
@@ -74,7 +76,7 @@ export default function PMDashboardPage() {
         params.append('customer', selectedCustomer);
       }
       
-      const response = await fetch(`/api/jira/pm-metrics?${params.toString()}`);
+      const response = await fetchWithAuth(`/api/jira/pm-metrics?${params.toString()}`);
       const data = await response.json();
       
       if (data.sprintName) {

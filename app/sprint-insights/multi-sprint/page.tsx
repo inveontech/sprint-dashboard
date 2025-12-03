@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { fetchWithAuth } from "@/lib/api-client";
 import { PageHeader } from "@/components/layout/PageHeader";
 
 interface IssueDetail {
@@ -35,7 +37,7 @@ export default function MultiSprintPage() {
   const fetchMultiSprintIssues = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/jira/multi-sprint-issues`);
+      const response = await fetchWithAuth(`/api/jira/multi-sprint-issues`);
       const data: MultiSprintIssues = await response.json();
       setIssues(data.issues || []);
     } catch (error) {
