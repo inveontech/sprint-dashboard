@@ -49,8 +49,14 @@ export async function POST(request: NextRequest) {
   }
   
   try {
-    // Ensure admin is seeded on first login attempt
-    await seedAdminUser();
+    // Ensure admin user is seeded in memory before login
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    
+    if (adminEmail && adminPassword) {
+      // This will seed the admin user synchronously in memory
+      await seedAdminUser();
+    }
     
     const body = await request.json();
     
@@ -119,16 +125,16 @@ export async function POST(request: NextRequest) {
     const refreshToken = await createRefreshToken(user.id, session.id);
     
     // Update last login timestamp
-    await updateLastLogin(user.id);
+    updateLastLogin(user.id).catch(err => console.error('updateLastLogin error:', err));
     
-    // Log successful login
-    await logCommand(
+    // Log successful login (non-blocking)
+    logCommand(
       AuditAction.USER_LOGIN,
       user.id,
       user.id,
       { email: user.email, userAgent: userAgent },
       ip
-    );
+    ).catch(err => console.error('logCommand error:', err));
     
     const response: LoginResponse = {
       user: safeUser,
