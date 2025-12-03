@@ -11,7 +11,6 @@ env:
 
 jobs:
   deploy:
-    needs: build-and-push
     runs-on: sprint-dashboard
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     
