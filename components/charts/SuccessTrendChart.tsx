@@ -35,9 +35,12 @@ export default function SuccessTrendChart({ sprints, selectedCustomer }: Success
         const response = await fetch('/api/settings/sprint-targets');
         const data = await response.json();
         // API returns { success: true, targets: [...] }
-        setTargets(Array.isArray(data.targets) ? data.targets : (Array.isArray(data) ? data : []));
+        const targetsList = Array.isArray(data.targets) ? data.targets : (Array.isArray(data) ? data : []);
+        console.log('Fetched targets:', targetsList);
+        setTargets(targetsList);
       } catch (error) {
         console.error('Failed to fetch sprint targets:', error);
+        setTargets([]);
       }
     };
     fetchTargets();
@@ -45,6 +48,8 @@ export default function SuccessTrendChart({ sprints, selectedCustomer }: Success
 
   const chartData = useMemo(() => {
     console.log('SuccessTrendChart - Received sprints:', sprints.length);
+    console.log('SuccessTrendChart - Sprints:', sprints);
+    console.log('SuccessTrendChart - Targets:', targets);
     // Use all sprints passed (should be 6)
     return sprints
       .slice(0, 6)
@@ -65,7 +70,7 @@ export default function SuccessTrendChart({ sprints, selectedCustomer }: Success
           successRate = Math.round((completedPoints / totalPoints) * 100);
         }
         
-        console.log(`Sprint ${sprint.name}: Completed=${completedPoints}, Target=${targetPoints}, Total=${totalPoints}, Success=${successRate}%`);
+        console.log(`Sprint ${sprint.name} (ID: ${sprint.id}): Completed=${completedPoints}, Target=${targetPoints}, Total=${totalPoints}, Success=${successRate}%`);
         
         return {
           name: sprint.name.split('|')[1]?.trim() || sprint.name,
