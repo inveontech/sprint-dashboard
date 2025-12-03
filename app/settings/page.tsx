@@ -504,7 +504,7 @@ export default function SettingsPage() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <header className="bg-white dark:bg-gray-800 border-b">
           <div className="px-6 py-8">
-            <PageHeader title="Settings" description="Dashboard tercihlerini, hedeflerini ve bildirim ayarlarını yapılandırın" />
+            <PageHeader title="Settings" />
           </div>
         </header>
         <main className="px-6 py-8">
@@ -519,7 +519,7 @@ export default function SettingsPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="Settings" description="Dashboard tercihlerini, hedeflerini ve bildirim ayarlarını yapılandırın" />
+          <PageHeader title="Settings" />
         </div>
       </header>
 

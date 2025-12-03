@@ -88,7 +88,7 @@ export default function TestFailuresPage() {
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
           <div className="flex items-center justify-between">
-            <PageHeader title="Test Failures" description="Başarısız testleri ve sorunlu alanları izleyin" />
+            <PageHeader title="Test Failures" />
             <SprintSelector
               sprints={allSprints}
               selectedMode={selectedSprintId}

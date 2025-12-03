@@ -117,7 +117,7 @@ export default function OverworkIssuesPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="Overwork Issues" description="Tahminden fazla çalışılan görevleri izleyin" />
+          <PageHeader title="Overwork Issues" />
         </div>
       </header>
 

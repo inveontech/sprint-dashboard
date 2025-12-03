@@ -101,7 +101,7 @@ export default function DeveloperPerformancePage() {
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
           <div className="flex items-center justify-between">
-            <PageHeader title="Developer Performance" description="Geliştirici bazlı performans metriklerini takip edin" />
+            <PageHeader title="Developer Performance" />
             <SprintSelector
               sprints={allSprints}
               selectedMode={selectedSprintId}

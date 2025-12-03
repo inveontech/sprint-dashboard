@@ -122,7 +122,7 @@ export default function SprintComparisonPage() {
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
           <div className="flex items-center justify-between mb-4">
-            <PageHeader title="Sprint Comparison" description="Geçmiş sprintleri karşılaştırarak performans trendlerini analiz edin" />
+            <PageHeader title="Sprint Comparison" />
           </div>
           <div className="flex flex-wrap gap-4 items-center">
             <CustomerSelector />

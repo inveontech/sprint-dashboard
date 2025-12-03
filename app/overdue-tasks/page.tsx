@@ -90,7 +90,7 @@ export default function OverdueTasksPage() {
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
           <div className="flex items-center justify-between">
-            <PageHeader title="Overdue Tasks" description="Geciken ve yaklaşan görevleri izleyin" />
+            <PageHeader title="Overdue Tasks" />
             <SprintSelector
             sprints={allSprints}
             selectedMode={selectedSprintId}

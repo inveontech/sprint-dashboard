@@ -1,0 +1,72 @@
+[
+  {
+    "customer": "CDN",
+    "type": "ecommerce",
+    "description": "E-ticaret altyapısı"
+  },
+  {
+    "customer": "Akinon",
+    "type": "ecommerce",
+    "description": "E-ticaret altyapısı"
+  },
+  {
+    "customer": "Ayakkabı Dünyası",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Champion",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Columbia",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Hotiç",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Inveon - Product",
+    "type": "internal",
+    "description": "İç ürün"
+  },
+  {
+    "customer": "Jeanslab",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Kipling",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Lav",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Quiz",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Sneaks Up",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "Suit Direct",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  },
+  {
+    "customer": "The Moose Bay",
+    "type": "brand",
+    "description": "Marka - Tüm metrikleri takip et"
+  }
+]

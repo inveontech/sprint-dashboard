@@ -1,0 +1,144 @@
+{
+  "ecommerce_metrics": {
+    "critical": [
+      {
+        "name": "Deployment Success Rate",
+        "description": "Başarılı deployment yüzdesi",
+        "target": 95,
+        "unit": "%",
+        "frequency": "per_deployment"
+      },
+      {
+        "name": "Critical Bug Count",
+        "description": "Kritik bug sayısı (blocker)",
+        "target": 0,
+        "unit": "count",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Payment Processing Failure Rate",
+        "description": "Ödeme işlemlerinde hata oranı",
+        "target": 0.1,
+        "unit": "%",
+        "frequency": "realtime"
+      },
+      {
+        "name": "System Uptime",
+        "description": "Sistem çalışma süresi",
+        "target": 99.9,
+        "unit": "%",
+        "frequency": "daily"
+      }
+    ],
+    "important": [
+      {
+        "name": "Test Coverage",
+        "description": "Test kodu kapsamı",
+        "target": 80,
+        "unit": "%",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Average Response Time",
+        "description": "Ortalama yanıt süresi",
+        "target": 200,
+        "unit": "ms",
+        "frequency": "realtime"
+      },
+      {
+        "name": "Database Query Performance",
+        "description": "Veritabanı sorgu performansı (P95)",
+        "target": 500,
+        "unit": "ms",
+        "frequency": "realtime"
+      },
+      {
+        "name": "Order Synchronization Failures",
+        "description": "Sipariş senkronizasyon hataları",
+        "target": 0,
+        "unit": "count",
+        "frequency": "hourly"
+      }
+    ],
+    "monitoring": [
+      {
+        "name": "Deployment Frequency",
+        "description": "Deployment sıklığı",
+        "target": "optimal",
+        "unit": "per_week",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Lead Time for Changes",
+        "description": "Değişiklik için geçen süre",
+        "target": 7,
+        "unit": "days",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Mean Time to Recovery",
+        "description": "Ortalama kurtarma süresi",
+        "target": 1,
+        "unit": "hours",
+        "frequency": "incident"
+      },
+      {
+        "name": "Cache Hit Ratio",
+        "description": "Cache başarı oranı",
+        "target": 85,
+        "unit": "%",
+        "frequency": "realtime"
+      }
+    ],
+    "optional": [
+      {
+        "name": "Customer Complaints",
+        "description": "Müşteri şikayet sayısı",
+        "target": "minimize",
+        "unit": "count",
+        "frequency": "daily"
+      },
+      {
+        "name": "Feature Toggle Health",
+        "description": "Feature toggle sağlığı",
+        "target": 100,
+        "unit": "%",
+        "frequency": "realtime"
+      }
+    ]
+  },
+  "brand_metrics": {
+    "critical": [
+      {
+        "name": "Sprint Completion Rate",
+        "description": "Sprint tamamlanma oranı",
+        "target": 85,
+        "unit": "%",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Bug Count",
+        "description": "Hata sayısı",
+        "target": "minimize",
+        "unit": "count",
+        "frequency": "per_sprint"
+      }
+    ],
+    "important": [
+      {
+        "name": "PM Approval Wait Time",
+        "description": "PM onayı bekleme süresi",
+        "target": 3,
+        "unit": "days",
+        "frequency": "per_sprint"
+      },
+      {
+        "name": "Customer Satisfaction",
+        "description": "Müşteri memnuniyeti",
+        "target": 85,
+        "unit": "%",
+        "frequency": "per_sprint"
+      }
+    ]
+  }
+}

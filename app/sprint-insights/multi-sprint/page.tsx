@@ -105,7 +105,7 @@ export default function MultiSprintPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="Multi-Sprint Insights" description="Birden fazla sprint arasında trendleri analiz edin ve detaylı backlog takibi yapın" />
+          <PageHeader title="Multi-Sprint Insights" />
         </div>
       </header>
 

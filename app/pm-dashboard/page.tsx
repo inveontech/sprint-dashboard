@@ -108,7 +108,7 @@ export default function PMDashboardPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="PM Dashboard" description="Proje yönetim metrikleri ve ilerleme takibi" />
+          <PageHeader title="PM Dashboard" />
         </div>
       </header>
 

@@ -55,7 +55,7 @@ export default function AIAnalysisPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="AI Analysis" description="Yapay zeka tarafından desteklenen sprint içgörüleri ve öneriler alın" />
+          <PageHeader title="AI Analysis" />
         </div>
       </header>
 
