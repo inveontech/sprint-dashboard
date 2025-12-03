@@ -365,9 +365,10 @@ export async function createUser(
       passwordHash: hashedPassword,
       name: name || email.split('@')[0],
       role: role,
+      permissions: getRolePermissions(role),
       isActive: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     };
     inMemoryUsers.set(email.toLowerCase(), newUser);
     console.log(`✅ Admin user created in memory: ${email}`);
@@ -578,9 +579,10 @@ export async function seedAdminUser(): Promise<void> {
         passwordHash: hashedPassword,
         name: 'System Admin',
         role: 'admin',
+        permissions: getRolePermissions('admin'),
         isActive: true,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
       };
       inMemoryUsers.set(adminEmail.toLowerCase(), adminUser);
       console.log(`✅ Admin user seeded in memory: ${adminEmail}`);
