@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push and Deploy Docker Image
 
 on:
   push:
@@ -53,3 +53,28 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build-and-push
+    runs-on: sprint-dashboard
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    
+    steps:
+      - name: Pull latest image
+        run: |
+          cd /home/inveon/sprint-dashboard
+          docker compose pull sprint-dashboard
+      
+      - name: Deploy with docker compose
+        run: |
+          cd /home/inveon/sprint-dashboard
+          docker compose up -d --force-recreate sprint-dashboard
+      
+      - name: Clean up old images
+        run: docker image prune -f
+      
+      - name: Check deployment status
+        run: |
+          cd /home/inveon/sprint-dashboard
+          docker compose ps sprint-dashboard
+          docker compose logs --tail=50 sprint-dashboard
