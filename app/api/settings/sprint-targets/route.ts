@@ -7,13 +7,24 @@ export const dynamic = 'force-dynamic';
 // GET: Retrieve saved sprint targets
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'data', 'sprint-targets.json');
-    const data = await fs.readFile(filePath, 'utf-8');
-    const targets = JSON.parse(data);
+    // Try public folder first (always accessible)
+    let filePath = path.join(process.cwd(), 'public', 'sprint-targets.json');
     
-    return NextResponse.json({ success: true, targets });
+    try {
+      const data = await fs.readFile(filePath, 'utf-8');
+      const targets = JSON.parse(data);
+      console.log(`[TARGETS] Loaded ${targets.length} targets from public`);
+      return NextResponse.json({ success: true, targets });
+    } catch {
+      // Fallback to data folder
+      filePath = path.join(process.cwd(), 'data', 'sprint-targets.json');
+      const data = await fs.readFile(filePath, 'utf-8');
+      const targets = JSON.parse(data);
+      console.log(`[TARGETS] Loaded ${targets.length} targets from data`);
+      return NextResponse.json({ success: true, targets });
+    }
   } catch (error) {
-    console.error('Error reading sprint targets:', error);
+    console.error('[TARGETS ERROR]', error instanceof Error ? error.message : error);
     return NextResponse.json({ success: true, targets: [] });
   }
 }
