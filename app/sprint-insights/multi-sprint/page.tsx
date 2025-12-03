@@ -105,7 +105,9 @@ export default function MultiSprintPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="Multi-Sprint Insights" />
+          <div className="flex items-center justify-between mb-4">
+            <PageHeader title="Multi-Sprint Insights" />
+          </div>
         </div>
       </header>
 

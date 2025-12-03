@@ -108,7 +108,12 @@ export default function PMDashboardPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b">
         <div className="px-6 py-8">
-          <PageHeader title="PM Dashboard" />
+          <div className="flex items-center justify-between mb-4">
+            <PageHeader title="PM Dashboard" />
+          </div>
+          <div className="flex flex-wrap gap-4 items-center">
+            <CustomerSelector />
+          </div>
         </div>
       </header>
 
