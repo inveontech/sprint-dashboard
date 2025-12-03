@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 
@@ -115,23 +116,29 @@ export default function MultiSprintPage() {
       <main className="px-6 py-8">
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Toplam İş</p>
-          <div className="text-3xl font-semibold">{totalTasks}</div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">adet task</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Toplam İş</p>
+            <div className="text-3xl font-semibold">{totalTasks}</div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">adet task</p>
+          </div>
+        </Card>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Toplam Story Points</p>
-          <div className="text-3xl font-semibold">{totalStoryPoints}</div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">SP</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Toplam Story Points</p>
+            <div className="text-3xl font-semibold">{totalStoryPoints}</div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">SP</p>
+          </div>
+        </Card>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Açık Süresi</p>
-          <div className="text-3xl font-semibold">{avgDaysOpen}<span className="text-lg text-gray-500">g</span></div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">gün</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Açık Süresi</p>
+            <div className="text-3xl font-semibold">{avgDaysOpen}<span className="text-lg text-gray-500">g</span></div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">gün</p>
+          </div>
+        </Card>
       </div>
 
       {loading && (

@@ -121,29 +121,37 @@ export default function PMDashboardPage() {
       <main className="px-6 py-8">
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting PM</p>
-          <div className="text-3xl font-semibold">{avgWaitingPM.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting PM</p>
+            <div className="text-3xl font-semibold">{avgWaitingPM.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+          </div>
+        </Card>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting Customer</p>
-          <div className="text-3xl font-semibold">{avgWaitingForCustomer.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Waiting Customer</p>
+            <div className="text-3xl font-semibold">{avgWaitingForCustomer.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+          </div>
+        </Card>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merge Req</p>
-          <div className="text-3xl font-semibold">{avgMergeRequested.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merge Req</p>
+            <div className="text-3xl font-semibold">{avgMergeRequested.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+          </div>
+        </Card>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merged</p>
-          <div className="text-3xl font-semibold">{avgMerged.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
-        </div>
+        <Card>
+          <div className="p-4">
+            <p className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">Ort. Merged</p>
+            <div className="text-3xl font-semibold">{avgMerged.toFixed(1)}<span className="text-lg text-gray-500">g</span></div>
+            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Ortalama bekleme süresi</p>
+          </div>
+        </Card>
       </div>
 
       {/* Top 5 Waiting Issues */}
