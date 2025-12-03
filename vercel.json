@@ -1,0 +1,27 @@
+{
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "REDIS_URL": "@redis_url",
+    "JWT_SECRET": "@jwt_secret",
+    "ADMIN_EMAIL": "@admin_email",
+    "ADMIN_PASSWORD": "@admin_password",
+    "JIRA_MOCK": "false",
+    "JIRA_HOST": "@jira_host",
+    "JIRA_EMAIL": "@jira_email",
+    "JIRA_API_TOKEN": "@jira_api_token",
+    "JIRA_BOARD_ID": "@jira_board_id",
+    "JIRA_PROJECT_KEY": "@jira_project_key",
+    "JIRA_CUSTOMER_FIELD": "@jira_customer_field",
+    "JIRA_STORY_POINTS_FIELD": "@jira_story_points_field",
+    "JIRA_TASK_OWNER_FIELD": "@jira_task_owner_field",
+    "OPENAI_API_KEY": "@openai_api_key",
+    "ANTHROPIC_API_KEY": "@anthropic_api_key",
+    "REDIS_MOCK": "false"
+  },
+  "domains": [
+    "sprint-dashboard.inveon.info"
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "framework": "nextjs"
+}
