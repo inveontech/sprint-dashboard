@@ -157,22 +157,23 @@ export default function PMDashboardPage() {
       {/* Top 5 Waiting Issues */}
       {!loading && metrics.length > 0 && (
         <div className="mb-8">
-          <div
-            className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 border border-gray-200 dark:border-gray-700 rounded-lg flex items-center justify-between transition-colors"
+          <Card
+            className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors"
             onClick={() => setExpandedTopIssues(!expandedTopIssues)}
           >
-            <div>
-              <h2 className="text-lg font-semibold">Top 5 En Çok Bekleyen İşler</h2>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">En uzun süre güncellenmemiş 5 işi gösterir</p>
+            <div className="p-4 flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-semibold">Top 5 En Çok Bekleyen İşler</h2>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">En uzun süre güncellenmemiş 5 işi gösterir</p>
+              </div>
+              <div className="text-gray-400">
+                {expandedTopIssues ? (
+                  <ChevronUp className="w-5 h-5" />
+                ) : (
+                  <ChevronDown className="w-5 h-5" />
+                )}
+              </div>
             </div>
-            <div className="text-gray-400">
-              {expandedTopIssues ? (
-                <ChevronUp className="w-5 h-5" />
-              ) : (
-                <ChevronDown className="w-5 h-5" />
-              )}
-            </div>
-          </div>
 
           {expandedTopIssues && (
             <div className="mt-3 space-y-2">
@@ -210,6 +211,7 @@ export default function PMDashboardPage() {
               })()}
             </div>
           )}
+          </Card>
         </div>
       )}
 
@@ -229,9 +231,9 @@ export default function PMDashboardPage() {
       {!loading && metrics.length > 0 && (
         <div className="space-y-3">
           {metrics.map((customerMetrics) => (
-            <div key={customerMetrics.customer} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+            <Card key={customerMetrics.customer} className="overflow-hidden">
               <div
-                className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 flex items-center justify-between transition-colors"
+                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/50 p-4 flex items-center justify-between transition-colors"
                 onClick={() => setExpandedCustomer(
                   expandedCustomer === customerMetrics.customer ? null : customerMetrics.customer
                 )}
@@ -308,7 +310,7 @@ export default function PMDashboardPage() {
                   </div>
                 </div>
               )}
-            </div>
+            </Card>
           ))}
         </div>
       )}

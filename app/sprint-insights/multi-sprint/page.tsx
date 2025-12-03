@@ -157,9 +157,9 @@ export default function MultiSprintPage() {
       {!loading && issues.length > 0 && (
         <div className="space-y-3">
           {statuses.map((status) => (
-            <div key={status} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+            <Card key={status} className="overflow-hidden">
               <div
-                className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 p-4 flex items-center justify-between transition-colors"
+                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/50 p-4 flex items-center justify-between transition-colors"
                 onClick={() => toggleStatus(status)}
               >
                 <div className="flex-1">
@@ -218,7 +218,7 @@ export default function MultiSprintPage() {
                   </div>
                 </div>
               )}
-            </div>
+            </Card>
           ))}
         </div>
       )}
