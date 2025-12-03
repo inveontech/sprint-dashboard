@@ -9,6 +9,9 @@ interface Sprint {
   metrics?: {
     completionRate?: number;
     completedPoints?: number;
+    velocity?: number;
+    totalPoints?: number;
+    targetPoints?: number;
   };
 }
 
