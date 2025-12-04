@@ -110,9 +110,76 @@ npm run dev
 - Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
+- Prisma ORM
+- PostgreSQL
+- Redis
 - jira.js (Jira API client)
 - OpenAI API (AI analiz)
 - recharts (Chart library)
-- zustand (State management)
 - lucide-react (Icons)
+
+## Production Deployment
+
+### Vercel'e Deploy Etmek
+
+1. GitHub repo'yu Vercel'e bağlayın
+2. `vercel.json`'daki environment variables'ları Vercel dashboard'ta ayarlayın:
+   - `DATABASE_URL` - PostgreSQL bağlantısı
+   - `REDIS_URL` - Redis bağlantısı
+   - `JWT_SECRET` - Güvenli bir secret key (minimum 32 char)
+   - `ADMIN_EMAIL` ve `ADMIN_PASSWORD` - İlk admin kullanıcısı
+   - Jira credentials (JIRA_HOST, JIRA_EMAIL, JIRA_API_TOKEN, vs.)
+   - `OPENAI_API_KEY` - AI özelliği için (opsiyonel)
+
+3. Her deployment'da otomatik olarak:
+   - `npm run build` çalıştırılır
+   - Database migrations uygulanır
+   - Admin user seeding yapılır
+
+### Manuel Production Sunucuya Deploy
+
+```bash
+# Dependenciler yükleme
+npm ci
+
+# Production build
+npm run build
+
+# Environment variables ayarla
+export NODE_ENV=production
+export DATABASE_URL="postgresql://..."
+export JWT_SECRET="..."
+# ... diğer env variables
+
+# Server başlat
+npm start
+```
+
+### Environment Variables (Production)
+
+`.env.production` dosyasını sunucuda güncelleyin:
+
+```env
+NODE_ENV=production
+PORT=3010
+
+DATABASE_URL=postgresql://user:password@db-host:5432/sprint_dashboard
+REDIS_URL=redis://redis-host:6379
+JWT_SECRET=your-production-secret-key-min-32-chars
+ADMIN_EMAIL=admin@inveon.com
+ADMIN_PASSWORD=secure-password-change-this
+
+JIRA_MOCK=false
+JIRA_HOST=your-domain.atlassian.net
+JIRA_EMAIL=your-email@example.com
+JIRA_API_TOKEN=your-api-token
+JIRA_BOARD_ID=284
+JIRA_PROJECT_KEY=INC
+OPENAI_API_KEY=sk-...
+```
+
+⚠️ **Güvenlik Uyarısı:**
+- Production'da `JWT_SECRET` ve `ADMIN_PASSWORD` **HER ZAMAN** değiştirin
+- Sensitive credentials hiçbir zaman GitHub'a commit etmeyin
+- Vercel/sunucu environment variables kullanın
 
