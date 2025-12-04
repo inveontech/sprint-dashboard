@@ -6,6 +6,14 @@ export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     console.log('🔧 Initializing server services...');
     
+    // Seed admin user if not exists
+    try {
+      const { seedAdminUser } = await import('@/lib/auth');
+      await seedAdminUser();
+    } catch (error) {
+      console.error('❌ Failed to seed admin user:', error);
+    }
+    
     // Initialize audit log cleanup scheduler (daily at 3:00 AM, keeps last 14 days)
     try {
       const { initializeAuditCleanupScheduler } = await import('@/lib/audit-scheduler');
