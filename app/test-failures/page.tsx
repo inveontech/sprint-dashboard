@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 import { format } from "date-fns";
 import { useDashboardStore } from "@/lib/store";
+import { fetchWithAuth } from "@/lib/api-client";
 import SprintSelector from "@/components/dashboard/SprintSelector";
 import { PageHeader } from "@/components/layout/PageHeader";
 
@@ -39,7 +41,7 @@ export default function TestFailuresPage() {
   useEffect(() => {
     const fetchAllSprints = async () => {
       try {
-        const response = await fetch('/api/jira/sprints?sprints=6');
+        const response = await fetchWithAuth('/api/jira/sprints?sprints=6');
         const data = await response.json();
         if (data.sprints && data.sprints.length > 0) {
           setAllSprints(data.sprints);
@@ -59,7 +61,7 @@ export default function TestFailuresPage() {
     
     setLoading(true);
     try {
-      const response = await fetch(`/api/jira/test-failures?sprintId=${selectedSprintId}`);
+      const response = await fetchWithAuth(`/api/jira/test-failures?sprintId=${selectedSprintId}`);
       const data = await response.json();
       setFailures(Array.isArray(data) ? data : []);
     } catch (error) {
